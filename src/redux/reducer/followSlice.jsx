@@ -10,7 +10,7 @@ export const followReducer = createSlice({
       awards: [],
       birthday: "",
       national: "",
-      realname: "",
+      realName: "",
       follow: 0,
       totalFollow: 0,
       sections: [{ items: [] }],
@@ -26,13 +26,23 @@ export const followReducer = createSlice({
       state.artist.awards = action.payload.awards;
       state.artist.birthday = action.payload.birthday;
       state.artist.national = action.payload.national;
-      state.artist.realname = action.payload.realname;
+      state.artist.realName = action.payload.realName;
       state.artist.follow = action.payload.follow;
       state.artist.totalFollow = action.payload.totalFollow;
       state.artist.sections = action.payload.sections;
       state.loading = false;
     },
     setLoading: (state, action) => {
+      state.artist.name = "";
+      state.artist.sortBiography = "";
+      state.artist.thumbnail = "";
+      state.artist.thumbnailM = "";
+      state.artist.awards = [];
+      state.artist.birthday = "";
+      state.artist.national = "";
+      state.artist.realName = "";
+      state.artist.follow = 0;
+      state.artist.totalFollow = 0;
       state.loading = true;
     },
   },

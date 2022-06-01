@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Slider from "react-slick";
 import clsx from "clsx";
 import { useDispatch, useSelector } from "react-redux";
@@ -18,6 +18,7 @@ import Loading from "../Loading/Loading";
 const Slide = ({ rectangle, triangle, circle, square }) => {
   const banners = useSelector((state) => state.explore.banner);
   const liveStream = useSelector((state) => state.radio.liveStream);
+  const [artistUrl, setArtistUrl] = useState("");
 
   const [btnLeft, setBtnLeft] = useState(false);
   const [btnRight, setBtnRight] = useState(true);
@@ -44,12 +45,18 @@ const Slide = ({ rectangle, triangle, circle, square }) => {
     await axios
       .get(`https://music-player-pink.vercel.app/api/artist?name=${artistUrl}`)
       .then(({ data }) => {
-        console.log(data.data);
-        dispatch(setLoading(true));
         dispatch(setArtist(data.data));
       })
       .catch((err) => console.log(err));
+
+    setArtist(artistUrl);
   };
+
+  useEffect(() => {
+    return () => {
+      dispatch(setLoading());
+    };
+  }, [artistUrl, dispatch]);
 
   const settings = {
     infinite: true,

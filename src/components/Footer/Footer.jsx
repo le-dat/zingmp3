@@ -68,7 +68,7 @@ const Footer = () => {
 
     render();
     return () => {
-      dispatch(setLoading(true));
+      dispatch(setLoading());
     };
   }, [dispatch, songId, index, indexNewSong]);
 
@@ -91,10 +91,23 @@ const Footer = () => {
     const seekTime = (audioRef.current.duration / 100) * e.target.value;
     audioRef.current.currentTime = seekTime;
   };
+  // handle tua bài hát nhả ra mới thêm current time
+  const handleMouseMove = (e) => {};
 
+  // const handleBtnPlay = () => {
+  //   dispatch(setPlay(!isPlay));
+  //   isPlay ? audioRef.current.pause() : audioRef.current.play();
+  // };
   const handleBtnPlay = () => {
-    dispatch(setPlay(!isPlay));
     isPlay ? audioRef.current.pause() : audioRef.current.play();
+  };
+  const handlePlay = () => {
+    dispatch(setPlay(true));
+    audioRef.current.play();
+  };
+  const handlePause = () => {
+    dispatch(setPlay(false));
+    audioRef.current.pause();
   };
 
   const nextSong = () => {
@@ -137,10 +150,10 @@ const Footer = () => {
   const handleBtnNext = () => {
     isRandom ? randomSong() : nextSong();
   };
-
   const handleBtnPre = () => {
     preSong();
   };
+
   const handleLoadStart = () => {
     dispatch(setPlay(isPlay));
     isPlay ? audioRef.current.play() : audioRef.current.pause();
@@ -254,6 +267,7 @@ const Footer = () => {
             max="100"
             className={style.progress}
             onChange={handleSeekTime}
+            onMouseMove={handleMouseMove}
           />
           <div className={style.progressTrack}>
             <div
@@ -282,6 +296,8 @@ const Footer = () => {
         id="audio"
         value={time}
         controls
+        onPlay={handlePlay}
+        onPause={handlePause}
         onTimeUpdate={handleUpdatePercentage}
         onEnded={handleAudioEnd}
         onLoadStart={handleLoadStart}

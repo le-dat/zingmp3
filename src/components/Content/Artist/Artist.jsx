@@ -22,7 +22,7 @@ const Artist = () => {
         ) : (
           <div className={clsx("row", style.marginMobile)}>
             <div className={clsx("col l-7 m-7 c-9")}>
-              <div className={style.header}>{artist.realname}</div>
+              <div className={style.header}>{artist.realName}</div>
               <div className={style.sortBiography}>{artist.sortBiography}</div>
               <div className={style.award}>
                 {artist.award &&

@@ -32,6 +32,7 @@ export const songReducer = createSlice({
       state.artistsNames = action.payload.artistsNames;
       state.duration = action.payload.duration;
       state.album = action.payload.album;
+      state.loading = false;
 
       setConfig("songId", action.payload.encodeId);
       setConfig("thumbnail", action.payload.thumbnail);
@@ -48,7 +49,7 @@ export const songReducer = createSlice({
       setConfig("songUrl", action.payload.songUrl);
     },
     setLoading: (state, action) => {
-      state.loading = action.payload;
+      state.loading = true;
     },
     renderLyrics: (state, action) => {
       state.lyric = action.payload;
