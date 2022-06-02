@@ -192,7 +192,7 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  background-color: #453575;
+  background-color: var(--color-primary-bg);
   position: absolute;
   left: 0;
   top: 120%;
@@ -215,16 +215,16 @@
   border-top: 8px solid transparent;
   border-right: 8px solid transparent;
   border-left: 8px solid transparent;
-  border-bottom: 8px solid #453575;
+  border-bottom: 8px solid var(--color-primary-bg);
 }
 .dropdownItem {
   width: 50%;
   font-size: 13px;
-  color: #fff;
+  color: var(--color-text-primary);
   border-radius: 5px;
   font-weight: 300;
   &:hover {
-    background-color: #573d83;
+    background-color: var(--color-alpha-bg);
   }
 }
 .itemSpan {

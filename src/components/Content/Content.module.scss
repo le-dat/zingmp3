@@ -33,6 +33,11 @@
 @media (min-width: 740px) and (max-width: 1023px) {
   .content {
     max-width: calc(100% - var(--width-sidebar-tablet));
+    position: absolute;
+    left: var(--width-sidebar-tablet);
+    top: 0;
+    right: 0;
+    bottom: 0;
   }
   .main {
     padding: 5rem 3rem 15rem 3rem;
