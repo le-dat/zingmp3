@@ -42,14 +42,14 @@ const Slide = ({ rectangle, triangle, circle, square }) => {
   };
 
   const handleChooseArtist = async (artistUrl) => {
+    setArtist(artistUrl);
+
     await axios
       .get(`https://music-player-pink.vercel.app/api/artist?name=${artistUrl}`)
       .then(({ data }) => {
         dispatch(setArtist(data.data));
       })
       .catch((err) => console.log(err));
-
-    setArtist(artistUrl);
   };
 
   useEffect(() => {
