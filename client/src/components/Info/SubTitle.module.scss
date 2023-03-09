@@ -1,0 +1,24 @@
+.subTitle,
+.subTitle > span > a {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-top: 3px;
+  color: var(--color-text-secondary);
+}
+
+.subTitle {
+  white-space: normal;
+  letter-spacing: normal;
+  overflow: hidden;
+}
+
+.subTitle > span > a {
+  word-break: inherit;
+  display: inline;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  &:hover {
+    color: var(--color-action-active);
+    text-decoration: underline;
+  }
+}

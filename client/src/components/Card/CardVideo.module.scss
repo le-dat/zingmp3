@@ -1,0 +1,86 @@
+.card {
+  position: relative;
+}
+
+.cardTop {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  height: 18rem;
+  &:hover > .thumbnailM {
+    transform: scale(1.07);
+  }
+  &:hover > .alpha {
+    display: flex;
+  }
+}
+
+.thumbnailM {
+  width: 100%;
+  height: 100%;
+  transition: all 0.7s ease-in;
+  overflow: hidden;
+  transform: scale(1.04);
+}
+
+.alpha {
+  position: absolute;
+  inset: 0;
+  background-color: var(--dark-alpha-50);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.time {
+  position: absolute;
+  right: 0.8rem;
+  bottom: 0.8rem;
+  padding: 3px 5px;
+  border-radius: 4px;
+  color: var(--color-text-primary);
+  background-color: var(--dark-alpha-70);
+}
+
+.cardContent {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.image {
+  width: 4rem;
+  height: 4rem;
+}
+
+.right {
+  flex: 1;
+}
+
+.title {
+}
+
+.subtitle {
+  width: 80%;
+}
+
+// tablet
+@media (min-width: 740px) and (max-width: 1023px) {
+  .cardTop {
+    min-height: 17rem;
+  }
+}
+
+// phone
+@media (max-width: 739px) {
+  .cardTop {
+    min-height: 20rem;
+  }
+}

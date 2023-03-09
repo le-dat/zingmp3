@@ -1,0 +1,742 @@
+// font-family
+@import "normalize.css";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap");
+// 1 - SETTINGS
+@import "./_colors.scss";
+@import "./_length.scss";
+@import "./_zIndex.scss";
+@import "./_mixin.scss";
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  overflow-x: hidden;
+}
+
+body,
+html,
+input,
+button,
+a,
+p {
+  font-family: "Inter", "Roboto", sans-serif;
+}
+
+// scrollbar
+html *::-webkit-scrollbar {
+  border-radius: 0;
+  width: 8px;
+}
+
+html *::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+html *::-webkit-scrollbar-track {
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+a,
+div,
+span {
+  user-select: none;
+  /* Standard syntax */
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  display: block;
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+a,
+button {
+  user-select: none;
+  /* Standard syntax */
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  content: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+img {
+  object-fit: cover;
+}
+
+input[type="range"] {
+  cursor: pointer;
+}
+
+input[type="checkbox"],
+input[type="file"],
+input[type="text"] {
+  outline: none;
+  border: none;
+}
+
+input[type="checkbox"] {
+  cursor: pointer;
+}
+
+input[type="text"]::placeholder,
+input[type="text"]:-ms-input-placeholder,
+input[type="text"]::-ms-input-placeholder,
+input[type="email"]::placeholder,
+input[type="email"]:-ms-input-placeholder,
+input[type="email"]::-ms-input-placeholder,
+input[type="password"]::placeholder,
+input[type="password"]:-ms-input-placeholder,
+input[type="password"]::-ms-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--color-text-secondary);
+}
+
+input[type="text"]:disabled,
+input[type="email"]:disabled,
+input[type="password"]:disabled {
+  background: #dddddd;
+}
+
+input[type="file"] {
+  height: 0;
+  overflow: hidden;
+  width: 0;
+}
+
+input[type="file"] + label {
+  background: #f15d22;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: inherit;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  outline: none;
+  padding: 1rem;
+  position: relative;
+  transition: all 0.3s;
+  vertical-align: middle;
+  &:hover {
+    background-color: darken(#f15d22, 10%);
+  }
+  &.lable {
+    background-color: #f79159;
+    box-shadow: 0 6px darken(#f79159, 10%);
+    transition: none;
+    &:hover {
+      box-shadow: 0 4px darken(#f79159, 10%);
+      top: 2px;
+    }
+  }
+}
+
+:root {
+  --color-white: #{$color-white};
+  --color-black: #{$color-black};
+  --dark-alpha-10: #{$dark-alpha-10};
+  --dark-alpha-50: #{$dark-alpha-50};
+  --dark-alpha-70: #{$dark-alpha-70};
+  --dark-alpha-80: #{$dark-alpha-80};
+  --white-alpha: #{$white-alpha};
+  --hover-tooltip-opacity: #{hover-tooltip-opacity};
+  --color-layout: #{$purple-layout};
+  --color-sidebar: #{$purple-sidebar};
+  --color-footer: #{$purple-footer};
+  --color-chart-box-bg-alpha: #{$color-chart-box-bg-alpha};
+  --color-text-primary: #{$purple-text-primary};
+  --color-text-secondary: #{$purple-text-secondary};
+  --color-text-btn: #{$purple-text-btn};
+  --color-item-hover: #{$purple-item-hover};
+  --color-action: #{$purple-action};
+  --color-action-active: #{$purple-action-active};
+  --color-bg-primary: #{$purple-primary-bg};
+  --color-bg-alpha: #{$purple-alpha-bg};
+  --color-icon: #{$purple-icon};
+  --color-player: #{$purple-player};
+  --color-border: #{$purple-border};
+  --color-track: #{$purple-track};
+  --color-text-hover: #{$purple-text-hover};
+  --color-tippy: #{$purple-tippy};
+  --color-chart-bg-img-alpha: #{$purple-chart-bg-img-alpha};
+  // length
+  --height-header: #{$height-header};
+  --height-player: #{$height-footer};
+  --height-btn-add-play-list: #{$height-btn-add-play-list};
+  --height-sidebar-mobile: #{$height-sidebar-mobile};
+  --height-player-mobile: #{$height-player-mobile};
+  --width-sidebar: #{$width-sidebar};
+  --width-sidebar-tablet: #{$width-sidebar-tablet};
+  --width-playlist: #{$width-playlist};
+  --padding-container: #{$padding-container};
+  // z-index
+  --zIndex-modal: #{$zIndex-modal};
+  --zIndex-modal-playlist: #{$zIndex-modal-playlist};
+  --zIndex-header: #{$zIndex-header};
+  --zIndex-player: #{$zIndex-player};
+  --zIndex-sidebar: #{$zIndex-sidebar};
+  --zIndex-media-preview: #{$zIndex-media-preview};
+  --zIndex-input: #{$zIndex-input};
+  --zIndex-icon: #{$zIndex-icon};
+  --zIndex-image-host: #{$zIndex-image-host};
+  --zIndex-bg-alpha: #{$zIndex-bg-alpha};
+  --zIndex-banner-current: #{$zIndex-banner-current};
+  --zIndex-banner-block: #{$zIndex-banner-block};
+  --zIndex-info: #{$zIndex-info};
+  --zIndex-after: #{$zIndex-after};
+  --zIndex-before: #{$zIndex-before};
+  --zIndex-bg-alpha-page: #{$zIndex-bg-alpha-page};
+}
+
+.app {
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--color-layout);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 1920px auto;
+  position: relative;
+}
+
+.number-1 {
+  color: transparent !important;
+  -webkit-text-stroke: 1px #4a90e2 !important;
+}
+
+.number-2 {
+  color: transparent !important;
+  -webkit-text-stroke: 1px #50e3c2 !important;
+}
+
+.number-3 {
+  color: transparent !important;
+  -webkit-text-stroke: 1px #e35050 !important;
+}
+
+.scrollbar {
+  @include scrollbar();
+}
+
+// line title...
+.lineCamp-1 {
+  @include lineClamp(1);
+}
+
+.lineCamp-2 {
+  @include lineClamp(2);
+}
+
+.is-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.mar-b-20 {
+  margin-bottom: 20px;
+}
+
+.is-relative-1 {
+  position: relative;
+  z-index: 1;
+}
+
+.is-relative-10 {
+  position: relative;
+  z-index: 10;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.london {
+  --color-layout: #{$london-layout};
+  --color-sidebar: #{$london-sidebar};
+  --color-footer: #{$london-footer};
+  --color-text-primary: #{$london-text-primary};
+  --color-text-secondary: #{$london-text-secondary};
+  --color-text-btn: #{$london-text-btn};
+  --color-item-hover: #{$london-item-hover};
+  --color-action: #{$london-action};
+  --color-action-active: #{$london-action-active};
+  --color-bg-primary: #{$london-primary-bg};
+  --color-bg-alpha: #{$london-alpha-bg};
+  --color-icon: #{$london-icon};
+  --color-player: #{$london-player};
+  --color-border: #{$london-border};
+  --color-track: #{$london-track};
+  --color-text-hover: #{$london-text-hover};
+  --color-tippy: #{$london-tippy};
+  --color-chart-bg-img-alpha: #{$london-chart-bg-img-alpha};
+}
+
+.xone {
+  --color-layout: #{$xone-layout};
+  --color-sidebar: #{$xone-sidebar};
+  --color-footer: #{$xone-footer};
+  --color-text-primary: #{$xone-text-primary};
+  --color-text-secondary: #{$xone-text-secondary};
+  --color-text-btn: #{$xone-text-btn};
+  --color-item-hover: #{$xone-item-hover};
+  --color-action: #{$xone-action};
+  --color-action-active: #{$xone-action-active};
+  --color-bg-primary: #{$xone-primary-bg};
+  --color-bg-alpha: #{$xone-alpha-bg};
+  --color-icon: #{$xone-icon};
+  --color-player: #{$xone-player};
+  --color-border: #{$xone-border};
+  --color-track: #{$xone-track};
+  --color-text-hover: #{$xone-text-hover};
+  --color-tippy: #{$xone-tippy};
+  --color-chart-bg-img-alpha: #{$xone-chart-bg-img-alpha};
+}
+
+.zing {
+  --color-layout: #{$zing-layout};
+  --color-sidebar: #{$zing-sidebar};
+  --color-footer: #{$zing-footer};
+  --color-text-primary: #{$zing-text-primary};
+  --color-text-secondary: #{$zing-text-secondary};
+  --color-text-btn: #{$zing-text-btn};
+  --color-item-hover: #{$zing-item-hover};
+  --color-action: #{$zing-action};
+  --color-action-active: #{$zing-action-active};
+  --color-bg-primary: #{$zing-primary-bg};
+  --color-bg-alpha: #{$zing-alpha-bg};
+  --color-icon: #{$zing-icon};
+  --color-player: #{$zing-player};
+  --color-border: #{$zing-border};
+  --color-track: #{$zing-track};
+  --color-text-hover: #{$zing-text-hover};
+  --color-tippy: #{$zing-tippy};
+  --color-chart-bg-img-alpha: #{$purple-chart-bg-img-alpha};
+}
+
+.elffel {
+  --color-layout: #{$elffel-layout};
+  --color-sidebar: #{$elffel-sidebar};
+  --color-footer: #{$elffel-footer};
+  --color-text-primary: #{$elffel-text-primary};
+  --color-text-secondary: #{$elffel-text-secondary};
+  --color-text-btn: #{$elffel-text-btn};
+  --color-item-hover: #{$elffel-item-hover};
+  --color-action: #{$elffel-action};
+  --color-action-active: #{$elffel-action-active};
+  --color-bg-primary: #{$elffel-primary-bg};
+  --color-bg-alpha: #{$elffel-alpha-bg};
+  --color-icon: #{$elffel-icon};
+  --color-player: #{$elffel-player};
+  --color-border: #{$elffel-border};
+  --color-track: #{$elffel-track};
+  --color-text-hover: #{$elffel-text-hover};
+  --color-tippy: #{$elffel-tippy};
+  --color-chart-bg-img-alpha: #{$elffel-chart-bg-img-alpha};
+}
+
+.jack {
+  --color-layout: #{$jack-layout};
+  --color-sidebar: #{$jack-sidebar};
+  --color-footer: #{$jack-footer};
+  --color-text-primary: #{$jack-text-primary};
+  --color-text-secondary: #{$jack-text-secondary};
+  --color-text-btn: #{$jack-text-btn};
+  --color-item-hover: #{$jack-item-hover};
+  --color-action: #{$jack-action};
+  --color-action-active: #{$jack-action-active};
+  --color-bg-primary: #{$jack-primary-bg};
+  --color-bg-alpha: #{$jack-alpha-bg};
+  --color-icon: #{$jack-icon};
+  --color-player: #{$jack-player};
+  --color-border: #{$jack-border};
+  --color-track: #{$jack-track};
+  --color-text-hover: #{$jack-text-hover};
+  --color-tippy: #{$jack-tippy};
+  --color-chart-bg-img-alpha: #{$jack-chart-bg-img-alpha};
+}
+
+.iu {
+  --color-layout: #{$iu-layout};
+  --color-sidebar: #{$iu-sidebar};
+  --color-footer: #{$iu-footer};
+  --color-text-primary: #{$iu-text-primary};
+  --color-text-secondary: #{$iu-text-secondary};
+  --color-text-btn: #{$iu-text-btn};
+  --color-item-hover: #{$iu-item-hover};
+  --color-action: #{$iu-action};
+  --color-action-active: #{$iu-action-active};
+  --color-bg-primary: #{$iu-primary-bg};
+  --color-bg-alpha: #{$iu-alpha-bg};
+  --color-icon: #{$iu-icon};
+  --color-player: #{$iu-player};
+  --color-border: #{$iu-border};
+  --color-track: #{$iu-track};
+  --color-text-hover: #{$iu-text-hover};
+  --color-tippy: #{$iu-tippy};
+  --color-chart-bg-img-alpha: #{$iu-chart-bg-img-alpha};
+}
+
+.jiChangWook {
+  --color-layout: #{$jiChangWook-layout};
+  --color-sidebar: #{$jiChangWook-sidebar};
+  --color-footer: #{$jiChangWook-footer};
+  --color-text-primary: #{$jiChangWook-text-primary};
+  --color-text-secondary: #{$jiChangWook-text-secondary};
+  --color-text-btn: #{$jiChangWook-text-btn};
+  --color-item-hover: #{$jiChangWook-item-hover};
+  --color-action: #{$jiChangWook-action};
+  --color-action-active: #{$jiChangWook-action-active};
+  --color-bg-primary: #{$jiChangWook-primary-bg};
+  --color-bg-alpha: #{$jiChangWook-alpha-bg};
+  --color-icon: #{$jiChangWook-icon};
+  --color-player: #{$jiChangWook-player};
+  --color-border: #{$jiChangWook-border};
+  --color-track: #{$jiChangWook-track};
+  --color-text-hover: #{$jiChangWook-text-hover};
+  --color-tippy: #{$jiChangWook-tippy};
+  --color-chart-bg-img-alpha: #{$jiChangWook-chart-bg-img-alpha};
+}
+
+.lisa {
+  --color-layout: #{$lisa-layout};
+  --color-sidebar: #{$lisa-sidebar};
+  --color-footer: #{$lisa-footer};
+  --color-text-primary: #{$lisa-text-primary};
+  --color-text-secondary: #{$lisa-text-secondary};
+  --color-text-btn: #{$lisa-text-btn};
+  --color-item-hover: #{$lisa-item-hover};
+  --color-action: #{$lisa-action};
+  --color-action-active: #{$lisa-action-active};
+  --color-bg-primary: #{$lisa-primary-bg};
+  --color-bg-alpha: #{$lisa-alpha-bg};
+  --color-icon: #{$lisa-icon};
+  --color-player: #{$lisa-player};
+  --color-border: #{$lisa-border};
+  --color-track: #{$lisa-track};
+  --color-text-hover: #{$lisa-text-hover};
+  --color-tippy: #{$lisa-tippy};
+  --color-chart-bg-img-alpha: #{$purple-chart-bg-img-alpha};
+}
+
+.jennieKim {
+  --color-layout: #{$jennieKim-layout};
+  --color-sidebar: #{$jennieKim-sidebar};
+  --color-footer: #{$jennieKim-footer};
+  --color-text-primary: #{$jennieKim-text-primary};
+  --color-text-secondary: #{$jennieKim-text-secondary};
+  --color-text-btn: #{$jennieKim-text-btn};
+  --color-item-hover: #{$jennieKim-item-hover};
+  --color-action: #{$jennieKim-action};
+  --color-action-active: #{$jennieKim-action-active};
+  --color-bg-primary: #{$jennieKim-primary-bg};
+  --color-bg-alpha: #{$jennieKim-alpha-bg};
+  --color-icon: #{$jennieKim-icon};
+  --color-player: #{$jennieKim-player};
+  --color-border: #{$jennieKim-border};
+  --color-track: #{$jennieKim-track};
+  --color-text-hover: #{$jennieKim-text-hover};
+  --color-tippy: #{$jennieKim-tippy};
+  --color-chart-bg-img-alpha: #{$jennieKim-chart-bg-img-alpha};
+}
+
+.jisoo {
+  --color-layout: #{$jisoo-layout};
+  --color-sidebar: #{$jisoo-sidebar};
+  --color-footer: #{$jisoo-footer};
+  --color-text-primary: #{$jisoo-text-primary};
+  --color-text-secondary: #{$jisoo-text-secondary};
+  --color-text-btn: #{$jisoo-text-btn};
+  --color-item-hover: #{$jisoo-item-hover};
+  --color-action: #{$jisoo-action};
+  --color-action-active: #{$jisoo-action-active};
+  --color-bg-primary: #{$jisoo-primary-bg};
+  --color-bg-alpha: #{$jisoo-alpha-bg};
+  --color-icon: #{$jisoo-icon};
+  --color-player: #{$jisoo-player};
+  --color-border: #{$jisoo-border};
+  --color-track: #{$jisoo-track};
+  --color-text-hover: #{$jisoo-text-hover};
+  --color-tippy: #{$jisoo-tippy};
+  --color-chart-bg-img-alpha: #{$jisoo-chart-bg-img-alpha};
+}
+
+.rose {
+  --color-layout: #{$rose-layout};
+  --color-sidebar: #{$rose-sidebar};
+  --color-footer: #{$rose-footer};
+  --color-text-primary: #{$rose-text-primary};
+  --color-text-secondary: #{$rose-text-secondary};
+  --color-text-btn: #{$rose-text-btn};
+  --color-item-hover: #{$rose-item-hover};
+  --color-action: #{$rose-action};
+  --color-action-active: #{$rose-action-active};
+  --color-bg-primary: #{$rose-primary-bg};
+  --color-bg-alpha: #{$rose-alpha-bg};
+  --color-icon: #{$rose-icon};
+  --color-player: #{$rose-player};
+  --color-border: #{$rose-border};
+  --color-track: #{$rose-track};
+  --color-text-hover: #{$rose-text-hover};
+  --color-tippy: #{$rose-tippy};
+  --color-chart-bg-img-alpha: #{$rose-chart-bg-img-alpha};
+}
+
+.dark {
+  --color-layout: #{$dark-layout};
+  --color-sidebar: #{$dark-sidebar};
+  --color-footer: #{$dark-footer};
+  --color-text-primary: #{$dark-text-primary};
+  --color-text-secondary: #{$dark-text-secondary};
+  --color-text-btn: #{$dark-text-btn};
+  --color-item-hover: #{$dark-item-hover};
+  --color-action: #{$dark-action};
+  --color-action-active: #{$dark-action-active};
+  --color-bg-primary: #{$dark-primary-bg};
+  --color-bg-alpha: #{$dark-alpha-bg};
+  --color-icon: #{$dark-icon};
+  --color-player: #{$dark-player};
+  --color-border: #{$dark-border};
+  --color-track: #{$dark-track};
+  --color-text-hover: #{$dark-text-hover};
+  --color-tippy: #{$dark-tippy};
+  --color-chart-bg-img-alpha: #{$dark-chart-bg-img-alpha};
+}
+
+.blue-bold {
+  --color-layout: #{$blue-bold-layout};
+  --color-sidebar: #{$blue-bold-sidebar};
+  --color-footer: #{$blue-bold-footer};
+  --color-text-primary: #{$blue-bold-text-primary};
+  --color-text-secondary: #{$blue-bold-text-secondary};
+  --color-text-btn: #{$blue-bold-text-btn};
+  --color-item-hover: #{$blue-bold-item-hover};
+  --color-action: #{$blue-bold-action};
+  --color-action-active: #{$blue-bold-action-active};
+  --color-bg-primary: #{$blue-bold-primary-bg};
+  --color-bg-alpha: #{$blue-bold-alpha-bg};
+  --color-icon: #{$blue-bold-icon};
+  --color-player: #{$blue-bold-player};
+  --color-border: #{$blue-bold-border};
+  --color-track: #{$blue-bold-track};
+  --color-text-hover: #{$blue-bold-text-hover};
+  --color-tippy: #{$blue-tippy};
+  --color-chart-bg-img-alpha: #{$blue-chart-bg-img-alpha};
+}
+
+.blue {
+  --color-layout: #{$blue-layout};
+  --color-sidebar: #{$blue-sidebar};
+  --color-footer: #{$blue-footer};
+  --color-text-primary: #{$blue-text-primary};
+  --color-text-secondary: #{$blue-text-secondary};
+  --color-text-btn: #{$blue-text-btn};
+  --color-item-hover: #{$blue-item-hover};
+  --color-action: #{$blue-action};
+  --color-action-active: #{$blue-action-active};
+  --color-bg-primary: #{$blue-primary-bg};
+  --color-bg-alpha: #{$blue-alpha-bg};
+  --color-icon: #{$blue-icon};
+  --color-player: #{$blue-player};
+  --color-border: #{$blue-border};
+  --color-track: #{$blue-track};
+  --color-text-hover: #{$blue-text-hover};
+  --color-tippy: #{$blue-tippy};
+  --color-chart-bg-img-alpha: #{$purple-chart-bg-img-alpha};
+}
+
+.green {
+  --color-layout: #{$green-layout};
+  --color-sidebar: #{$green-sidebar};
+  --color-footer: #{$green-footer};
+  --color-text-primary: #{$green-text-primary};
+  --color-text-secondary: #{$green-text-secondary};
+  --color-text-btn: #{$green-text-btn};
+  --color-item-hover: #{$green-item-hover};
+  --color-action: #{$green-action};
+  --color-action-active: #{$green-action-active};
+  --color-bg-primary: #{$green-primary-bg};
+  --color-bg-alpha: #{$green-alpha-bg};
+  --color-icon: #{$green-icon};
+  --color-player: #{$green-player};
+  --color-border: #{$green-border};
+  --color-track: #{$green-track};
+  --color-text-hover: #{$green-text-hover};
+  --color-tippy: #{$green-tippy};
+  --color-chart-bg-img-alpha: #{$green-chart-bg-img-alpha};
+}
+
+.brown {
+  --color-layout: #{$brown-layout};
+  --color-sidebar: #{$brown-sidebar};
+  --color-footer: #{$brown-footer};
+  --color-text-primary: #{$brown-text-primary};
+  --color-text-secondary: #{$brown-text-secondary};
+  --color-text-btn: #{$brown-text-btn};
+  --color-item-hover: #{$brown-item-hover};
+  --color-action: #{$brown-action};
+  --color-action-active: #{$brown-action-active};
+  --color-bg-primary: #{$brown-primary-bg};
+  --color-bg-alpha: #{$brown-alpha-bg};
+  --color-icon: #{$brown-icon};
+  --color-player: #{$brown-player};
+  --color-border: #{$brown-border};
+  --color-track: #{$brown-track};
+  --color-text-hover: #{$brown-text-hover};
+  --color-tippy: #{$brown-tippy};
+  --color-chart-bg-img-alpha: #{$brown-chart-bg-img-alpha};
+}
+
+.pink {
+  --color-layout: #{$pink-layout};
+  --color-sidebar: #{$pink-sidebar};
+  --color-footer: #{$pink-footer};
+  --color-text-primary: #{$pink-text-primary};
+  --color-text-secondary: #{$pink-text-secondary};
+  --color-text-btn: #{$pink-text-btn};
+  --color-item-hover: #{$pink-item-hover};
+  --color-action: #{$pink-action};
+  --color-action-active: #{$pink-action-active};
+  --color-bg-primary: #{$pink-primary-bg};
+  --color-bg-alpha: #{$pink-alpha-bg};
+  --color-icon: #{$pink-icon};
+  --color-player: #{$pink-player};
+  --color-border: #{$pink-border};
+  --color-track: #{$pink-track};
+  --color-text-hover: #{$pink-text-hover};
+  --color-tippy: #{$pink-tippy};
+  --color-chart-bg-img-alpha: #{$pink-chart-bg-img-alpha};
+}
+
+.red {
+  --color-layout: #{$red-layout};
+  --color-sidebar: #{$red-sidebar};
+  --color-footer: #{$red-footer};
+  --color-text-primary: #{$red-text-primary};
+  --color-text-secondary: #{$red-text-secondary};
+  --color-text-btn: #{$red-text-btn};
+  --color-item-hover: #{$red-item-hover};
+  --color-action: #{$red-action};
+  --color-action-active: #{$red-action-active};
+  --color-bg-primary: #{$red-primary-bg};
+  --color-bg-alpha: #{$red-alpha-bg};
+  --color-icon: #{$red-icon};
+  --color-player: #{$red-player};
+  --color-border: #{$red-border};
+  --color-track: #{$red-track};
+  --color-text-hover: #{$red-text-hover};
+  --color-tippy: #{$red-tippy};
+  --color-chart-bg-img-alpha: #{$red-chart-bg-img-alpha};
+}
+
+.light {
+  --color-layout: #{$light-layout};
+  --color-sidebar: #{$light-sidebar};
+  --color-footer: #{$light-footer};
+  --color-text-primary: #{$light-text-primary};
+  --color-text-secondary: #{$light-text-secondary};
+  --color-text-btn: #{$light-text-btn};
+  --color-item-hover: #{$light-item-hover};
+  --color-action: #{$light-action};
+  --color-action-active: #{$light-action-active};
+  --color-bg-primary: #{$light-primary-bg};
+  --color-bg-alpha: #{$light-alpha-bg};
+  --color-icon: #{$light-icon};
+  --color-player: #{$light-player};
+  --color-border: #{$light-border};
+  --color-track: #{$light-track};
+  --color-text-hover: #{$light-text-hover};
+  --color-tippy: #{$light-tippy};
+  --color-chart-bg-img-alpha: #{$light-chart-bg-img-alpha};
+}
+
+.gray-light {
+  --color-layout: #{$gray-light-layout};
+  --color-sidebar: #{$gray-light-sidebar};
+  --color-footer: #{$gray-light-footer};
+  --color-text-primary: #{$gray-light-text-primary};
+  --color-text-secondary: #{$gray-light-text-secondary};
+  --color-text-btn: #{$gray-light-text-btn};
+  --color-item-hover: #{$gray-light-item-hover};
+  --color-action: #{$gray-light-action};
+  --color-action-active: #{$gray-light-action-active};
+  --color-bg-primary: #{$gray-light-primary-bg};
+  --color-bg-alpha: #{$gray-light-alpha-bg};
+  --color-icon: #{$gray-light-icon};
+  --color-player: #{$gray-light-player};
+  --color-border: #{$gray-light-border};
+  --color-track: #{$gray-light-track};
+  --color-text-hover: #{$gray-light-text-hover};
+  --color-tippy: #{$gray-light-tippy};
+  --color-chart-bg-img-alpha: #{$gray-light-chart-bg-img-alpha};
+}
+
+.blue-light {
+  --color-layout: #{$blue-light-layout};
+  --color-sidebar: #{$blue-light-sidebar};
+  --color-footer: #{$blue-light-footer};
+  --color-text-primary: #{$blue-light-text-primary};
+  --color-text-secondary: #{$blue-light-text-secondary};
+  --color-text-btn: #{$blue-light-text-btn};
+  --color-item-hover: #{$blue-light-item-hover};
+  --color-action: #{$blue-light-action};
+  --color-action-active: #{$blue-light-action-active};
+  --color-bg-primary: #{$blue-light-primary-bg};
+  --color-bg-alpha: #{$blue-light-alpha-bg};
+  --color-icon: #{$blue-light-icon};
+  --color-player: #{$blue-light-player};
+  --color-border: #{$blue-light-border};
+  --color-track: #{$blue-light-track};
+  --color-text-hover: #{$blue-light-text-hover};
+  --color-tippy: #{$blue-tippy};
+  --color-chart-bg-img-alpha: #{$blue-light-chart-bg-img-alpha};
+}
+
+.pink-light {
+  --color-layout: #{$pink-light-layout};
+  --color-sidebar: #{$pink-light-sidebar};
+  --color-footer: #{$pink-light-footer};
+  --color-text-primary: #{$pink-light-text-primary};
+  --color-text-secondary: #{$pink-light-text-secondary};
+  --color-text-btn: #{$pink-light-text-btn};
+  --color-item-hover: #{$pink-light-item-hover};
+  --color-action: #{$pink-light-action};
+  --color-action-active: #{$pink-light-action-active};
+  --color-bg-primary: #{$pink-light-primary-bg};
+  --color-bg-alpha: #{$pink-light-alpha-bg};
+  --color-icon: #{$pink-light-icon};
+  --color-player: #{$pink-light-player};
+  --color-border: #{$pink-light-border};
+  --color-track: #{$pink-light-track};
+  --color-text-hover: #{$pink-light-text-hover};
+  --color-tippy: #{$pink-tippy};
+  --color-chart-bg-img-alpha: #{$pink-light-chart-bg-img-alpha};
+}

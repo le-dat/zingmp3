@@ -1,0 +1,57 @@
+.media {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.mediaLeft {
+  width: 64px;
+  height: 64px;
+  margin-right: 1rem;
+}
+.images {
+  width: inherit;
+  height: inherit;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.songCard {
+  display: flex;
+  -moz-flex-direction: column;
+  flex-direction: column;
+  overflow: hidden;
+}
+.title {
+  min-width: 7rem;
+}
+.subtitle {
+  min-width: 5rem;
+}
+.mediaRight {
+  padding: 0 1rem;
+}
+.icon {
+  &.active {
+    color: var(--color-action-active);
+    background-color: hsla(0, 0%, 100%, 0.1);
+  }
+}
+// tablet
+@media (min-width: 740px) and (max-width: 1023px) {
+  .iconThreeDot {
+    display: none;
+  }
+}
+// phone
+@media (max-width: 739px) {
+  .mediaLeft {
+    width: 5rem;
+    height: 5rem;
+  }
+  .mediaRight {
+    display: none;
+  }
+  .songCard {
+    display: none;
+  }
+}

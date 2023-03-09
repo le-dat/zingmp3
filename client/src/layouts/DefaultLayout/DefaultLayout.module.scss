@@ -1,0 +1,43 @@
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+.body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+}
+.container {
+  flex: 1;
+  color: #fff;
+  max-width: calc(100% - var(--width-sidebar));
+}
+.main {
+  padding: 0 var(--padding-container);
+  position: relative;
+}
+
+// tablet
+@media (min-width: 740px) and (max-width: 1023px) {
+  .container {
+    max-width: calc(100% - var(--width-sidebar-tablet));
+    position: absolute;
+    left: var(--width-sidebar-tablet);
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .main {
+    padding: 5rem 3rem 15rem 3rem;
+  }
+}
+// phone
+@media (max-width: 739px) {
+  .container {
+    max-width: initial;
+  }
+  .main {
+    padding: 0 calc(var(--padding-container) / 4);
+  }
+}

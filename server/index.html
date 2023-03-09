@@ -1,0 +1,112 @@
+<h1>Home Page Server</h1>
+
+<h3>1. Install Package</h3>
+<p><code>$ npm install</code></p>
+
+<h3>2. Run App</h3>
+<p><code>$ # yarn dev</code></p>
+
+<h2>3. Usage</h2>
+<h3>Open Browser <a href="http://localhost:5000">http://localhost:5000</a></h3>
+
+<h2>+ For zing:</h2>
+<h3>Get Song:</h3>
+<blockquote>
+    <p>http://localhost:5000/api/zing/song?id={param-id-song}</p>
+</blockquote>
+
+<h3>Get Detail Playlist:</h3>
+<blockquote>
+    <p>http://localhost:5000/api/zing/detailplaylist?id={param-id-playlist}</p>
+</blockquote>
+
+<h3>Get Home:</h3>
+<blockquote>
+    <p>http://localhost:5000/api/zing/home?page={param-page}</p>
+</blockquote>
+
+<h3>Get Top 100:</h3>
+<blockquote>
+    <p>http://localhost:5000/api/zing/top100</p>
+</blockquote>
+
+<h3>Get Charthome:</h3>
+<blockquote>
+    <p>http://localhost:5000/api/zing/charthome</p>
+</blockquote>
+
+<h3>Get New Release Chart:</h3>
+<blockquote>
+    <p>http://localhost:5000/api/zing/newreleasechart</p>
+</blockquote>
+
+<h3>Get Info Song:</h3>
+<blockquote>
+    <p>http://localhost:5000/api/zing/infosong?id={param-id-song}</p>
+</blockquote>
+
+<h3>Get Artist:</h3>
+<blockquote>
+    <p>http://localhost:5000/api/zing/artist?name={param-name}</p>
+</blockquote>
+
+<h3>Get Artist Song:</h3>
+<blockquote>
+    <p>http://localhost:5000/api/zing/artistsong?name={param-id, page, count}</p>
+</blockquote>
+
+<h3>Get Lyric:</h3>
+<blockquote>
+    <p>http://localhost:5000/api/zing/lyric?id={param-id-song}</p>
+</blockquote>
+
+<h3>Search:</h3>
+<blockquote>
+    <p>http://localhost:5000/api/zing/search?keyword={keyword}</p>
+</blockquote>
+
+<h3>Get List MV:</h3>
+<blockquote>
+    <p>http://localhost:5000/api/zing/listmv?{id, page, count}</p>
+</blockquote>
+
+<h3>Get Categoty MV:</h3>
+<blockquote>
+    <p>http://localhost:5000/api/zing/categorymv?id={param-id-video}</p>
+</blockquote>
+
+<h3>Get Video:</h3>
+<blockquote>
+    <p>http://localhost:5000/api/zing/video?id={param-id-video}</p>
+</blockquote>
+
+<h2>+ For user:</h2>
+<h3>Get Liked Song:</h3>
+<blockquote>
+    <p>http://localhost:5000/api/user/liked/song/${email}</p>
+</blockquote>
+
+<h3>Get Liked Album:</h3>
+<blockquote>
+    <p>http://localhost:5000/api/user/liked/album/${email}</p>
+</blockquote>
+
+<h3>Add Liked Song:</h3>
+<blockquote>
+    <p>http://localhost:5000/api/user/liked/song/add?email=${email}&song=${song}</p>
+</blockquote>
+
+<h3>Add Liked Album:</h3>
+<blockquote>
+    <p>http://localhost:5000/api/user/liked/album/add?email=${email}&song=${song}</p>
+</blockquote>
+
+<h3>Remove Liked Song:</h3>
+<blockquote>
+    <p>http://localhost:5000/api/user/liked/song/add?email=${email}&songId=${songId}</p>
+</blockquote>
+
+<h3>Remove Liked Album:</h3>
+<blockquote>
+    <p>http://localhost:5000/api/user/liked/album/add?email=${email}&albumId=${albumId}</p>
+</blockquote>

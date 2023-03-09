@@ -1,0 +1,46 @@
+.wrapper {
+  margin-top: 7rem;
+  margin-bottom: 10rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.banner {
+  padding-top: 2rem;
+}
+
+.playlist {
+}
+
+.newRelease {
+}
+
+.liveStream {
+}
+
+.RTChart {
+}
+
+.weekChart {
+}
+
+.artistSpotlight {
+}
+
+.event {
+}
+
+// tablet
+@media (min-width: 740px) and (max-width: 1023px) {
+  .wrapper {
+    margin-top: 2.5rem;
+  }
+}
+
+// phone
+@media (max-width: 739px) {
+  .wrapper {
+    margin-bottom: 20rem;
+  }
+}

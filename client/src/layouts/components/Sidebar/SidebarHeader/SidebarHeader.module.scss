@@ -1,0 +1,50 @@
+.header {
+  width: 100%;
+  height: var(--height-header);
+  padding: 0 2.5rem 0 2.8rem;
+  display: flex;
+  align-items: center;
+}
+.headerLink {
+  position: relative;
+}
+.logo {
+  width: 12rem;
+}
+.icon {
+  display: none;
+  width: 4.5rem;
+}
+
+// tablet
+@media (min-width: 740px) and (max-width: 1023px) {
+  .header {
+    padding: 0;
+    justify-content: center;
+
+    &.isExpanded {
+      justify-content: flex-start;
+
+      .logo {
+        display: block;
+        padding-left: 2.5rem;
+      }
+      .icon {
+        display: none;
+      }
+    }
+
+    .logo {
+      display: none;
+    }
+    .icon {
+      display: block;
+    }
+  }
+}
+// phone
+@media (max-width: 739px) {
+  .header {
+    display: none;
+  }
+}

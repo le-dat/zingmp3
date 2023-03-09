@@ -1,0 +1,25 @@
+.accounts {
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  cursor: pointer;
+}
+.image {
+  width: 4rem;
+  height: 4rem;
+}
+// tablet
+@media (min-width: 740px) and (max-width: 1023px) {
+}
+// phone
+@media (max-width: 739px) {
+  .accounts {
+    gap: 0.3rem;
+  }
+  .iconVip,
+  .menu {
+    display: none;
+  }
+}

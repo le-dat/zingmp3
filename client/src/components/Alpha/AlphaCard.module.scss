@@ -1,0 +1,17 @@
+.wrapper {
+  position: absolute;
+  inset: 0;
+  background-color: var(--dark-alpha-50);
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  gap: 1rem;
+}
+.icon {
+  font-size: 2.2rem;
+}
+.iconPlaying {
+  width: 3.5rem;
+  height: 3.5rem;
+}

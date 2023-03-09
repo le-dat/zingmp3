@@ -1,0 +1,19 @@
+.wrapper {
+  margin: 12rem 0;
+}
+.headerPLayList {
+  text-transform: capitalize;
+}
+.lists {
+  margin-top: 2.5rem;
+}
+
+// tablet
+@media (min-width: 740px) and (max-width: 1023px) {
+  .wrapper {
+    margin: 6.5rem 0;
+  }
+}
+// phone
+@media (max-width: 739px) {
+}

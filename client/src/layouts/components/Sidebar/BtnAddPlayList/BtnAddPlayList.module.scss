@@ -1,0 +1,34 @@
+.addPlayList {
+  font-weight: 700;
+  position: fixed;
+  z-index: 5;
+  left: 0;
+  bottom: 0;
+  width: var(--width-sidebar);
+  height: var(--height-btn-add-play-list);
+  background-image: linear-gradient(var(--color-bg-primary), var(--color-bg-alpha));
+  border: 1px solid transparent;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+
+  &:hover {
+    opacity: 1;
+    color: var(--color-text-secondary);
+  }
+}
+.bottomPlayer {
+  bottom: var(--height-player);
+}
+// tablet
+@media (min-width: 740px) and (max-width: 1023px) {
+  .addPlayList {
+    display: none !important;
+  }
+}
+
+// phone
+@media (max-width: 739px) {
+  .addPlayList {
+    display: none !important;
+  }
+}

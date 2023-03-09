@@ -1,0 +1,21 @@
+.wrapper {
+  position: absolute;
+  inset: 0;
+  background-color: var(--dark-alpha-50);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.btn {
+  font-size: 8px;
+  text-transform: uppercase;
+  text-align: center;
+  width: 9rem;
+  color: #fff;
+  padding: 5px 0;
+  & + .btn {
+    margin-left: 0;
+  }
+}

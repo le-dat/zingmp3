@@ -1,0 +1,16 @@
+.wrapper {
+}
+.image {
+  width: 100%;
+}
+// tablet
+@media (min-width: 740px) and (max-width: 1023px) {
+}
+// phone
+@media (max-width: 739px) {
+  .wrapper {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+  }
+}

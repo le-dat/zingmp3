@@ -1,0 +1,71 @@
+.wrapper {
+  position: fixed;
+  inset: 0;
+  background-color: var(--dark-alpha-50);
+  z-index: var(--zIndex-modal);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: display 0.5s linear;
+  &.active {
+    display: flex;
+  }
+}
+
+.container {
+  position: absolute;
+  border-radius: 8px;
+  width: 70vw;
+  max-width: 90rem;
+  max-height: 50vh;
+  min-height: 500px;
+  overflow: hidden;
+  max-height: 90vh;
+  padding-bottom: 2rem;
+}
+
+.main {
+  padding: 0 3rem;
+}
+
+.heading {
+  > h3 {
+    font-size: 24px;
+  }
+  padding: 20px 30px;
+  position: relative;
+}
+
+.iconClose {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 2.5rem;
+  padding: 0.5rem;
+}
+
+.list {
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+
+.test {
+  background-image: url("http://localhost:5000/images/zma.svg");
+}
+
+// tablet
+@media (min-width: 740px) and (max-width: 1023px) {
+}
+
+// phone
+@media (max-width: 739px) {
+  .container {
+    width: 100vw;
+  }
+}

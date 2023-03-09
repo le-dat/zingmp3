@@ -1,0 +1,25 @@
+.wrapper {
+  width: 280px;
+}
+.item {
+  display: flex;
+  align-items: center;
+}
+.btnWrapper {
+  width: 100%;
+}
+.button {
+  width: 100%;
+  padding: 10px 20px 10px 14px;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+
+  &:hover {
+    background-color: var(--color-bg-alpha);
+    opacity: 1;
+  }
+  &.separate {
+    border-top: 1px solid var(--color-border);
+    margin: 1rem 0 1rem;
+  }
+}

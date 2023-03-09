@@ -1,0 +1,21 @@
+.wrapper {
+  position: absolute;
+  inset: 0;
+  background-color: var(--dark-alpha-50);
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  &.rounded {
+    border-radius: 50%;
+  }
+}
+.iconPlay,
+.iconLoading {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+.iconAudio {
+  width: 2rem;
+  height: 2rem;
+}

@@ -1,0 +1,94 @@
+.aside {
+  width: var(--width-sidebar);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-sidebar);
+  transition: all 0.3s ease-out;
+}
+
+.divide {
+  position: relative;
+  height: 1px;
+  &::after {
+    content: "";
+    border-top: 1px solid var(--color-border);
+    position: absolute;
+    left: 25px;
+    right: 25px;
+    top: 0;
+  }
+}
+
+.container {
+  flex: 1;
+  margin-top: 1rem;
+  margin-bottom: var(--height-btn-add-play-list);
+  padding-bottom: var(--height-player);
+  overflow: hidden !important;
+  &:hover {
+    overflow: auto !important;
+    scroll-snap-type: y proximity;
+    scroll-behavior: smooth;
+  }
+}
+
+.btnExpanded {
+  display: none;
+}
+
+// tablet
+@media (min-width: 740px) and (max-width: 1023px) {
+  .aside {
+    background-color: var(--color-tippy);
+    width: var(--width-sidebar-tablet);
+    position: relative;
+    z-index: var(--zIndex-sidebar);
+    &.isExpanded {
+      width: var(--width-sidebar);
+      .logo {
+        display: none;
+      }
+      .icon {
+        display: block;
+      }
+    }
+    .btnExpanded {
+      display: block;
+      position: absolute;
+      right: 1.3rem;
+      bottom: calc(var(--height-player) + 1rem);
+      opacity: 0.8;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  .addPlayList {
+    display: none !important;
+  }
+  .container {
+    max-height: 45rem;
+  }
+}
+
+// phone
+@media (max-width: 739px) {
+  .aside {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: var(--zIndex-sidebar);
+    height: var(--height-sidebar-mobile);
+    background-color: var(--color-layout);
+  }
+  .logo {
+    display: none;
+  }
+  .icon {
+    display: block;
+  }
+  .addPlayList {
+    display: none !important;
+  }
+}

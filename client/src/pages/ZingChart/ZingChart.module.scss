@@ -1,0 +1,42 @@
+.wrapper {
+  padding-top: 11rem;
+}
+
+// zingChart
+.header {
+  margin-bottom: 40px;
+}
+
+.zingChart {
+  padding-bottom: 30px;
+}
+
+.btnTop100 {
+}
+
+// weekChart
+.weekChart {
+  margin-top: 2.8rem;
+  padding-top: 4rem;
+  margin-bottom: 13rem;
+}
+
+.list {
+  row-gap: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+// tablet
+@media (min-width: 740px) and (max-width: 1023px) {
+  .wrapper {
+    padding-top: 5rem;
+  }
+}
+
+// phone
+@media (max-width: 739px) {
+  .wrapper {
+    margin-bottom: 18rem;
+  }
+}

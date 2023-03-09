@@ -1,0 +1,18 @@
+.wrapper {
+  border-radius: 16px;
+  background-color: var(--color-chart-box-bg-alpha);
+  padding: 2rem 1rem;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  padding: 0 0 10px 40px;
+}
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: normal;
+}
+.contain {
+  margin-bottom: 1.5rem;
+}

@@ -1,0 +1,33 @@
+@mixin lineClamp($line: 1, $orient: vertical) {
+  white-space: normal;
+  letter-spacing: normal;
+
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: $orient;
+  -webkit-line-clamp: $line;
+}
+
+@mixin scrollbar($color-thumb: var(--color-text-secondary), $color-track: transparent) {
+  overflow-y: auto;
+  overflow-x: hidden;
+  overflow-anchor: none !important;
+  will-change: scroll-position;
+  scroll-snap-stop: normal;
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    border-radius: 0;
+    width: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background-color: $color-thumb;
+  }
+  &::-webkit-scrollbar-track {
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    background-color: $color-track;
+  }
+}

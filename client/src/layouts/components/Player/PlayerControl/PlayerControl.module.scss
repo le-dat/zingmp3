@@ -1,0 +1,33 @@
+.controller {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon {
+  margin: 0 7px;
+}
+.iconRandom {
+}
+.iconSpinner {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+.iconPlay {
+  font-size: 3.5rem;
+  padding: 0;
+
+  &:hover {
+    color: var(--color-action-active);
+  }
+}
+.iconLoop {
+  font-size: 2rem;
+}
+.iconPre,
+.iconNext {
+  font-size: 3rem;
+  padding: 0;
+}
+.active {
+  color: var(--color-action-active);
+}

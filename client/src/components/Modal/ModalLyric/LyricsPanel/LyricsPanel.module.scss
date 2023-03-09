@@ -1,0 +1,19 @@
+.wrapper {
+}
+
+.image {
+  width: 80%;
+  border-radius: 4px;
+  margin-bottom: 3rem;
+}
+
+// tablet
+@media (min-width: 740px) and (max-width: 1023px) {
+  .image {
+    width: 40%;
+  }
+}
+
+// phone
+@media (max-width: 739px) {
+}

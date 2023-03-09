@@ -1,0 +1,77 @@
+.card {
+  position: relative;
+}
+
+.cardTop {
+  min-height: 18rem;
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  cursor: pointer;
+  &:hover > .image {
+    transform: scale(1.04);
+  }
+  &:hover > .alpha {
+    display: flex;
+  }
+}
+
+.image {
+  width: 100%;
+  transition: all 0.5s linear;
+  overflow: hidden;
+}
+
+.alpha {
+  position: absolute;
+  inset: 0;
+  background-color: var(--dark-alpha-50);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardContent {
+  word-break: break-word;
+  padding-top: 1rem;
+  margin-top: 0.5rem;
+}
+
+.title,
+.title a {
+  font-weight: 400;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0;
+  cursor: pointer;
+  & > a {
+    margin-top: 8px;
+    margin-bottom: 0;
+  }
+}
+
+.subtitle {
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  margin-top: 1rem;
+}
+
+// tablet
+@media (min-width: 740px) and (max-width: 1023px) {
+  .cardTop {
+    min-height: 14.2rem;
+  }
+}
+
+// phone
+@media (max-width: 739px) {
+  .cardTop {
+    min-height: 12rem;
+  }
+}

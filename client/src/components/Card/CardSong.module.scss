@@ -1,0 +1,52 @@
+.card {
+  position: relative;
+}
+.cardTop {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+
+  &:hover > .image {
+    transform: scale(1.07);
+  }
+  &:hover > .alpha {
+    display: flex;
+  }
+}
+.image {
+  width: 100%;
+  transition: all 0.3s linear;
+  overflow: hidden;
+}
+.alpha {
+  position: absolute;
+  inset: 0;
+  background-color: var(--dark-alpha-50);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.cardContent {
+  word-break: break-word;
+  margin-top: 0.5rem;
+}
+.title,
+.title a {
+  font-weight: 400;
+}
+.title {
+  font-size: 12px;
+  margin-bottom: 0;
+
+  & > a {
+    margin-top: 8px;
+    margin-bottom: 0;
+  }
+}
+.subtitle {
+  color: var(--color-text-secondary);
+  margin-top: 3px;
+  font-size: 10px;
+}

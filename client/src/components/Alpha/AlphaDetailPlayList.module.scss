@@ -1,0 +1,17 @@
+.wrapper {
+  position: absolute;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.iconPlay,
+.iconLoading {
+  width: 4.5rem;
+  height: 4.5rem;
+}
+
+.iconAudio {
+  width: 3.5rem;
+  height: 3.5rem;
+}

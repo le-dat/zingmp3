@@ -1,0 +1,35 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  padding: 8px 10px;
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-bg-alpha);
+  }
+}
+.media {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-align: left;
+  border-radius: 5px;
+}
+.mediaLeft {
+  height: 52px;
+}
+.thumbnailM {
+  width: 52px;
+}
+.mediaContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}

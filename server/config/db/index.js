@@ -1,0 +1,13 @@
+require("dotenv").config();
+const mongoose = require("mongoose");
+
+module.exports.connect = async () => {
+  try {
+    await mongoose.connect(
+      `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@cluster0.9msg1cr.mongodb.net/?retryWrites=true&w=majority`,
+    );
+    console.log("connect success");
+  } catch (error) {
+    console.log("Connect database fail: " + error);
+  }
+};

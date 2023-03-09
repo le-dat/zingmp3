@@ -1,0 +1,158 @@
+.media {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 10px;
+  text-align: left;
+  background-color: transparent;
+  border-radius: 4px;
+  border-bottom: 1px solid var(--color-border);
+  &:hover {
+    background-color: var(--color-sidebar);
+  }
+  &:hover > .mediaRight > .time,
+  .alpha {
+    display: none;
+  }
+  &:hover > .mediaRight > .level,
+  &:hover > .mediaLeft > .songThumbWrapper > .alpha {
+    display: flex;
+  }
+  &.action {
+    background-color: var(--color-item-hover);
+    .mediaLeft > .songThumbWrapper > .alpha {
+      display: flex;
+    }
+  }
+  &.vip {
+    .title {
+      opacity: 0.5;
+    }
+  }
+  &.disable {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+.mediaLeft {
+  flex: 1.5;
+  display: flex;
+  align-items: center;
+}
+
+.songThumbWrapper {
+  position: relative;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.songThumb {
+  width: 100%;
+  height: 100%;
+}
+
+// card info
+.songCard {
+  flex: 2;
+  display: flex;
+  -moz-flex-direction: column;
+  flex-direction: column;
+  .title,
+  .subTitle {
+    word-break: break-all;
+  }
+  .title {
+    width: 100%;
+  }
+  .subTitle {
+    width: 90%;
+    text-transform: capitalize;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.vipBlock {
+  font-size: 12px;
+  color: black;
+  border-radius: 3px;
+  padding: 0 2px;
+  background-color: yellow;
+  text-transform: uppercase;
+}
+
+.mediaContent {
+  flex: 1;
+}
+
+.albumInfo {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+  cursor: pointer;
+  word-break: break-all;
+  white-space: normal;
+  letter-spacing: normal;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  &:hover {
+    color: var(--color-action-active);
+    text-decoration: underline;
+  }
+}
+
+.mediaRight {
+  width: 13rem;
+  position: relative;
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.time {
+  text-align: right;
+}
+
+.level {
+  display: none;
+}
+
+.levelItem {
+  padding: 6px;
+  margin: 0 4px;
+}
+
+// config
+.small {
+  .mediaLeft {
+    flex: 0;
+  }
+  .mediaRight {
+    width: auto;
+  }
+}
+
+// tablet
+@media (min-width: 740px) and (max-width: 1023px) {
+}
+
+// phone
+@media (max-width: 739px) {
+  .mediaContent {
+    display: none;
+  }
+  .mediaRight {
+    width: auto;
+  }
+}

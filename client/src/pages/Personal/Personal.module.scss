@@ -1,0 +1,39 @@
+.wrapper {
+  margin-top: 14rem;
+  margin-bottom: 13rem;
+}
+
+.container {
+  padding-top: 3rem;
+}
+
+.navigate {
+  display: flex;
+  gap: 1.6rem;
+}
+
+// Empty
+.emptyContainer {
+  flex-direction: column;
+}
+
+.text {
+  font-size: 16px;
+  margin-top: 16px;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+// tablet
+@media (min-width: 740px) and (max-width: 1023px) {
+  .wrapper {
+    margin-top: 8rem;
+  }
+}
+
+// phone
+@media (max-width: 739px) {
+  .wrapper {
+    margin-top: 10rem;
+  }
+}

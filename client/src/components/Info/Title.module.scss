@@ -1,0 +1,43 @@
+.wrapper {
+  display: flex;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+.title {
+  width: 100%;
+  min-width: 5rem;
+  font-weight: inherit;
+}
+.hoverColor {
+  &:hover {
+    color: var(--color-action-active);
+  }
+}
+.hoverMove {
+  white-space: nowrap;
+
+  &:hover {
+    animation: moveTitle 11.125s linear infinite;
+  }
+}
+@keyframes moveTitle {
+  0% {
+    transform: translate(0, 0);
+  }
+  75% {
+    transform: translate(-100%, 0);
+  }
+  76% {
+    transform: translate(-100%, -150%);
+  }
+  77% {
+    transform: translate(100%, -150%);
+  }
+  78% {
+    transform: translate(100%, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}

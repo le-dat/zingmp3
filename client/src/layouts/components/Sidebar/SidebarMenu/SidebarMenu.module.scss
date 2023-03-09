@@ -1,0 +1,32 @@
+.wrapper {
+  padding-left: 0;
+  margin-bottom: 1.5rem;
+  text-decoration: none;
+  list-style-type: none;
+}
+.title {
+  font-size: 12px;
+  color: var(--color-text-primary);
+  font-weight: 700;
+  margin: 0 2.8rem 0.8rem;
+  padding-top: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+// tablet
+@media (min-width: 740px) and (max-width: 1023px) {
+  .title {
+    display: none;
+  }
+}
+// phone
+@media (max-width: 739px) {
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    margin: 0;
+  }
+}

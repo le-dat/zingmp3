@@ -1,0 +1,11 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: var(--color-text-primary);
+  max-height: min((100vh - var(--height-player)) - 10rem, 70rem);
+  background-color: var(--color-tippy);
+  box-shadow: 0 0.2rem 1.2rem var(--color-border);
+  border-radius: 0.8rem;
+  padding-top: 0.8rem;
+}

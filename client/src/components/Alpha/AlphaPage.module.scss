@@ -1,0 +1,23 @@
+.image,
+.bgBlur,
+.bgAlpha {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  z-index: var(--zIndex-bg-alpha-page);
+  margin: 0 calc(var(--padding-container) * -1);
+}
+
+.image {
+  height: 50rem;
+  filter: grayscale(1);
+  -webkit-filter: grayscale(1);
+}
+
+.bgBlur {
+  background-image: linear-gradient(180deg, hsla(0, 0%, 100%, 0) 37%, var(--color-chart-bg-img-alpha));
+}
+
+.bgAlpha {
+  background-image: var(--color-action-active);
+}

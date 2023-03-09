@@ -1,0 +1,49 @@
+// prefix number
+.prefix {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+.prefixNum {
+  font-size: 32px;
+  font-family: "Roboto", sans-serif;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--color-text-secondary);
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
+  width: 60px;
+  margin-right: 5px;
+  white-space: nowrap;
+}
+
+// prefix title
+.prefixPromote {
+  text-align: center;
+  width: 81px;
+  color: var(--color-text-secondary);
+}
+
+// prefix ion
+.prefixIcon {
+  font-size: 16px;
+  font-weight: 700;
+  margin-right: 1rem;
+  opacity: 0.8;
+}
+
+// config
+.small {
+  .prefixNum {
+    width: 32px;
+  }
+}
+// tablet
+@media (min-width: 740px) and (max-width: 1023px) {
+}
+// phone
+@media (max-width: 739px) {
+  .prefix {
+    width: 4.5rem;
+  }
+}

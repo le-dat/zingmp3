@@ -1,0 +1,6 @@
+.image {
+  width: 13rem;
+  &:hover {
+    filter: brightness(0.7);
+  }
+}
