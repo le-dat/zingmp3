@@ -11,7 +11,7 @@ const SlideArtist: React.FC = () => {
     <div className={style.wrapper}>
       <SlideWrapper>
         {ARTISTS.map((item, i) => (
-          <Link to={item.link} key={`slide-artist-${item.id}-${i}`} className={style.item}>
+          <Link to={item.link} key={`slide-artist-${item.id}-${i}`}>
             <Image src={item.cover} alt={item.name} className={style.image} />
           </Link>
         ))}

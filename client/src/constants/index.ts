@@ -32,4 +32,9 @@ export const ID = ":id";
 export const PLAYER_STORAGE_KEY = "DAT_PLAYER";
 
 export const API_URL =
-  process.env.NODE_ENV !== "production" ? process.env.REACT_APP_BASE_URL : process.env.REACT_APP_BASE_URL_DEPLOY;
+  process.env.NODE_ENV !== "production"
+    ? process.env.REACT_APP_BASE_URL || "http://localhost:5000"
+    : process.env.REACT_APP_BASE_URL_DEPLOY || "https://zingmp3-19ul.onrender.com";
+
+console.log(process.env.REACT_APP_BASE_URL);
+console.log(process.env.REACT_APP_BASE_URL_DEPLOY);

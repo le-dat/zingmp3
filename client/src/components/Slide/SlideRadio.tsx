@@ -17,7 +17,7 @@ const SlideRadio: React.FC<IProps> = ({ data, title }) => {
 
       <SlideWrapper>
         {data.map((item, i) => (
-          <div key={`slider-radio-${item.encodeId}-${i}`} className={style.item}>
+          <div key={`slider-radio-${item.encodeId}-${i}`} >
             <CardRadio
               encodeId={item.encodeId}
               title={item.title}

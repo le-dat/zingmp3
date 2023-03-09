@@ -19,7 +19,7 @@ interface IProps {
 const CardRadio: React.FC<IProps> = ({ encodeId, title, thumbnailM, subTitle, customClass }) => {
   return (
     <div className={clsx(style.card, customClass)}>
-      <Link to={`${RADIO}/${encodeId}`}>
+      <Link to={`${RADIO}/${encodeId}`} className={style.link}>
         <figure className={style.cardTop}>
           <Image className={style.image} src={thumbnailM} />
           {encodeId && <AlphaCard rounded customClass={style.alpha} />}

@@ -5,6 +5,7 @@
   align-items: center;
   gap: 1.5rem;
 }
+
 .cardTop {
   min-width: 18rem;
   min-height: 18rem;
@@ -13,7 +14,6 @@
   overflow: hidden;
   cursor: pointer;
   display: flex;
-
   &:hover > .image {
     transform: scale(1.07);
   }
@@ -21,11 +21,13 @@
     display: flex;
   }
 }
+
 .image {
   width: 100%;
   transition: all 0.3s linear;
   overflow: hidden;
 }
+
 .alpha {
   position: absolute;
   inset: 0;
@@ -34,19 +36,24 @@
   align-items: center;
   justify-content: center;
 }
+
 .cardContent {
   text-align: center;
 }
+
 .title {
   &:hover {
     text-decoration: underline;
   }
 }
+
 .subtitle {
   padding-top: 1.2rem;
 }
+
 .btn {
 }
+
 // tablet
 @media (min-width: 740px) and (max-width: 1023px) {
   .cardTop {
@@ -54,6 +61,7 @@
     min-height: 14.5rem;
   }
 }
+
 // phone
 @media (max-width: 739px) {
   .cardTop {
