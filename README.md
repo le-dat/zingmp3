@@ -14,8 +14,8 @@
 cd server
 ```
 
-Create an `.env` file and add the following variables.
-`Login to account MongoDB and create database [here](https://www.mongodb.com/)`
+`Create an `.env` file and add the following variables.`
+Login to account MongoDB and create database [here](https://www.mongodb.com/)
 
 ```
 PORT=5000
@@ -87,7 +87,8 @@ Remove Liked Album: http://localhost:5000/api/user/liked/album/add?email=${email
 cd client
 ```
 
-`Create a new firebase project .Login to your google account and create a new firebase project [here](https://console.firebase.google.com/u/0/)`
+`Create a new firebase project`
+.Login to your google account and create a new firebase project [here](https://console.firebase.google.com/u/0/)
 
 Create an `.env` file and add the following variables.
 
