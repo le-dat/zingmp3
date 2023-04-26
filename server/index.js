@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(cors());
 
 // view url folder public ( images file )
-app.use(express.static(path.join(__dirname, "public")));
+// app.use(express.static(path.join(__dirname, "public")));
 
 // Page Home
 app.get("/", (req, res, next) => {

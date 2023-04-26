@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
+import HeaderPlayList from "../../components/HeaderPlayList";
 
 import { PlayListAlbum } from "../../components/PlayList";
 import { SlideArtist, SlideBanner, SlideRadio } from "../../components/Slide";
@@ -18,13 +19,13 @@ const Discover: React.FC = () => {
     {
       sectionType: "banner",
       items: Array(10).fill({}),
-      title: ""
+      title: "",
     },
     {
       sectionType: "playlist",
       items: getArrayPlayListEmpty(20),
-      title: ""
-    }
+      title: "",
+    },
   ]);
 
   useEffect(() => {
@@ -70,13 +71,14 @@ const Discover: React.FC = () => {
             </div>
           ) : item.sectionType === "artistSpotlight" ? (
             <div key={`artistSpotlight-${i}`} className={style.artistSpotlight}>
+              <HeaderPlayList title='Nghệ sĩ nổi bật' />
               <SlideArtist />
             </div>
           ) : item.sectionType === "event" ? (
             <div key={`event-${i}`} className={style.event}>
               {/* <Slide slider={item.items} /> */}
             </div>
-          ) : null
+          ) : null,
         )}
       </div>
     </>

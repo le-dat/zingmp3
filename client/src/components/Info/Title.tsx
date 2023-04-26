@@ -28,7 +28,10 @@ const Title: React.FC<IProps> = ({ title, hoverColor = false, hoverMove, lineCam
   return (
     <SkeletonTheme baseColor={baseColor} highlightColor={highlightColor}>
       <h3 className={className} onClick={onClick}>
-        <div className={style.title}>{title || <Skeleton height={20 * lineCamp} />}</div>
+        <div>
+          <span className={style.title}>{title || <Skeleton height={20 * lineCamp} />}</span>
+          {hoverMove && <span className={style.title}>{title || <Skeleton height={20 * lineCamp} />}</span>}
+        </div>
       </h3>
     </SkeletonTheme>
   );

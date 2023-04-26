@@ -21,8 +21,21 @@
 
 .title {
   font-size: 2.5rem;
+  color: var(--color-gray);
 }
 
-.artists {
+.subTitle {
   font-size: 2rem;
+  color: var(--color-gray);
+}
+
+// tablet
+@media (min-width: 740px) and (max-width: 1023px) {
+  .wrapper {
+    text-align: center;
+  }
+}
+
+// phone
+@media (max-width: 739px) {
 }

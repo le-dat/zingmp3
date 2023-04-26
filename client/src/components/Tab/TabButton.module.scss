@@ -3,13 +3,13 @@
   color: hsla(0, 0%, 100%, 0.5);
   padding: 7px 50px;
   font-weight: 700;
-
   &.active {
     background-color: hsla(0, 0%, 100%, 0.1);
     border-radius: 999px;
-    color: var(--white);
+    color: var(--color-white);
   }
 }
+
 .disable {
   opacity: 0.5;
 }
@@ -20,6 +20,7 @@
     padding: 7px 20px;
   }
 }
+
 // phone
 @media (max-width: 739px) {
 }

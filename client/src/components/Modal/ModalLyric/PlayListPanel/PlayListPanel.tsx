@@ -17,7 +17,7 @@ const PlayListPanel: React.FC = () => {
           <div key={`playList-item-${index}`} className={clsx("is-center", style.item)}>
             <Image src={item?.thumbnailM} alt={item?.title} className={style.image} />
             <Title title={item?.title} customClass={style.title} />
-            <SubTitle artists={item?.artists} customClass={style.artists} />
+            <SubTitle artists={item?.artists} customClass={style.subTitle} />
           </div>
         ))}
       </SlideWrapper>

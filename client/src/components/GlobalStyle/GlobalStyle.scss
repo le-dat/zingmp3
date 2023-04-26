@@ -51,17 +51,16 @@ html *::-webkit-scrollbar-track {
 a,
 div,
 span {
+  /* IE 10 and IE 11 */
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
   user-select: none;
   /* Standard syntax */
   -webkit-user-select: none;
   /* Safari */
   -ms-user-select: none;
-  /* IE 10 and IE 11 */
-  -webkit-tap-highlight-color: transparent;
-  -webkit-tap-highlight-color: transparent;
-}
-
-a {
   display: block;
   color: var(--color-text-primary);
   text-decoration: none;
@@ -156,6 +155,7 @@ input[type="file"] + label {
 
 :root {
   --color-white: #{$color-white};
+  --color-gray: #{$color-gray};
   --color-black: #{$color-black};
   --dark-alpha-10: #{$dark-alpha-10};
   --dark-alpha-50: #{$dark-alpha-50};
@@ -342,25 +342,25 @@ input[type="file"] + label {
   --color-chart-bg-img-alpha: #{$purple-chart-bg-img-alpha};
 }
 
-.elffel {
-  --color-layout: #{$elffel-layout};
-  --color-sidebar: #{$elffel-sidebar};
-  --color-footer: #{$elffel-footer};
-  --color-text-primary: #{$elffel-text-primary};
-  --color-text-secondary: #{$elffel-text-secondary};
-  --color-text-btn: #{$elffel-text-btn};
-  --color-item-hover: #{$elffel-item-hover};
-  --color-action: #{$elffel-action};
-  --color-action-active: #{$elffel-action-active};
-  --color-bg-primary: #{$elffel-primary-bg};
-  --color-bg-alpha: #{$elffel-alpha-bg};
-  --color-icon: #{$elffel-icon};
-  --color-player: #{$elffel-player};
-  --color-border: #{$elffel-border};
-  --color-track: #{$elffel-track};
-  --color-text-hover: #{$elffel-text-hover};
-  --color-tippy: #{$elffel-tippy};
-  --color-chart-bg-img-alpha: #{$elffel-chart-bg-img-alpha};
+.eiffel {
+  --color-layout: #{$eiffel-layout};
+  --color-sidebar: #{$eiffel-sidebar};
+  --color-footer: #{$eiffel-footer};
+  --color-text-primary: #{$eiffel-text-primary};
+  --color-text-secondary: #{$eiffel-text-secondary};
+  --color-text-btn: #{$eiffel-text-btn};
+  --color-item-hover: #{$eiffel-item-hover};
+  --color-action: #{$eiffel-action};
+  --color-action-active: #{$eiffel-action-active};
+  --color-bg-primary: #{$eiffel-primary-bg};
+  --color-bg-alpha: #{$eiffel-alpha-bg};
+  --color-icon: #{$eiffel-icon};
+  --color-player: #{$eiffel-player};
+  --color-border: #{$eiffel-border};
+  --color-track: #{$eiffel-track};
+  --color-text-hover: #{$eiffel-text-hover};
+  --color-tippy: #{$eiffel-tippy};
+  --color-chart-bg-img-alpha: #{$eiffel-chart-bg-img-alpha};
 }
 
 .jack {
@@ -405,25 +405,25 @@ input[type="file"] + label {
   --color-chart-bg-img-alpha: #{$iu-chart-bg-img-alpha};
 }
 
-.jiChangWook {
-  --color-layout: #{$jiChangWook-layout};
-  --color-sidebar: #{$jiChangWook-sidebar};
-  --color-footer: #{$jiChangWook-footer};
-  --color-text-primary: #{$jiChangWook-text-primary};
-  --color-text-secondary: #{$jiChangWook-text-secondary};
-  --color-text-btn: #{$jiChangWook-text-btn};
-  --color-item-hover: #{$jiChangWook-item-hover};
-  --color-action: #{$jiChangWook-action};
-  --color-action-active: #{$jiChangWook-action-active};
-  --color-bg-primary: #{$jiChangWook-primary-bg};
-  --color-bg-alpha: #{$jiChangWook-alpha-bg};
-  --color-icon: #{$jiChangWook-icon};
-  --color-player: #{$jiChangWook-player};
-  --color-border: #{$jiChangWook-border};
-  --color-track: #{$jiChangWook-track};
-  --color-text-hover: #{$jiChangWook-text-hover};
-  --color-tippy: #{$jiChangWook-tippy};
-  --color-chart-bg-img-alpha: #{$jiChangWook-chart-bg-img-alpha};
+.jiChangWood {
+  --color-layout: #{$jiChangWood-layout};
+  --color-sidebar: #{$jiChangWood-sidebar};
+  --color-footer: #{$jiChangWood-footer};
+  --color-text-primary: #{$jiChangWood-text-primary};
+  --color-text-secondary: #{$jiChangWood-text-secondary};
+  --color-text-btn: #{$jiChangWood-text-btn};
+  --color-item-hover: #{$jiChangWood-item-hover};
+  --color-action: #{$jiChangWood-action};
+  --color-action-active: #{$jiChangWood-action-active};
+  --color-bg-primary: #{$jiChangWood-primary-bg};
+  --color-bg-alpha: #{$jiChangWood-alpha-bg};
+  --color-icon: #{$jiChangWood-icon};
+  --color-player: #{$jiChangWood-player};
+  --color-border: #{$jiChangWood-border};
+  --color-track: #{$jiChangWood-track};
+  --color-text-hover: #{$jiChangWood-text-hover};
+  --color-tippy: #{$jiChangWood-tippy};
+  --color-chart-bg-img-alpha: #{$jiChangWood-chart-bg-img-alpha};
 }
 
 .lisa {
@@ -716,7 +716,7 @@ input[type="file"] + label {
   --color-border: #{$blue-light-border};
   --color-track: #{$blue-light-track};
   --color-text-hover: #{$blue-light-text-hover};
-  --color-tippy: #{$blue-tippy};
+  --color-tippy: #{$blue-light-tippy};
   --color-chart-bg-img-alpha: #{$blue-light-chart-bg-img-alpha};
 }
 

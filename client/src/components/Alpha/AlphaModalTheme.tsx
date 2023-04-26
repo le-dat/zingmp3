@@ -1,15 +1,28 @@
 import clsx from "clsx";
 import React from "react";
+import { useAppDispatch } from "../../hooks/useRedux";
+import { changeTheme, setShowThemeModal } from "../../redux/reducers/themeSlice";
+import { getToastWarn } from "../../utils/toast";
 
 import { ButtonTitle } from "../Button";
 import style from "./AlphaModalTheme.module.scss";
 
 interface IProps {
-  handleApply: () => void;
-  handleTest: () => void;
+  listThemeIndex: number;
+  themeIndex: number;
   customClass?: string;
 }
-const AlphaModalTheme: React.FC<IProps> = ({ handleApply, handleTest, customClass }) => {
+const AlphaModalTheme: React.FC<IProps> = ({ listThemeIndex, themeIndex, customClass }) => {
+  const dispatch = useAppDispatch();
+
+  const handleApply = () => {
+    dispatch(changeTheme({ listThemeIndex, themeIndex }));
+    dispatch(setShowThemeModal(false));
+  };
+  const handleTest = () => {
+    getToastWarn({ msg: "Tính năng này chưa hoàn thiện !" });
+  };
+
   return (
     <div className={clsx(style.wrapper, customClass)}>
       <ButtonTitle primary rounded onClick={handleApply} customClass={clsx("is-center", style.btn)}>

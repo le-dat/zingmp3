@@ -39,10 +39,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject"
   },
   "eslintConfig": {
     "extends": [
@@ -68,12 +68,15 @@
     "@typescript-eslint/eslint-plugin": "^5.48.1",
     "@typescript-eslint/parser": "^5.48.1",
     "babel-plugin-module-resolver": "^5.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "customize-cra": "^1.0.0",
     "eslint": "^8.31.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.0",
     "prettier": "^2.8.3",
+    "react-app-rewired": "^2.2.1",
     "typescript-plugin-css-modules": "^4.1.1"
   }
 }

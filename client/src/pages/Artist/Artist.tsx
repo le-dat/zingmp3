@@ -1,39 +1,39 @@
-import clsx from "clsx"
-import React, { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import clsx from "clsx";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-import { BtnFollow } from "../../components/BtnAction"
-import { CardDetail } from "../../components/Card"
-import HeaderPlayList from "../../components/HeaderPlayList"
-import Image from "../../components/Image"
-import { Paragraph } from "../../components/Info"
-import { PlayListAlbum, PlayListArtist, PlayListVideo } from "../../components/PlayList"
-import { useScrollTop } from "../../hooks"
-import { CardIProps } from "../../interface"
-import * as services from "../../services"
-import { formatNumber } from "../../utils/common"
-import { getArrayArtistEmpty, getArrayPlayListEmpty, getArraySongEmpty, getArrayVideoEmpty } from "../../utils/song"
-import { getToastWarn } from "../../utils/toast"
-import { SectionIProps } from "../interface"
-import style from "./Artist.module.scss"
-import TopListSong from "./TopListSong"
+import { BtnFollow } from "../../components/BtnAction";
+import { CardDetail } from "../../components/Card";
+import HeaderPlayList from "../../components/HeaderPlayList";
+import Image from "../../components/Image";
+import { Paragraph } from "../../components/Info";
+import { PlayListAlbum, PlayListArtist, PlayListVideo } from "../../components/PlayList";
+import { useScrollTop } from "../../hooks";
+import { CardIProps } from "../../interface";
+import * as services from "../../services";
+import { formatNumber } from "../../utils/common";
+import { getArrayArtistEmpty, getArrayPlayListEmpty, getArraySongEmpty, getArrayVideoEmpty } from "../../utils/song";
+import { getToastWarn } from "../../utils/toast";
+import { SectionIProps } from "../interface";
+import style from "./Artist.module.scss";
+import TopListSong from "./TopListSong";
 
 interface IProps {
-  alias: string
-  biography: string
-  birthday: string
-  cover: string
-  follow: number
-  name: string
-  realname: string
-  playlistId: string
-  thumbnailM: string
-  topAlbum: CardIProps
-  sections: SectionIProps[]
+  alias: string;
+  biography: string;
+  birthday: string;
+  cover: string;
+  follow: number;
+  name: string;
+  realname: string;
+  playlistId: string;
+  thumbnailM: string;
+  topAlbum: CardIProps;
+  sections: SectionIProps[];
 }
 const Artist: React.FC = () => {
-  useScrollTop()
-  const { id } = useParams()
+  useScrollTop();
+  const { id } = useParams();
   const [artist, setArtist] = useState<IProps>({
     alias: "",
     biography: "",
@@ -52,43 +52,43 @@ const Artist: React.FC = () => {
       name: "",
       releaseDate: "",
       textType: "",
-      duration: 0
+      duration: 0,
     },
     sections: [
       {
         sectionType: "song",
         items: getArraySongEmpty(6),
-        title: ""
+        title: "",
       },
       {
         sectionType: "playlist",
         items: getArrayPlayListEmpty(4),
-        title: ""
+        title: "",
       },
       {
         sectionType: "video",
         items: getArrayVideoEmpty(2),
-        title: ""
+        title: "",
       },
       {
         sectionType: "artist",
         items: getArrayArtistEmpty(4),
-        title: ""
-      }
-    ]
-  })
+        title: "",
+      },
+    ],
+  });
 
   useEffect(() => {
     const fetchApi = async () => {
-      const res = await services.getArtist(id as string)
-      setArtist(res)
-    }
-    fetchApi()
-  }, [id])
+      const res = await services.getArtist(id as string);
+      setArtist(res);
+    };
+    fetchApi();
+  }, [id]);
 
   const handlePlay = () => {
-    getToastWarn({ msg: "Tính năng này chưa hoàn thiện !" })
-  }
+    getToastWarn({ msg: "Tính năng này chưa hoàn thiện !" });
+  };
 
   return (
     <div className={style.wrapper}>
@@ -132,7 +132,7 @@ const Artist: React.FC = () => {
               <div key={`video-${index}`} className={"col l-12 m-12 c-12"}>
                 <PlayListArtist data={item.items} title={item.title} />
               </div>
-            ) : null
+            ) : null,
           )}
         </div>
 
@@ -153,7 +153,7 @@ const Artist: React.FC = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Artist
+export default Artist;

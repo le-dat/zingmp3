@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 
 module.exports.connect = async () => {
   try {
+    await mongoose.set("strictQuery", false);
     await mongoose.connect(
       `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@cluster0.9msg1cr.mongodb.net/?retryWrites=true&w=majority`,
     );

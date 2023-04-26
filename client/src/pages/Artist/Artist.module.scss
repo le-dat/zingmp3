@@ -136,4 +136,7 @@
 
 // phone
 @media (max-width: 739px) {
+  .thumbnail {
+    min-height: 14rem;
+  }
 }

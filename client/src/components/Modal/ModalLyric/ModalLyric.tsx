@@ -28,7 +28,7 @@ const ModalLyric: React.FC = () => {
     <div className={clsx(style.wrapper, { [style.active]: isShowLyricSongModal })}>
       <header className={clsx("is-center", style.header)}>
         <div className={style.left}>
-          <Image src={images.icon.zingMP3} alt='zingmp3' />
+          <Image src={images.icon.zingMP3} alt='ZingMP3' />
         </div>
         <div className={style.body}>
           <TabWrapper customClass={style.tabs}>

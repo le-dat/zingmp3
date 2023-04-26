@@ -15,29 +15,50 @@
   }
 }
 .hoverMove {
-  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  height: 2rem;
 
-  &:hover {
-    animation: moveTitle 11.125s linear infinite;
+  div {
+    position: absolute;
+    top: 0;
+    width: 200%;
+    overflow: hidden;
+  }
+  &:hover > div {
+    animation: marquee 5s linear infinite;
+  }
+  .title {
+    width: 50%;
+    float: left;
   }
 }
-@keyframes moveTitle {
+
+@keyframes marquee {
   0% {
-    transform: translate(0, 0);
-  }
-  75% {
-    transform: translate(-100%, 0);
-  }
-  76% {
-    transform: translate(-100%, -150%);
-  }
-  77% {
-    transform: translate(100%, -150%);
-  }
-  78% {
-    transform: translate(100%, 0);
+    left: 0;
   }
   100% {
-    transform: translate(0, 0);
+    left: -100%;
   }
+}
+
+// tablet
+@media (min-width: 740px) and (max-width: 1023px) {
+  .hoverMove {
+    white-space: nowrap;
+
+    div {
+      animation: marquee 5s linear infinite;
+    }
+    .title {
+      &:nth-child(2) {
+        display: none;
+      }
+    }
+  }
+}
+
+// phone
+@media (max-width: 739px) {
 }

@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  padding-right: 2rem;
 }
 .mediaLeft {
   width: 64px;
@@ -16,6 +17,7 @@
   overflow: hidden;
 }
 .songCard {
+  flex: 1;
   display: flex;
   -moz-flex-direction: column;
   flex-direction: column;

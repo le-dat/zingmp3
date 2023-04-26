@@ -1,4 +1,5 @@
 $color-white: #fff;
+$color-gray: #a2a2a2;
 $color-black: #333;
 $dark-alpha-10: rgba(0, 0, 0, 0.1);
 $dark-alpha-50: rgba(0, 0, 0, 0.5);
@@ -7,7 +8,7 @@ $dark-alpha-80: rgba(0, 0, 0, 0.8);
 $white-alpha: hsla(0, 0%, 100%, 0.1);
 $hover-tooltip-opacity: hsla(0, 0%, 100%, 0.3);
 $color-chart-box-bg-alpha: hsla(0, 0%, 100%, 0.05);
-
+// xone
 $xone-layout: #1e1e1e;
 $xone-sidebar: hsla(0, 0%, 100%, 0.05);
 $xone-footer: #181818;
@@ -26,7 +27,7 @@ $xone-track: #d7cb1f;
 $xone-text-hover: #fff;
 $xone-tippy: #282828;
 $xone-chart-bg-img-alpha: rgba(32, 19, 53, 0.9);
-
+// london
 $london-layout: #082050;
 $london-sidebar: hsla(0, 0%, 100%, 0.05);
 $london-footer: #061840;
@@ -45,7 +46,7 @@ $london-track: #ffffff;
 $london-text-hover: #fff;
 $london-tippy: #192f60;
 $london-chart-bg-img-alpha: rgba(32, 19, 53, 0.9);
-
+// zing
 $zing-layout: #3a295d;
 $zing-sidebar: hsla(0, 0%, 100%, 0.05);
 $zing-footer: #32214e;
@@ -64,26 +65,26 @@ $zing-track: #ffffff;
 $zing-text-hover: #fff;
 $zing-tippy: #4b1178;
 $zing-chart-bg-img-alpha: rgba(32, 19, 53, 0.9);
-
-$elffel-layout: #282828;
-$elffel-sidebar: hsla(0, 0%, 100%, 0.05);
-$elffel-footer: #202020;
-$elffel-text-primary: #fff;
-$elffel-text-secondary: #a0a0a0;
-$elffel-text-btn: #ffffff;
-$elffel-item-hover: #505050;
-$elffel-action: #ffffff;
-$elffel-action-active: #774ea1;
-$elffel-primary-bg: #3d3d3d;
-$elffel-alpha-bg: hsla(0, 0%, 100%, 0.1);
-$elffel-icon: #d1d1d1;
-$elffel-player: #5d5d5d;
-$elffel-border: hsla(0, 0%, 100%, 0.05);
-$elffel-track: #ffffff;
-$elffel-text-hover: #fff;
-$elffel-tippy: #3d3d3d;
-$elffel-chart-bg-img-alpha: rgba(32, 19, 53, 0.9);
-
+// eiffel
+$eiffel-layout: #282828;
+$eiffel-sidebar: hsla(0, 0%, 100%, 0.05);
+$eiffel-footer: #202020;
+$eiffel-text-primary: #fff;
+$eiffel-text-secondary: #a0a0a0;
+$eiffel-text-btn: #ffffff;
+$eiffel-item-hover: #505050;
+$eiffel-action: #ffffff;
+$eiffel-action-active: #774ea1;
+$eiffel-primary-bg: #3d3d3d;
+$eiffel-alpha-bg: hsla(0, 0%, 100%, 0.1);
+$eiffel-icon: #d1d1d1;
+$eiffel-player: #5d5d5d;
+$eiffel-border: hsla(0, 0%, 100%, 0.05);
+$eiffel-track: #ffffff;
+$eiffel-text-hover: #fff;
+$eiffel-tippy: #3d3d3d;
+$eiffel-chart-bg-img-alpha: rgba(32, 19, 53, 0.9);
+// jack
 $jack-layout: #767269;
 $jack-sidebar: hsla(0, 0%, 100%, 0.05);
 $jack-footer: #5e5b54;
@@ -102,7 +103,7 @@ $jack-track: #ffffff;
 $jack-text-hover: #fff;
 $jack-tippy: #565147;
 $jack-chart-bg-img-alpha: rgba(32, 19, 53, 0.9);
-
+// iu
 $iu-layout: #e7dfdd;
 $iu-sidebar: hsla(0, 0%, 100%, 0.05);
 $iu-footer: #d0ccc5;
@@ -121,26 +122,26 @@ $iu-track: #409abc;
 $iu-text-hover: #409abc;
 $iu-tippy: #ffff;
 $iu-chart-bg-img-alpha: rgba(32, 19, 53, 0.9);
-
-$jiChangWook-layout: #b2d8db;
-$jiChangWook-sidebar: hsla(0, 0%, 100%, 0.3);
-$jiChangWook-footer: #b4d0d0;
-$jiChangWook-text-primary: #333;
-$jiChangWook-text-secondary: #798283;
-$jiChangWook-text-btn: #ffffff;
-$jiChangWook-item-hover: hsla(0, 0%, 100%, 0.3);
-$jiChangWook-action: #333;
-$jiChangWook-action-active: #389292;
-$jiChangWook-primary-bg: #e1e8e8;
-$jiChangWook-alpha-bg: hsla(0, 0%, 100%, 0.3);
-$jiChangWook-icon: #4f575e;
-$jiChangWook-player: #a2bbbb;
-$jiChangWook-border: #a9cdd0;
-$jiChangWook-track: #389292;
-$jiChangWook-text-hover: #389292;
-$jiChangWook-tippy: #e1e8e8;
-$jiChangWook-chart-bg-img-alpha: rgba(32, 19, 53, 0.9);
-
+// jiChangWood
+$jiChangWood-layout: #b2d8db;
+$jiChangWood-sidebar: hsla(0, 0%, 100%, 0.3);
+$jiChangWood-footer: #b4d0d0;
+$jiChangWood-text-primary: #333;
+$jiChangWood-text-secondary: #798283;
+$jiChangWood-text-btn: #ffffff;
+$jiChangWood-item-hover: hsla(0, 0%, 100%, 0.3);
+$jiChangWood-action: #333;
+$jiChangWood-action-active: #389292;
+$jiChangWood-primary-bg: #e1e8e8;
+$jiChangWood-alpha-bg: hsla(0, 0%, 100%, 0.3);
+$jiChangWood-icon: #4f575e;
+$jiChangWood-player: #a2bbbb;
+$jiChangWood-border: #a9cdd0;
+$jiChangWood-track: #389292;
+$jiChangWood-text-hover: #389292;
+$jiChangWood-tippy: #e1e8e8;
+$jiChangWood-chart-bg-img-alpha: rgba(32, 19, 53, 0.9);
+// lisa
 $lisa-layout: #f9dbdb;
 $lisa-sidebar: hsla(0, 0%, 100%, 0.05);
 $lisa-footer: #f8c6c5;
@@ -159,7 +160,7 @@ $lisa-track: #ea7aa0;
 $lisa-text-hover: #ea7aa0;
 $lisa-tippy: #fef8f8;
 $lisa-chart-bg-img-alpha: rgba(32, 19, 53, 0.9);
-
+// jennieKim
 $jennieKim-layout: #bab8c3;
 $jennieKim-sidebar: rgba(0, 0, 0, 0.05);
 $jennieKim-footer: #c6c4d1;
@@ -178,7 +179,7 @@ $jennieKim-track: #346875;
 $jennieKim-text-hover: #346875;
 $jennieKim-tippy: #e2e7f5;
 $jennieKim-chart-bg-img-alpha: rgba(32, 19, 53, 0.9);
-
+// jisoo
 $jisoo-layout: #fff;
 $jisoo-sidebar: rgba(0, 0, 0, 0.05);
 $jisoo-footer: #fff;
@@ -197,7 +198,7 @@ $jisoo-track: #6d3f83;
 $jisoo-text-hover: #6d3f83;
 $jisoo-tippy: #fff;
 $jisoo-chart-bg-img-alpha: rgba(32, 19, 53, 0.9);
-
+// rose
 $rose-layout: #082050;
 $rose-sidebar: hsla(0, 0%, 100%, 0.05);
 $rose-footer: #061840;
@@ -216,7 +217,7 @@ $rose-track: #ffffff;
 $rose-text-hover: #fff;
 $rose-tippy: #192f60;
 $rose-chart-bg-img-alpha: rgba(32, 19, 53, 0.9);
-
+// dark
 $dark-layout: #1e1e1e;
 $dark-sidebar: #292929;
 $dark-footer: #181818;
@@ -235,7 +236,7 @@ $dark-track: #fff;
 $dark-text-hover: #fff;
 $dark-tippy: #282828;
 $dark-chart-bg-img-alpha: rgba(32, 19, 53, 0.9);
-
+// purple
 $purple-layout: #170f23;
 $purple-sidebar: #231b2e;
 $purple-footer: #120c1c;
@@ -255,7 +256,7 @@ $purple-track: #fff;
 $purple-text-hover: #fff;
 $purple-tippy: #4b1178;
 $purple-chart-bg-img-alpha: rgba(32, 19, 53, 0.9);
-
+// blue-bold
 $blue-bold-layout: #101f3f;
 $blue-bold-sidebar: #1c2a49;
 $blue-bold-footer: #0d1932;
@@ -272,9 +273,9 @@ $blue-bold-player: #565e70;
 $blue-bold-border: hsla(0, 0%, 100%, 0.05);
 $blue-bold-track: #fff;
 $blue-bold-text-hover: #fff;
-$london-tippy: #192f60;
-$london-chart-bg-img-alpha: rgba(32, 19, 53, 0.9);
-
+$blue-bold-tippy: #192f60;
+$blue-bold-chart-bg-img-alpha: rgba(32, 19, 53, 0.9);
+// blue
 $blue-layout: #1d375a;
 $blue-sidebar: #294162;
 $blue-footer: #172c48;
@@ -293,14 +294,14 @@ $blue-track: #fff;
 $blue-text-hover: #fff;
 $blue-tippy: #284a78;
 $blue-chart-bg-img-alpha: rgba(32, 19, 53, 0.9);
-
+// green
 $green-layout: #1b4534;
-$green-sidebar: #234e3e;
+$green-sidebar: hsla(0, 0%, 100%, 0.05);
 $green-footer: #14372a;
 $green-text-primary: #fff;
 $green-text-secondary: #d8d9d8;
 $green-text-btn: #fff;
-$green-item-hover: #366052;
+$green-item-hover: hsla(0, 0%, 100%, 0.1);
 $green-action: #ffffff;
 $green-action-active: #3f9785;
 $green-primary-bg: #2f6e55;
@@ -312,7 +313,7 @@ $green-track: #fff;
 $green-text-hover: #fff;
 $green-tippy: #2f6e55;
 $green-chart-bg-img-alpha: rgba(32, 19, 53, 0.9);
-
+// brown
 $brown-layout: #57403b;
 $brown-sidebar: #5f4a45;
 $brown-footer: #46332f;
@@ -331,7 +332,7 @@ $brown-track: #fff;
 $brown-text-hover: #fff;
 $brown-tippy: #6f514c;
 $brown-chart-bg-img-alpha: rgba(32, 19, 53, 0.9);
-
+// pink
 $pink-layout: #833664;
 $pink-sidebar: #883c6c;
 $pink-footer: #682a50;
@@ -348,9 +349,9 @@ $pink-player: #944d84;
 $pink-border: hsla(0, 0%, 100%, 0.05);
 $pink-track: #fff;
 $pink-text-hover: #fff;
-$pink-tippy: #a44987;
+$pink-tippy: #fde8e8;
 $pink-chart-bg-img-alpha: rgba(32, 19, 53, 0.9);
-
+// red
 $red-layout: #731e17;
 $red-sidebar: #7a2520;
 $red-footer: #5c1612;
@@ -369,8 +370,7 @@ $red-track: #fff;
 $red-text-hover: #fff;
 $red-tippy: #883236;
 $red-chart-bg-img-alpha: rgba(32, 19, 53, 0.9);
-
-// light color
+// light
 $light-layout: #ffffff;
 $light-sidebar: #f2f2f2;
 $light-footer: #fff;
@@ -389,7 +389,7 @@ $light-track: #6d3f83;
 $light-text-hover: #6d3f83;
 $light-tippy: #fff;
 $light-chart-bg-img-alpha: rgba(32, 19, 53, 0.9);
-
+// gray-light
 $gray-light-layout: #e5e3df;
 $gray-light-sidebar: #d9d7d4;
 $gray-light-footer: #d0ccc5;
@@ -408,14 +408,14 @@ $gray-light-track: #8c8471;
 $gray-light-text-hover: #8c8471;
 $gray-light-tippy: #fffffe;
 $gray-light-chart-bg-img-alpha: rgba(32, 19, 53, 0.9);
-
+// blue-light
 $blue-light-layout: #ced9d9;
-$blue-light-sidebar: #dce4e4;
+$blue-light-sidebar: hsla(0, 0%, 100%, 0.3);
 $blue-light-footer: #b4d0d0;
 $blue-light-text-primary: #333;
 $blue-light-text-secondary: #656870;
 $blue-light-text-btn: #fff;
-$blue-light-item-hover: #e7eded;
+$blue-light-item-hover: hsla(0, 0%, 100%, 0.3);
 $blue-light-action: #32323d;
 $blue-light-action-active: #389292;
 $blue-light-primary-bg: #e1e8e8;
@@ -427,9 +427,9 @@ $blue-light-track: #fff;
 $blue-light-text-hover: #389292;
 $blue-light-tippy: #e1e8e8;
 $blue-light-chart-bg-img-alpha: rgba(32, 19, 53, 0.9);
-
+// pink-light
 $pink-light-layout: #f9dbdb;
-$pink-light-sidebar: #f9dcdc;
+$pink-light-sidebar: hsla(0, 0%, 100%, 0.3);
 $pink-light-footer: #f8c6c5;
 $pink-light-text-primary: #333;
 $pink-light-text-secondary: #323242;

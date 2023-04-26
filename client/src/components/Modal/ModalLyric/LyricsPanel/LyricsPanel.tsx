@@ -12,7 +12,7 @@ const LyricsPanel: React.FC = () => {
   return (
     <div className={clsx("grid", style.wrapper)}>
       <div className='row'>
-        <div className='col l-5 m-12 c-0 '>
+        <div className='col l-5 m-0 c-0 '>
           <div className='is-center'>
             <Image src={thumbnailM} className={style.image} />
           </div>
