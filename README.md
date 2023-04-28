@@ -1,4 +1,4 @@
-### 🚀 Live Demo (https://ledat-zingmp3.netlify.app/)
+### 🚀 Live Demo (https://ledat-zingmp3.vercel.app/)
 
 ![ZingMp3 screenshot](https://raw.githubusercontent.com/le-dat/zingmp3/master/static/screenshot1.png)
 ![ZingMp3 screenshot](https://raw.githubusercontent.com/le-dat/zingmp3/master/static/screenshot2.png)
