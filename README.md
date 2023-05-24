@@ -8,14 +8,26 @@
 ![ZingMp3 screenshot](https://raw.githubusercontent.com/le-dat/zingmp3/master/static/screenshot6.png)
 ![ZingMp3 screenshot](https://raw.githubusercontent.com/le-dat/zingmp3/master/static/screenshot7.png)
 
-## Server
+### Feature:
+
+- Play, pause, skip to the next or previous music track.
+- Adjust the volume and seek through the audio.
+- View the playlist of songs.
+- View the lyrics of a song.
+- Watch videos.
+- Search for songs or artists.
+- Change the background.
+- Login or register using email or Google.
+- Add or remove songs from favorites.
+
+### Server
 
 ```
 cd server
 ```
 
-`Create an `.env` file and add the following variables.`
-Login to account MongoDB and create database [here](https://www.mongodb.com/)
+Create an `.env` file and add the following variables.
+[Login to account MongoDB and create database](https://www.mongodb.com/)
 
 ```
 PORT=5000
@@ -24,7 +36,7 @@ MONGODB_PASSWORD=1234
 ACCESS_TOKEN_SECRET=datdeptrai
 ```
 
-`run`
+run
 
 ```
 yarn install
@@ -33,7 +45,7 @@ yarn dev
 
 Open Browser: http://localhost:5000
 
-`For zing`
+##### For zing
 
 ```
 Get Song: http://localhost:5000/api/zing/song?id={param-id-song}
@@ -65,7 +77,7 @@ Get Categoty MV: http://localhost:5000/api/zing/categorymv?id={param-id-video}
 Get Video: http://localhost:5000/api/zing/video?id={param-id-video}
 ```
 
-`For user:`
+##### For user:
 
 ```
 Get Liked Song: http://localhost:5000/api/user/liked/song/${email}
@@ -81,14 +93,13 @@ Remove Liked Song: http://localhost:5000/api/user/liked/song/add?email=${email}&
 Remove Liked Album: http://localhost:5000/api/user/liked/album/add?email=${email}&albumId=${albumId}
 ```
 
-## Client
+### Client
 
 ```
 cd client
 ```
 
-`Create a new firebase project`
-.Login to your google account and create a new firebase project [here](https://console.firebase.google.com/u/0/)
+Create a new firebase project.[Login to your google account and create a new firebase project](https://console.firebase.google.com/u/0/)
 
 Create an `.env` file and add the following variables.
 

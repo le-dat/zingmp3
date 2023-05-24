@@ -1,34 +1,20 @@
-import clsx from "clsx"
-import { BsPauseCircle, BsPlayCircle } from "react-icons/bs"
-import { CiRepeat } from "react-icons/ci"
-import { FaRandom } from "react-icons/fa"
-import { MdSkipNext, MdSkipPrevious } from "react-icons/md"
+import clsx from "clsx";
+import { BsPauseCircle, BsPlayCircle } from "react-icons/bs";
+import { CiRepeat } from "react-icons/ci";
+import { FaRandom } from "react-icons/fa";
+import { MdSkipNext, MdSkipPrevious } from "react-icons/md";
 
-import { ButtonIcon } from "../../../../components/Button"
-import { IconLoading } from "../../../../components/Icons"
-import { useAppDispatch, useAppSelector } from "../../../../hooks/useRedux"
-import { setLoop, setPlay, setRandom } from "../../../../redux/reducers/controlSlice"
-import { setSongIndex } from "../../../../redux/reducers/playListSlice"
-import { setInfoSong } from "../../../../redux/reducers/songSlice"
-import { getNewIndex, getRandomIndex } from "../../../../utils/song"
-import style from "./PlayerControl.module.scss"
+import { ButtonIcon } from "../../../../components/Button";
+import { IconLoading } from "../../../../components/Icons";
+import { useChangeSong } from "../../../../hooks";
+import { useAppDispatch, useAppSelector } from "../../../../hooks/useRedux";
+import { setLoop, setPlay, setRandom } from "../../../../redux/reducers/controlSlice";
+import style from "./PlayerControl.module.scss";
 
 const PlayerControl: React.FC = () => {
-  const dispatch = useAppDispatch()
-  const { isPlay, isRandom, isLoop, isLoading } = useAppSelector((state) => state.control)
-  const { songIndex, playListSong } = useAppSelector((state) => state.playList)
-
-  const handleChangeSong = (direction: string) => {
-    let newSongIndex
-    if (isRandom) {
-      newSongIndex = getRandomIndex(playListSong, songIndex)
-    } else {
-      newSongIndex = getNewIndex(playListSong, songIndex, direction)
-    }
-    dispatch(setSongIndex(newSongIndex))
-    const { encodeId, thumbnailM, title, artists, duration, album, streamingStatus } = playListSong[newSongIndex]
-    dispatch(setInfoSong({ encodeId, thumbnailM, title, artists, duration, album, streamingStatus }))
-  }
+  const dispatch = useAppDispatch();
+  const { isPlay, isRandom, isLoop, isLoading } = useAppSelector((state) => state.control);
+  const handleChangeSong = useChangeSong();
 
   return (
     <div className={style.controller}>
@@ -72,7 +58,7 @@ const PlayerControl: React.FC = () => {
         onClick={() => dispatch(setLoop(!isLoop))}
       />
     </div>
-  )
-}
+  );
+};
 
-export default PlayerControl
+export default PlayerControl;
