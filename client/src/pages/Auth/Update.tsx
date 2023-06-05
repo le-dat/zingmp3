@@ -55,8 +55,8 @@ const Update: React.FC = () => {
         <form onSubmit={(e) => handleSubmit(e)}>
           <div className={clsx("is-center", style.info)}>
             <Image src={avatar} className={style.avatar} />
-            <input type='file' name='photoURL' id='photoURL' onChange={handleReviewAvatar} />
-            <label htmlFor='photoURL' className='label'>
+            <input type="file" name="photoURL" id="photoURL" onChange={handleReviewAvatar} />
+            <label htmlFor="photoURL" className="label">
               Chọn avatar
             </label>
             <ButtonTitle primary rounded large>

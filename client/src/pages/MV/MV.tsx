@@ -31,12 +31,12 @@ const TYPE = [
   { name: "VIỆT NAM", link: VIET_NAM, id: "IWZ9Z08I" },
   { name: "US-UK", link: US_UK, id: "IWZ9Z08O" },
   { name: "KOREAN", link: HAN_QUOC, id: "IWZ9Z08W" },
-  { name: "HÒA TẤU", link: HOA_TAU, id: "IWZ9Z086" }
+  { name: "HÒA TẤU", link: HOA_TAU, id: "IWZ9Z086" },
 ]
 const FILTER = [
   { id: "1", name: "Nghe nhiều" },
   { id: "2", name: "Nổi bật" },
-  { id: "3", name: "Mới nhất" }
+  { id: "3", name: "Mới nhất" },
 ]
 
 const MV: React.FC = () => {
@@ -78,7 +78,7 @@ const MV: React.FC = () => {
         <TabWrapper>
           <div className={style.header}>MV</div>
           {TYPE?.map((item, index) => (
-            <div key={`type-mv-${index}`} onClick={() => setTab(index)} className='is-center'>
+            <div key={`type-mv-${index}`} onClick={() => setTab(index)} className="is-center">
               <TabNav small to={`/${MV_ROUTER}/${item.link}`}>
                 {item.name}
               </TabNav>
@@ -87,9 +87,9 @@ const MV: React.FC = () => {
         </TabWrapper>
 
         <div className={style.searchNav}>
-          <ButtonDropDown title='Tất Cả' leftIcon={<HiOutlineMusicalNote />} customClass={style.searchNavBtn}>
+          <ButtonDropDown title="Tất Cả" leftIcon={<HiOutlineMusicalNote />} customClass={style.searchNavBtn}>
             <div className={style.searchNavBody}>
-              <div className='grid'>
+              <div className="grid">
                 <div className={clsx("row", style.searchNavMenu)}>
                   {category.map((item, index) => (
                     <div
@@ -116,7 +116,7 @@ const MV: React.FC = () => {
           </ButtonDropDown>
         </div>
 
-        <div className='grid'>
+        <div className="grid">
           <div className={clsx("row", style.container)}>
             {listMV.map((item, index) => (
               <div key={`media-${item?.encodeId}-${index}`} className={clsx("col l-4 m-6 c-12", style.item)}>

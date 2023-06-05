@@ -1,20 +1,21 @@
 /* eslint-disable react/display-name */
-import Tippy from "@tippyjs/react";
-import clsx from "clsx";
-import React from "react";
+import Tippy from "@tippyjs/react"
+import clsx from "clsx"
+import React from "react"
 
-import style from "./ButtonIcon.module.scss";
+import style from "./ButtonIcon.module.scss"
+import { IconType } from "react-icons"
 
 export interface IProps {
-  icon: any;
-  title?: string;
-  backgroundLarge?: boolean;
-  backgroundSmall?: boolean;
-  rounded?: boolean;
-  disable?: boolean;
-  active?: boolean;
-  customClass?: string;
-  onClick?: () => void;
+  icon?: any
+  title?: string
+  backgroundLarge?: boolean
+  backgroundSmall?: boolean
+  rounded?: boolean
+  disable?: boolean
+  active?: boolean
+  customClass?: string
+  onClick?: () => void
 }
 
 const ButtonIcon: React.FC<IProps> = ({
@@ -30,9 +31,9 @@ const ButtonIcon: React.FC<IProps> = ({
 }) => {
   const props = {
     onClick,
-  };
+  }
   if (disable && onClick) {
-    delete props.onClick;
+    delete props.onClick
   }
 
   const className = clsx(
@@ -45,7 +46,7 @@ const ButtonIcon: React.FC<IProps> = ({
       [style.disable]: disable,
     },
     customClass,
-  );
+  )
 
   const ToolTip: React.FC<{ children: any }> = ({ children }) => {
     if (title) {
@@ -53,10 +54,10 @@ const ButtonIcon: React.FC<IProps> = ({
         <span>
           <Tippy content={<span className={style.tooltip}>{title}</span>}>{children}</Tippy>
         </span>
-      );
+      )
     }
-    return children;
-  };
+    return children
+  }
 
   return (
     <ToolTip>
@@ -64,6 +65,6 @@ const ButtonIcon: React.FC<IProps> = ({
         {icon && <div className={style.icon}>{icon}</div>}
       </button>
     </ToolTip>
-  );
-};
-export default ButtonIcon;
+  )
+}
+export default ButtonIcon

@@ -1,20 +1,20 @@
-import clsx from "clsx";
-import React from "react";
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import clsx from "clsx"
+import React from "react"
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton"
 
-import { useAppSelector } from "../../hooks/useRedux";
-import style from "./Title.module.scss";
+import { useAppSelector } from "../../hooks/useRedux"
+import style from "./Title.module.scss"
 
 interface IProps {
-  title: string;
-  hoverColor?: boolean;
-  hoverMove?: boolean;
-  customClass?: string;
-  lineCamp?: number;
-  onClick?: () => void;
+  title: string
+  hoverColor?: boolean
+  hoverMove?: boolean
+  customClass?: string
+  lineCamp?: number
+  onClick?: () => void
 }
 const Title: React.FC<IProps> = ({ title, hoverColor = false, hoverMove, lineCamp = 1, onClick, customClass }) => {
-  const { baseColor, highlightColor } = useAppSelector((state) => state.skeleton);
+  const { baseColor, highlightColor } = useAppSelector((state) => state.skeleton)
 
   const className = clsx(
     style.wrapper,
@@ -24,7 +24,7 @@ const Title: React.FC<IProps> = ({ title, hoverColor = false, hoverMove, lineCam
       [style.hoverMove]: hoverMove,
     },
     customClass,
-  );
+  )
   return (
     <SkeletonTheme baseColor={baseColor} highlightColor={highlightColor}>
       <h3 className={className} onClick={onClick}>
@@ -34,7 +34,7 @@ const Title: React.FC<IProps> = ({ title, hoverColor = false, hoverMove, lineCam
         </div>
       </h3>
     </SkeletonTheme>
-  );
-};
+  )
+}
 
-export default Title;
+export default Title

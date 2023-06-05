@@ -1,21 +1,21 @@
-import React from "react";
-import { GiMicrophone } from "react-icons/gi";
+import React from "react"
+import { GiMicrophone } from "react-icons/gi"
 
-import { useAppDispatch } from "../../hooks/useRedux";
-import { setShowLyricSongModal } from "../../redux/reducers/lyricSlice";
-import { ButtonIcon } from "../Button";
+import { useAppDispatch } from "../../hooks/useRedux"
+import { setShowLyricSongModal } from "../../redux/reducers/lyricSlice"
+import { ButtonIcon } from "../Button"
 
 interface IProps {
-  title?: string;
-  disable?: boolean;
-  customClass?: string;
+  title?: string
+  disable?: boolean
+  customClass?: string
 }
 const BtnKaraoke: React.FC<IProps> = ({ title = "Xem lời bài hát", disable, customClass }) => {
-  const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch()
 
   const handleLyric = () => {
-    dispatch(setShowLyricSongModal(true));
-  };
+    dispatch(setShowLyricSongModal(true))
+  }
 
   return (
     <ButtonIcon
@@ -27,7 +27,7 @@ const BtnKaraoke: React.FC<IProps> = ({ title = "Xem lời bài hát", disable, 
       customClass={customClass}
       onClick={handleLyric}
     />
-  );
-};
+  )
+}
 
-export default BtnKaraoke;
+export default BtnKaraoke

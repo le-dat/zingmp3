@@ -1,18 +1,18 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from "react"
+import { Link } from "react-router-dom"
 
-import { DETAIL_PLAY_LIST } from "../../constants";
-import { useAppDispatch } from "../../hooks/useRedux";
-import { MediaIProps } from "../../interface";
-import { setInfoSong } from "../../redux/reducers/songSlice";
-import { AlphaMedia } from "../Alpha";
-import { BtnHeartSong, BtnThreeDotMedia } from "../BtnAction";
-import Image from "../Image";
-import { SubTitle, Title } from "../Info";
-import style from "./SuggestItem.module.scss";
+import { DETAIL_PLAY_LIST } from "../../constants"
+import { useAppDispatch } from "../../hooks/useRedux"
+import { MediaIProps } from "../../interface"
+import { setInfoSong } from "../../redux/reducers/songSlice"
+import { AlphaMedia } from "../Alpha"
+import { BtnHeartSong, BtnThreeDotMedia } from "../BtnAction"
+import Image from "../Image"
+import { SubTitle, Title } from "../Info"
+import style from "./SuggestItem.module.scss"
 
 const SuggestItem: React.FC<MediaIProps> = (props) => {
-  const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch()
 
   return (
     <div className={style.wrapper}>
@@ -31,11 +31,11 @@ const SuggestItem: React.FC<MediaIProps> = (props) => {
 
         <div className={style.mediaRight}>
           <BtnHeartSong song={props} />
-          <BtnThreeDotMedia {...props} tooltip='Khác' {...props} />
+          <BtnThreeDotMedia {...props} tooltip="Khác" {...props} />
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SuggestItem;
+export default SuggestItem

@@ -1,18 +1,18 @@
-import clsx from "clsx";
-import React from "react";
+import clsx from "clsx"
+import React from "react"
 
-import { AlbumIProps } from "../../interface";
-import { CardAlbum } from "../Card";
-import HeaderPlayList from "../HeaderPlayList";
-import style from "./PlayList.module.scss";
+import { AlbumIProps } from "../../interface"
+import { CardAlbum } from "../Card"
+import HeaderPlayList from "../HeaderPlayList"
+import style from "./PlayList.module.scss"
 
 interface IProps {
-  data: AlbumIProps[];
-  title?: string;
+  data: AlbumIProps[]
+  title?: string
 }
 const PlayListAlbum: React.FC<IProps> = ({ data, title = "Gợi ý cho bạn" }) => {
   return (
-    <div className='grid'>
+    <div className="grid">
       <HeaderPlayList title={title} small customClass={style.title} />
       <div className={clsx("row", style.list)}>
         {data.map((item, i) => (
@@ -27,7 +27,7 @@ const PlayListAlbum: React.FC<IProps> = ({ data, title = "Gợi ý cho bạn" })
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default PlayListAlbum;
+export default PlayListAlbum

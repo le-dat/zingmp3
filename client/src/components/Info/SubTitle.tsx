@@ -34,7 +34,7 @@ const renderArtistReview = (artists: any[]) => {
       <HeadlessTippy
         interactive
         offset={[0, 0]}
-        placement='top-start'
+        placement="top-start"
         delay={[500, 0]}
         render={() => renderReview(artist)}
       >

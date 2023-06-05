@@ -1,33 +1,33 @@
-import clsx from "clsx";
-import React, { useRef } from "react";
-import { toast, ToastContainer } from "react-toastify";
+import clsx from "clsx"
+import React, { useRef } from "react"
+import { toast, ToastContainer } from "react-toastify"
 
-import ModalLyric from "../../components/Modal/ModalLyric";
-import ModalPlayList from "../../components/Modal/ModalPlayList";
-import ModalTheme from "../../components/Modal/ModalTheme";
-import { useAppSelector } from "../../hooks/useRedux";
-import { currentThemeSelector } from "../../redux/selectors/themeSelector";
-import Header from "../components/Header";
-import Player from "../components/Player";
-import Sidebar from "../components/Sidebar";
-import style from "./DefaultLayout.module.scss";
+import ModalLyric from "../../components/Modal/ModalLyric"
+import ModalPlayList from "../../components/Modal/ModalPlayList"
+import ModalTheme from "../../components/Modal/ModalTheme"
+import { useAppSelector } from "../../hooks/useRedux"
+import { currentThemeSelector } from "../../redux/selectors/themeSelector"
+import Header from "../components/Header"
+import Player from "../components/Player"
+import Sidebar from "../components/Sidebar"
+import style from "./DefaultLayout.module.scss"
 
 interface IProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 const DefaultLayout: React.FC<IProps> = ({ children }) => {
-  const headerRef = useRef<any>(null);
-  const containerRef = useRef<any>(null);
-  const currentTheme = useAppSelector(currentThemeSelector);
+  const headerRef = useRef<any>(null)
+  const containerRef = useRef<any>(null)
+  const currentTheme = useAppSelector(currentThemeSelector)
 
   const handleScroll = () => {
-    const offsetContent = containerRef.current.scrollY || containerRef.current.scrollTop;
+    const offsetContent = containerRef.current.scrollY || containerRef.current.scrollTop
     if (offsetContent > 10) {
-      headerRef.current.sticky();
+      headerRef.current.sticky()
     } else {
-      headerRef.current.nonSticky();
+      headerRef.current.nonSticky()
     }
-  };
+  }
 
   return (
     <div
@@ -38,7 +38,7 @@ const DefaultLayout: React.FC<IProps> = ({ children }) => {
         <Header ref={headerRef} />
         <div className={style.body}>
           <Sidebar />
-          <div id='container' className={clsx("scrollbar", style.container)} ref={containerRef} onScroll={handleScroll}>
+          <div id="container" className={clsx("scrollbar", style.container)} ref={containerRef} onScroll={handleScroll}>
             <div className={style.main}>{children}</div>
           </div>
         </div>
@@ -48,10 +48,10 @@ const DefaultLayout: React.FC<IProps> = ({ children }) => {
         <ModalTheme />
         <ModalLyric />
         <ModalPlayList />
-        <ToastContainer position={toast.POSITION.BOTTOM_LEFT} theme='dark' />
+        <ToastContainer position={toast.POSITION.BOTTOM_LEFT} theme="dark" />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default DefaultLayout;
+export default DefaultLayout

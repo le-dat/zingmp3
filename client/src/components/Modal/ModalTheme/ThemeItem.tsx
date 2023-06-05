@@ -1,18 +1,18 @@
-import clsx from "clsx";
-import React from "react";
-import { BsCheckCircleFill } from "react-icons/bs";
+import clsx from "clsx"
+import React from "react"
+import { BsCheckCircleFill } from "react-icons/bs"
 
-import { AlphaTheme } from "../../Alpha";
-import Image from "../../Image";
-import style from "./ThemeItem.module.scss";
+import { AlphaTheme } from "../../Alpha"
+import Image from "../../Image"
+import style from "./ThemeItem.module.scss"
 
 interface IProps {
-  themeThumb: any;
-  className: string;
-  title: string;
-  listThemeIndex: number;
-  themeIndex: number;
-  active: boolean;
+  themeThumb: any
+  className: string
+  title: string
+  listThemeIndex: number
+  themeIndex: number
+  active: boolean
 }
 
 const ThemeItem: React.FC<IProps> = ({ themeThumb, title, listThemeIndex, themeIndex, active }) => {
@@ -25,7 +25,7 @@ const ThemeItem: React.FC<IProps> = ({ themeThumb, title, listThemeIndex, themeI
       </div>
       <h4 className={style.title}>{title}</h4>
     </div>
-  );
-};
+  )
+}
 
-export default ThemeItem;
+export default ThemeItem

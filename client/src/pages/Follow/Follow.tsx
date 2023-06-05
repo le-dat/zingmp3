@@ -1,12 +1,12 @@
-import React from "react";
-import { Helmet } from "react-helmet-async";
+import React from "react"
+import { Helmet } from "react-helmet-async"
 
-import { SlideArtist } from "../../components/Slide";
-import { useScrollTop } from "../../hooks";
-import style from "./Follow.module.scss";
+import { SlideArtist } from "../../components/Slide"
+import { useScrollTop } from "../../hooks"
+import style from "./Follow.module.scss"
 
 const Follow: React.FC = () => {
-  useScrollTop();
+  useScrollTop()
 
   return (
     <>
@@ -18,7 +18,7 @@ const Follow: React.FC = () => {
         <SlideArtist />
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Follow;
+export default Follow

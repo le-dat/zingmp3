@@ -1,14 +1,14 @@
-import clsx from "clsx";
-import React from "react";
+import clsx from "clsx"
+import React from "react"
 
-import { useAppSelector } from "../../../../hooks/useRedux";
-import Image from "../../../Image";
-import { SubTitle, Title } from "../../../Info";
-import { SlideWrapper } from "../../../Wrapper";
-import style from "./PlayListPanel.module.scss";
+import { useAppSelector } from "../../../../hooks/useRedux"
+import Image from "../../../Image"
+import { SubTitle, Title } from "../../../Info"
+import { SlideWrapper } from "../../../Wrapper"
+import style from "./PlayListPanel.module.scss"
 
 const PlayListPanel: React.FC = () => {
-  const { playListSong } = useAppSelector((state) => state.playList);
+  const { playListSong } = useAppSelector((state) => state.playList)
 
   return (
     <div className={style.wrapper}>
@@ -22,6 +22,6 @@ const PlayListPanel: React.FC = () => {
         ))}
       </SlideWrapper>
     </div>
-  );
-};
-export default PlayListPanel;
+  )
+}
+export default PlayListPanel

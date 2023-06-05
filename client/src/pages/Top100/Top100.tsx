@@ -1,29 +1,29 @@
-import clsx from "clsx";
-import React, { useEffect, useState } from "react";
-import { Helmet } from "react-helmet-async";
+import clsx from "clsx"
+import React, { useEffect, useState } from "react"
+import { Helmet } from "react-helmet-async"
 
-import { ImgTop100 } from "../../components/Icons";
-import { PlayListAlbum } from "../../components/PlayList";
-import { useScrollTop } from "../../hooks";
-import * as services from "../../services";
-import { getArraySongEmpty } from "../../utils/song";
-import style from "./Top100.module.scss";
+import { ImgTop100 } from "../../components/Icons"
+import { PlayListAlbum } from "../../components/PlayList"
+import { useScrollTop } from "../../hooks"
+import * as services from "../../services"
+import { getArraySongEmpty } from "../../utils/song"
+import style from "./Top100.module.scss"
 
 interface IProps {
-  items: any[];
-  title: string;
+  items: any[]
+  title: string
 }
 
 const Top100: React.FC = () => {
-  useScrollTop();
-  const [albums, setAlbums] = useState<IProps[]>(Array(5).fill({ items: getArraySongEmpty(20), title: "" }));
+  useScrollTop()
+  const [albums, setAlbums] = useState<IProps[]>(Array(5).fill({ items: getArraySongEmpty(20), title: "" }))
   useEffect(() => {
     const fetchApi = async () => {
-      const res = await services.getTop100();
-      setAlbums(res);
-    };
-    fetchApi();
-  }, []);
+      const res = await services.getTop100()
+      setAlbums(res)
+    }
+    fetchApi()
+  }, [])
 
   return (
     <>
@@ -44,7 +44,7 @@ const Top100: React.FC = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Top100;
+export default Top100

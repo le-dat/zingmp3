@@ -1,13 +1,13 @@
-import React from "react";
+import React from "react"
 
-import Empty from "./Empty";
+import Empty from "./Empty"
 
 const PersonalRecent: React.FC = () => {
   return (
     <div>
       <Empty />
     </div>
-  );
-};
+  )
+}
 
-export default PersonalRecent;
+export default PersonalRecent

@@ -1,45 +1,45 @@
-import clsx from "clsx";
-import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import clsx from "clsx"
+import React, { useEffect, useState } from "react"
+import { Link, useParams } from "react-router-dom"
 
-import Image from "../../components/Image";
-import { Paragraph, SubTitle, Title } from "../../components/Info";
-import { VIDEO as VIDEO_ROUTER } from "../../constants";
-import { useScrollTop } from "../../hooks";
-import * as services from "../../services";
-import { getArrayVideoEmpty } from "../../utils/song";
-import style from "./Video.module.scss";
+import Image from "../../components/Image"
+import { Paragraph, SubTitle, Title } from "../../components/Info"
+import { VIDEO as VIDEO_ROUTER } from "../../constants"
+import { useScrollTop } from "../../hooks"
+import * as services from "../../services"
+import { getArrayVideoEmpty } from "../../utils/song"
+import style from "./Video.module.scss"
 
 interface CardIProps {
-  encodeId: string;
-  thumbnailM: string;
-  title: string;
-  artists: any[];
-  duration: number;
+  encodeId: string
+  thumbnailM: string
+  title: string
+  artists: any[]
+  duration: number
 }
 interface LyricsIProps {
-  content: string;
-  id: string;
+  content: string
+  id: string
 }
 interface StreamingIProps {
-  "360p": string;
-  "480p"?: string;
-  "720p"?: string;
-  "1080p"?: string;
+  "360p": string
+  "480p"?: string
+  "720p"?: string
+  "1080p"?: string
 }
 interface IProps {
-  recommends?: CardIProps[];
-  artists: any[];
-  thumbnailM: string;
-  title: string;
-  lyrics: LyricsIProps[];
+  recommends?: CardIProps[]
+  artists: any[]
+  thumbnailM: string
+  title: string
+  lyrics: LyricsIProps[]
   streaming: {
-    mp4: StreamingIProps;
-  };
+    mp4: StreamingIProps
+  }
 }
 const Video: React.FC = () => {
-  useScrollTop();
-  const { id } = useParams();
+  useScrollTop()
+  const { id } = useParams()
   const [video, setVideo] = useState<IProps>({
     recommends: getArrayVideoEmpty(5),
     thumbnailM: "",
@@ -51,32 +51,32 @@ const Video: React.FC = () => {
         "360p": "",
         "480p": "",
         "720p": "",
-        "1080p": ""
-      }
-    }
-  });
+        "1080p": "",
+      },
+    },
+  })
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await services.getVideo(id as string);
-      console.log(res);
-      setVideo(res);
-    };
-    fetchData();
-  }, [id]);
+      const res = await services.getVideo(id as string)
+      console.log(res)
+      setVideo(res)
+    }
+    fetchData()
+  }, [id])
 
   const getSrcVideo = () => {
-    const arr: string[] = Object.values(video.streaming.mp4);
+    const arr: string[] = Object.values(video.streaming.mp4)
     for (let i = arr.length - 1; i >= 0; i--) {
-      if (arr[i] !== "") return arr[i];
+      if (arr[i] !== "") return arr[i]
     }
-    return arr[0];
-  };
+    return arr[0]
+  }
   return (
     <div className={style.wrapper}>
       <div className={clsx("grid")}>
         <div className={clsx("row")}>
-          <div className='col l-7 m-12 c-12'>
+          <div className="col l-7 m-12 c-12">
             <video poster={video.thumbnailM} controls src={getSrcVideo()} className={style.video} />
 
             <div className={style.info}>
@@ -101,7 +101,7 @@ const Video: React.FC = () => {
             )}
           </div>
 
-          <div className='col l-5 m-12 c-12'>
+          <div className="col l-5 m-12 c-12">
             <div className={style.listPlaying}>
               <h3 className={style.header}>Danh Sách Phát</h3>
               <div className={clsx("scrollbar", style.listContainer)}>
@@ -124,7 +124,7 @@ const Video: React.FC = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Video;
+export default Video

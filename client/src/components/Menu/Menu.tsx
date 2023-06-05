@@ -35,7 +35,7 @@ const ButtonHeadless: React.FC<RenderIProps> = ({ title, leftIcon, rightIcon, ch
   return (
     // Using a wrapper <div> or <span> tag around the reference element solves this by creating a new parentNode context.
     <div className={style.btnWrapper}>
-      <HeadlessTippy interactive offset={[0, 0]} placement='right-end' render={() => renderReview(children)}>
+      <HeadlessTippy interactive offset={[0, 0]} placement="right-end" render={() => renderReview(children)}>
         <ButtonTitle
           leftIcon={leftIcon}
           rightIcon={rightIcon}

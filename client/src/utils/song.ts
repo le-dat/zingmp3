@@ -1,24 +1,24 @@
 export const getRandomIndex = (listSong: any[], currentIndex: number) => {
-  let newIndex = 0;
+  let newIndex = 0
 
   do {
-    newIndex = Math.floor(Math.random() * listSong.length);
-  } while (newIndex === currentIndex);
+    newIndex = Math.floor(Math.random() * listSong.length)
+  } while (newIndex === currentIndex)
 
-  return newIndex;
-};
+  return newIndex
+}
 
 export const getNewIndex = (listSong: any[], currentIndex: number, director: string) => {
-  let newSongIndex;
+  let newSongIndex
 
   if (director === "next") {
-    newSongIndex = currentIndex + 1 >= listSong.length ? 0 : currentIndex + 1;
+    newSongIndex = currentIndex + 1 >= listSong.length ? 0 : currentIndex + 1
   } else {
-    newSongIndex = currentIndex - 1 < 0 ? listSong.length - 1 : currentIndex - 1;
+    newSongIndex = currentIndex - 1 < 0 ? listSong.length - 1 : currentIndex - 1
   }
 
-  return newSongIndex;
-};
+  return newSongIndex
+}
 
 export const getArraySongEmpty = (value: number) => {
   return Array(value).fill({
@@ -27,9 +27,9 @@ export const getArraySongEmpty = (value: number) => {
     duration: 0,
     title: "",
     artists: [],
-    album: { encodeId: "" }
-  });
-};
+    album: { encodeId: "" },
+  })
+}
 
 export const getArrayPlayListEmpty = (value: number) => {
   return Array(value).fill({
@@ -39,9 +39,9 @@ export const getArrayPlayListEmpty = (value: number) => {
     releaseDate: "",
     artists: [],
     sortDescription: "",
-    artistsNames: ""
-  });
-};
+    artistsNames: "",
+  })
+}
 
 export const getArrayVideoEmpty = (value: number) => {
   return Array(value).fill({
@@ -52,24 +52,24 @@ export const getArrayVideoEmpty = (value: number) => {
     artists: [],
     name: "",
     releaseDate: "",
-    duration: 0
-  });
-};
+    duration: 0,
+  })
+}
 
 export const getArrayArtistEmpty = (value: number) => {
   return Array(value).fill({
     link: "",
     name: "",
     thumbnailM: "",
-    totalFollow: 0
-  });
-};
+    totalFollow: 0,
+  })
+}
 export const getArrayRadioEmpty = (value: number) => {
   return Array(value).fill({
     encodeId: "",
     title: "",
     thumbnailM: "",
     description: "",
-    activeUsers: ""
-  });
-};
+    activeUsers: "",
+  })
+}

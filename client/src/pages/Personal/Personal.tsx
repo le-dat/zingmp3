@@ -14,16 +14,16 @@ import style from "./Personal.module.scss"
 const TABS = [
   {
     title: "BÀI HÁT",
-    to: `/${CA_NHAN}/${LIBRARY_SONG}`
+    to: `/${CA_NHAN}/${LIBRARY_SONG}`,
   },
   {
     title: "PLAY LIST",
-    to: `/${CA_NHAN}/${LIBRARY_PLAY_LIST}`
+    to: `/${CA_NHAN}/${LIBRARY_PLAY_LIST}`,
   },
   {
     title: "GẦN ĐÂY",
-    to: `/${CA_NHAN}/${GAN_DAY}`
-  }
+    to: `/${CA_NHAN}/${GAN_DAY}`,
+  },
 ]
 const Personal: React.FC = () => {
   useScrollTop()
@@ -35,7 +35,7 @@ const Personal: React.FC = () => {
       </Helmet>
 
       <div className={style.wrapper}>
-        <HeaderPlayList title='Thư viện' iconPlay />
+        <HeaderPlayList title="Thư viện" iconPlay />
         <div className={style.container}>
           <TabWrapper>
             {TABS.map((item, index) => (
@@ -46,7 +46,7 @@ const Personal: React.FC = () => {
           </TabWrapper>
 
           <div className={style.navigate}>
-            <ButtonTitle rounded primary to='#'>
+            <ButtonTitle rounded primary to="#">
               Yêu thích
             </ButtonTitle>
             <ButtonTitle rounded outline onClick={() => getToastWarn({ msg: "Chức năng này chưa hoàn thiện" })}>

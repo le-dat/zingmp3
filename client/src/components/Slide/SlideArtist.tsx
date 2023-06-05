@@ -1,10 +1,10 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from "react"
+import { Link } from "react-router-dom"
 
-import Image from "../Image";
-import { SlideWrapper } from "../Wrapper";
-import ARTISTS from "./data";
-import style from "./SlideArtist.module.scss";
+import Image from "../Image"
+import { SlideWrapper } from "../Wrapper"
+import ARTISTS from "./data"
+import style from "./SlideArtist.module.scss"
 
 const SlideArtist: React.FC = () => {
   return (
@@ -17,7 +17,7 @@ const SlideArtist: React.FC = () => {
         ))}
       </SlideWrapper>
     </div>
-  );
-};
+  )
+}
 
-export default SlideArtist;
+export default SlideArtist

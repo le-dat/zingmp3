@@ -1,1 +1,1 @@
-export { default } from "./ModalTheme";
+export { default } from "./ModalTheme"

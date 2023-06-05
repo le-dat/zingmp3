@@ -1,15 +1,15 @@
-import type { PayloadAction } from "@reduxjs/toolkit";
-import { createSlice } from "@reduxjs/toolkit";
+import type { PayloadAction } from "@reduxjs/toolkit"
+import { createSlice } from "@reduxjs/toolkit"
 
 interface SongIProps {
-  encodeId: string;
-  thumbnailM: string;
-  title: string;
-  artists: any[];
-  duration: number;
+  encodeId: string
+  thumbnailM: string
+  title: string
+  artists: any[]
+  duration: number
   album: {
-    encodeId: string;
-  };
+    encodeId: string
+  }
 }
 export const playListSlice = createSlice({
   name: "playListSong",
@@ -21,21 +21,21 @@ export const playListSlice = createSlice({
       title: "",
       artists: [],
       duration: 0,
-      album: { encodeId: "" }
+      album: { encodeId: "" },
     }),
-    isShowPlayListModal: false
+    isShowPlayListModal: false,
   },
   reducers: {
     setSongIndex: (state, action: PayloadAction<number>) => {
-      state.songIndex = action.payload;
+      state.songIndex = action.payload
     },
     setPlayList: (state, action: PayloadAction<SongIProps[]>) => {
-      state.playListSong = action.payload;
+      state.playListSong = action.payload
     },
     setShowPlayListModal: (state, action: PayloadAction<boolean>) => {
-      state.isShowPlayListModal = action.payload;
-    }
-  }
-});
-export const { setSongIndex, setPlayList, setShowPlayListModal } = playListSlice.actions;
-export default playListSlice.reducer;
+      state.isShowPlayListModal = action.payload
+    },
+  },
+})
+export const { setSongIndex, setPlayList, setShowPlayListModal } = playListSlice.actions
+export default playListSlice.reducer

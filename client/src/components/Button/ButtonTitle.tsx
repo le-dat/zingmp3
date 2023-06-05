@@ -37,9 +37,9 @@ const ButtonTitle = forwardRef<IProps, any>(
       vertical,
       children,
       customClass,
-      onClick
+      onClick,
     },
-    ref
+    ref,
   ) => {
     const buttonRef = useRef(ref)
     let Comp: any = "button"
@@ -53,9 +53,9 @@ const ButtonTitle = forwardRef<IProps, any>(
         [style.small]: small,
         [style.large]: large,
         [style.disable]: disable,
-        [style.vertical]: vertical
+        [style.vertical]: vertical,
       },
-      customClass
+      customClass,
     )
 
     const props = { to, href, onClick }
@@ -79,7 +79,7 @@ const ButtonTitle = forwardRef<IProps, any>(
         {rightIcon && <span className={style.rightIcon}>{rightIcon}</span>}
       </Comp>
     )
-  }
+  },
 )
 
 export default ButtonTitle

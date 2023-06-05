@@ -1,1 +1,1 @@
-export { default } from "./HeaderNavigation";
+export { default } from "./HeaderNavigation"

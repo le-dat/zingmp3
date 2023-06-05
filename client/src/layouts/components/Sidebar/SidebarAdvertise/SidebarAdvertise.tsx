@@ -1,12 +1,12 @@
-import React from "react";
-import clsx from "clsx";
+import React from "react"
+import clsx from "clsx"
 
-import style from "./SidebarAdvertise.module.scss";
+import style from "./SidebarAdvertise.module.scss"
 
 interface IProps {
-  title?: string;
-  description: string;
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  title?: string
+  description: string
+  onClick: React.MouseEventHandler<HTMLButtonElement>
 }
 const SidebarAdvertise: React.FC<IProps> = ({ title = "", description = "", onClick }) => {
   return (
@@ -18,7 +18,7 @@ const SidebarAdvertise: React.FC<IProps> = ({ title = "", description = "", onCl
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SidebarAdvertise;
+export default SidebarAdvertise

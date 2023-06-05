@@ -1,71 +1,70 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react"
 
-import Time from "../../../../components/Time";
-import { useChangeSong } from "../../../../hooks";
-import { useAppDispatch, useAppSelector } from "../../../../hooks/useRedux";
-import { setCurrentTime as setTime } from "../../../../redux/reducers/currentTimeSlice";
-import style from "./PlayerDuration.module.scss";
+import Time from "../../../../components/Time"
+import { useChangeSong } from "../../../../hooks"
+import { useAppDispatch, useAppSelector } from "../../../../hooks/useRedux"
+import { setCurrentTime as setTime } from "../../../../redux/reducers/currentTimeSlice"
+import style from "./PlayerDuration.module.scss"
 
 const PlayerDuration: React.FC = () => {
-  const dispatch = useAppDispatch();
-  const audioRef = useRef<HTMLAudioElement>(null);
-  const { isPlay, isLoop } = useAppSelector((state) => state.control);
-  const { currentTime } = useAppSelector((state) => state.currentTime);
-  const { volume } = useAppSelector((state) => state.volume);
-  const { encodeId, duration, source } = useAppSelector((state) => state.song);
-  const [isSeeking, setIsSeeKing] = useState<boolean>(false);
-  const [processValue, setProcessValue] = useState<number>(0);
-  const handleChangeSong = useChangeSong();
+  const dispatch = useAppDispatch()
+  const audioRef = useRef<HTMLAudioElement>(null)
+  const { isPlay, isLoop } = useAppSelector((state) => state.control)
+  const { currentTime } = useAppSelector((state) => state.currentTime)
+  const { volume } = useAppSelector((state) => state.volume)
+  const { encodeId, duration, source } = useAppSelector((state) => state.song)
+  const [isSeeking, setIsSeeKing] = useState<boolean>(false)
+  const [processValue, setProcessValue] = useState<number>(0)
+  const handleChangeSong = useChangeSong()
 
   // set play audio
   useEffect(() => {
-    if (isPlay) handlePlay();
-    else handlePause();
-  }, [isPlay, encodeId]);
+    if (isPlay) handlePlay()
+    else handlePause()
+  }, [isPlay, encodeId])
 
   // set volume audio
   useEffect(() => {
-    if (audioRef?.current) audioRef.current.volume = volume / 100;
-  }, [volume]);
+    if (audioRef?.current) audioRef.current.volume = volume / 100
+  }, [volume])
 
-  const handlePlay = () => audioRef.current?.play();
-  const handlePause = () => audioRef.current?.pause();
+  const handlePlay = () => audioRef.current?.play()
+  const handlePause = () => audioRef.current?.pause()
 
   const handleTimeUpdate = () => {
     if (audioRef.current) {
-      dispatch(setTime(audioRef.current.currentTime));
+      dispatch(setTime(audioRef.current.currentTime))
     }
-  };
+  }
   const handleChangeProgress = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setProcessValue(Number.parseInt(e.target.value));
-  };
+    setProcessValue(Number.parseInt(e.target.value))
+  }
   const handleSeekTime = (e: any) => {
-    setIsSeeKing(false);
+    setIsSeeKing(false)
     if (audioRef.current) {
-      const seekTime = (Number.parseInt(e.target.value) * audioRef.current.duration) / 100;
-      audioRef.current.currentTime = seekTime;
+      const seekTime = (Number.parseInt(e.target.value) * audioRef.current.duration) / 100
+      audioRef.current.currentTime = seekTime
     }
-  };
+  }
   const progressWidth = useMemo(() => {
     if (audioRef.current) {
       const width = isSeeking
         ? processValue
-        : Math.floor((audioRef.current.currentTime / audioRef.current.duration) * 100) || 0;
-      return width;
+        : Math.floor((audioRef.current.currentTime / audioRef.current.duration) * 100) || 0
+      return width
     }
-  }, [isSeeking, currentTime, processValue]);
+  }, [isSeeking, currentTime, processValue])
 
   const handleSongEnd = () => {
-    if (isLoop) handlePlay();
-    handleChangeSong("next");
-  };
+    return isLoop ? handlePlay() : handleChangeSong("next")
+  }
 
   return (
     <div className={style.playerBar}>
       <Time duration={currentTime} />
       <div className={style.progress}>
         <input
-          type='range'
+          type="range"
           step={1}
           min={0}
           max={100}
@@ -84,7 +83,7 @@ const PlayerDuration: React.FC = () => {
 
       <audio
         ref={audioRef}
-        id='audio'
+        id="audio"
         src={source}
         loop={isLoop}
         autoPlay={isPlay}
@@ -94,7 +93,7 @@ const PlayerDuration: React.FC = () => {
         onEnded={handleSongEnd}
       />
     </div>
-  );
-};
+  )
+}
 
-export default PlayerDuration;
+export default PlayerDuration

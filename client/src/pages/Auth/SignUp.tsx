@@ -21,7 +21,7 @@ const SignUp: React.FC = () => {
   const { signUp, signInWithGoogle, currentUser } = useAuthContext()
   const [values, setValues] = useState<FormIProps>({
     email: "",
-    password: ""
+    password: "",
   })
 
   useEffect(() => {
@@ -47,7 +47,7 @@ const SignUp: React.FC = () => {
   return (
     <div className={clsx("is-center", style.wrapper)}>
       <PopperWrapper customClass={style.container} onClick={(e) => e.stopPropagation()}>
-        <TabWrapper customClass='is-center'>
+        <TabWrapper customClass="is-center">
           <TabNav small to={`/${LOGIN}`}>
             Đăng nhập
           </TabNav>
@@ -60,19 +60,19 @@ const SignUp: React.FC = () => {
           <form className={clsx("is-center", style.vertical)} onSubmit={(e) => handleSubmit(e)}>
             <input
               required
-              type='email'
-              name='email'
+              type="email"
+              name="email"
               className={style.input}
-              placeholder='Nhập email của bạn'
+              placeholder="Nhập email của bạn"
               value={values.email}
               onChange={(e) => setValues({ ...values, [e.target.name]: e.target.value })}
             />
             <input
               required
-              type='password'
-              name='password'
+              type="password"
+              name="password"
               className={style.input}
-              placeholder='Nhập password của bạn'
+              placeholder="Nhập password của bạn"
               value={values.password}
               onChange={(e) => setValues({ ...values, [e.target.name]: e.target.value })}
             />
@@ -83,7 +83,7 @@ const SignUp: React.FC = () => {
 
           <div className={clsx("is-center", style.vertical)}>
             <div className={clsx("is-center", style.separate)}>hoặc</div>
-            <GoogleButton type='light' label='Đăng kí bằng Google' onClick={() => signInWithGoogle()} />
+            <GoogleButton type="light" label="Đăng kí bằng Google" onClick={() => signInWithGoogle()} />
           </div>
         </div>
       </PopperWrapper>

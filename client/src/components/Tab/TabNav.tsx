@@ -1,15 +1,15 @@
-import clsx from "clsx";
-import React from "react";
-import { NavLink } from "react-router-dom";
+import clsx from "clsx"
+import React from "react"
+import { NavLink } from "react-router-dom"
 
-import style from "./TabNav.module.scss";
+import style from "./TabNav.module.scss"
 
 interface IProps {
-  to: string;
-  children: React.ReactNode;
-  small?: boolean;
-  customClass?: string;
-  onClick?: () => void;
+  to: string
+  children: React.ReactNode
+  small?: boolean
+  customClass?: string
+  onClick?: () => void
 }
 
 const TabNav: React.FC<IProps> = ({ to, small, children, customClass, onClick }) => {
@@ -21,7 +21,7 @@ const TabNav: React.FC<IProps> = ({ to, small, children, customClass, onClick })
     >
       {children}
     </NavLink>
-  );
-};
+  )
+}
 
-export default TabNav;
+export default TabNav

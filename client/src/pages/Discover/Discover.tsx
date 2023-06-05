@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from "react";
-import { Helmet } from "react-helmet-async";
-import HeaderPlayList from "../../components/HeaderPlayList";
+import React, { useEffect, useState } from "react"
+import { Helmet } from "react-helmet-async"
+import HeaderPlayList from "../../components/HeaderPlayList"
 
-import { PlayListAlbum } from "../../components/PlayList";
-import { SlideArtist, SlideBanner, SlideRadio } from "../../components/Slide";
-import { useScrollTop } from "../../hooks";
-import * as services from "../../services";
-import { getArrayPlayListEmpty } from "../../utils/song";
-import { SectionIProps } from "../interface";
-import style from "./Discover.module.scss";
+import { PlayListAlbum } from "../../components/PlayList"
+import { SlideArtist, SlideBanner, SlideRadio } from "../../components/Slide"
+import { useScrollTop } from "../../hooks"
+import * as services from "../../services"
+import { getArrayPlayListEmpty } from "../../utils/song"
+import { SectionIProps } from "../interface"
+import style from "./Discover.module.scss"
 
 interface ResponseIProps {
-  items: SectionIProps[];
+  items: SectionIProps[]
 }
 const Discover: React.FC = () => {
-  useScrollTop();
+  useScrollTop()
   const [data, setData] = useState<SectionIProps[]>([
     {
       sectionType: "banner",
@@ -26,16 +26,16 @@ const Discover: React.FC = () => {
       items: getArrayPlayListEmpty(20),
       title: "",
     },
-  ]);
+  ])
 
   useEffect(() => {
     const fetchApi = async () => {
-      const res: ResponseIProps = await services.getHome();
-      console.log(res);
-      setData(res.items);
-    };
-    fetchApi();
-  }, []);
+      const res: ResponseIProps = await services.getHome()
+      console.log(res)
+      setData(res.items)
+    }
+    fetchApi()
+  }, [])
 
   return (
     <>
@@ -71,7 +71,7 @@ const Discover: React.FC = () => {
             </div>
           ) : item.sectionType === "artistSpotlight" ? (
             <div key={`artistSpotlight-${i}`} className={style.artistSpotlight}>
-              <HeaderPlayList title='Nghệ sĩ nổi bật' />
+              <HeaderPlayList title="Nghệ sĩ nổi bật" />
               <SlideArtist />
             </div>
           ) : item.sectionType === "event" ? (
@@ -82,7 +82,7 @@ const Discover: React.FC = () => {
         )}
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Discover;
+export default Discover

@@ -35,11 +35,11 @@ const WeekChartItem: React.FC<IProps> = ({ country = "vn", items = [], customCla
                     iconHeart
                     {...item}
                   />
-                )
+                ),
             )}
         </div>
 
-        <div className='is-center'>
+        <div className="is-center">
           <ButtonTitle outline rounded to={link}>
             Xem tất cả
           </ButtonTitle>

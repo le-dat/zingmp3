@@ -1,18 +1,18 @@
-import clsx from "clsx";
-import React from "react";
+import clsx from "clsx"
+import React from "react"
 
-import { CardIProps } from "../../interface";
-import { CardVideo } from "../Card";
-import HeaderPlayList from "../HeaderPlayList";
-import style from "./PlayList.module.scss";
+import { CardIProps } from "../../interface"
+import { CardVideo } from "../Card"
+import HeaderPlayList from "../HeaderPlayList"
+import style from "./PlayList.module.scss"
 
 interface IProps {
-  data: CardIProps[];
-  title?: string;
+  data: CardIProps[]
+  title?: string
 }
 const Videos: React.FC<IProps> = ({ data, title = "Gợi ý cho bạn" }) => {
   return (
-    <div className='grid'>
+    <div className="grid">
       <HeaderPlayList title={title} small customClass={style.title} />
       <div className={clsx("row", style.list)}>
         {data.map((item, i) => (
@@ -22,7 +22,7 @@ const Videos: React.FC<IProps> = ({ data, title = "Gợi ý cho bạn" }) => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Videos;
+export default Videos

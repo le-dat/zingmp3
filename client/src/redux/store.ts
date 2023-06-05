@@ -22,8 +22,8 @@ export const store = configureStore({
     skeleton: skeletonReducer,
     song: songReducer,
     theme: themeReducer,
-    volume: volumeReducer
-  }
+    volume: volumeReducer,
+  },
 })
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

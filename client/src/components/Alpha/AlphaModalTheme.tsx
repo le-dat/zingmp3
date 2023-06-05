@@ -1,27 +1,27 @@
-import clsx from "clsx";
-import React from "react";
-import { useAppDispatch } from "../../hooks/useRedux";
-import { changeTheme, setShowThemeModal } from "../../redux/reducers/themeSlice";
-import { getToastWarn } from "../../utils/toast";
+import clsx from "clsx"
+import React from "react"
+import { useAppDispatch } from "../../hooks/useRedux"
+import { changeTheme, setShowThemeModal } from "../../redux/reducers/themeSlice"
+import { getToastWarn } from "../../utils/toast"
 
-import { ButtonTitle } from "../Button";
-import style from "./AlphaModalTheme.module.scss";
+import { ButtonTitle } from "../Button"
+import style from "./AlphaModalTheme.module.scss"
 
 interface IProps {
-  listThemeIndex: number;
-  themeIndex: number;
-  customClass?: string;
+  listThemeIndex: number
+  themeIndex: number
+  customClass?: string
 }
 const AlphaModalTheme: React.FC<IProps> = ({ listThemeIndex, themeIndex, customClass }) => {
-  const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch()
 
   const handleApply = () => {
-    dispatch(changeTheme({ listThemeIndex, themeIndex }));
-    dispatch(setShowThemeModal(false));
-  };
+    dispatch(changeTheme({ listThemeIndex, themeIndex }))
+    dispatch(setShowThemeModal(false))
+  }
   const handleTest = () => {
-    getToastWarn({ msg: "Tính năng này chưa hoàn thiện !" });
-  };
+    getToastWarn({ msg: "Tính năng này chưa hoàn thiện !" })
+  }
 
   return (
     <div className={clsx(style.wrapper, customClass)}>
@@ -32,7 +32,7 @@ const AlphaModalTheme: React.FC<IProps> = ({ listThemeIndex, themeIndex, customC
         Xem trước
       </ButtonTitle>
     </div>
-  );
-};
+  )
+}
 
-export default AlphaModalTheme;
+export default AlphaModalTheme

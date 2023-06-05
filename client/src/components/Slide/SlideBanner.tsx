@@ -1,45 +1,45 @@
-import clsx from "clsx";
-import React, { useEffect, useRef, useState } from "react";
-import { GrNext, GrPrevious } from "react-icons/gr";
-import { Link } from "react-router-dom";
+import clsx from "clsx"
+import React, { useEffect, useRef, useState } from "react"
+import { GrNext, GrPrevious } from "react-icons/gr"
+import { Link } from "react-router-dom"
 
-import { BannerIProps } from "../../interface";
-import { formatLinkBanner } from "../../utils/common";
-import Image from "../Image";
-import style from "./SlideBanner.module.scss";
+import { BannerIProps } from "../../interface"
+import { formatLinkBanner } from "../../utils/common"
+import Image from "../Image"
+import style from "./SlideBanner.module.scss"
 
 interface IProps {
-  data: BannerIProps[];
+  data: BannerIProps[]
 }
 const SlideBanner: React.FC<IProps> = ({ data = Array(10).fill({}) }) => {
-  const [currentImage, setCurrentImage] = useState<number>(0);
-  const timeRef = useRef<any>(null);
+  const [currentImage, setCurrentImage] = useState<number>(0)
+  const timeRef = useRef<any>(null)
 
   const handleNext = () => {
     if (currentImage >= data.length - 1) {
-      setCurrentImage(0);
+      setCurrentImage(0)
     } else {
-      setCurrentImage(currentImage + 1);
+      setCurrentImage(currentImage + 1)
     }
-  };
+  }
 
   const handlePrev = () => {
     if (currentImage === 0) {
-      setCurrentImage(data.length - 1);
+      setCurrentImage(data.length - 1)
     } else {
-      setCurrentImage(currentImage - 1);
+      setCurrentImage(currentImage - 1)
     }
-  };
+  }
 
   useEffect(() => {
-    timeRef.current = setTimeout(() => handleNext(), 4000);
+    timeRef.current = setTimeout(() => handleNext(), 4000)
 
     return () => {
       if (timeRef.current) {
-        clearTimeout(timeRef.current);
+        clearTimeout(timeRef.current)
       }
-    };
-  }, [currentImage]);
+    }
+  }, [currentImage])
 
   return (
     <div className={clsx("is-center", style.slider)}>
@@ -64,7 +64,7 @@ const SlideBanner: React.FC<IProps> = ({ data = Array(10).fill({}) }) => {
         </Link>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default SlideBanner;
+export default SlideBanner

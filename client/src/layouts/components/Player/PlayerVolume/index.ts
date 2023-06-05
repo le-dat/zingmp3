@@ -1,1 +1,1 @@
-export { default } from "./PlayerVolume";
+export { default } from "./PlayerVolume"

@@ -13,12 +13,12 @@
 - Play, pause, skip to the next or previous music track.
 - Adjust the volume and seek through the audio.
 - View the playlist of songs.
-- View the lyrics of a song.
 - Watch videos.
 - Search for songs or artists.
 - Change the background.
 - Login or register using email or Google.
 - Add or remove songs from favorites.
+- To view real-time lyrics for audio,
 
 ### Server
 

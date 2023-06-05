@@ -1,24 +1,24 @@
-import HeadlessTippy from "@tippyjs/react/headless";
-import clsx from "clsx";
-import React, { useState } from "react";
-import { AiOutlineRight } from "react-icons/ai";
-import { BiBlock, BiShare } from "react-icons/bi";
-import { BsFacebook, BsFillFileMusicFill, BsMusicNoteList, BsThreeDots } from "react-icons/bs";
-import { FiDownload, FiLink } from "react-icons/fi";
-import { GiMicrophone } from "react-icons/gi";
-import { HiOutlineCodeBracket } from "react-icons/hi2";
-import { IoIosAddCircleOutline } from "react-icons/io";
-import { MdAddBox, MdOutlineModeComment } from "react-icons/md";
-import { SiZalo } from "react-icons/si";
+import HeadlessTippy from "@tippyjs/react/headless"
+import clsx from "clsx"
+import React, { useState } from "react"
+import { AiOutlineRight } from "react-icons/ai"
+import { BiBlock, BiShare } from "react-icons/bi"
+import { BsFacebook, BsFillFileMusicFill, BsMusicNoteList, BsThreeDots } from "react-icons/bs"
+import { FiDownload, FiLink } from "react-icons/fi"
+import { GiMicrophone } from "react-icons/gi"
+import { HiOutlineCodeBracket } from "react-icons/hi2"
+import { IoIosAddCircleOutline } from "react-icons/io"
+import { MdAddBox, MdOutlineModeComment } from "react-icons/md"
+import { SiZalo } from "react-icons/si"
 
-import { useAppDispatch } from "../../hooks/useRedux";
-import { setShowLyricSongModal } from "../../redux/reducers/lyricSlice";
-import { ButtonIcon, ButtonTitle } from "../Button";
-import Image from "../Image";
-import { SubTitle, Title } from "../Info";
-import Menu from "../Menu/Menu";
-import { PopperWrapper } from "../Wrapper";
-import style from "./BtnThreeDotMedia.module.scss";
+import { useAppDispatch } from "../../hooks/useRedux"
+import { setShowLyricSongModal } from "../../redux/reducers/lyricSlice"
+import { ButtonIcon, ButtonTitle } from "../Button"
+import Image from "../Image"
+import { SubTitle, Title } from "../Info"
+import Menu from "../Menu/Menu"
+import { PopperWrapper } from "../Wrapper"
+import style from "./BtnThreeDotMedia.module.scss"
 
 const MENU_MEDIA = [
   {
@@ -53,15 +53,15 @@ const MENU_MEDIA = [
     ],
     rightIcon: <AiOutlineRight />,
   },
-];
+]
 interface IProps {
-  title: string;
-  artists?: any[];
-  artistsNames?: string;
-  thumbnailM: string;
-  disable?: boolean;
-  tooltip?: string;
-  customClass?: string;
+  title: string
+  artists?: any[]
+  artistsNames?: string
+  thumbnailM: string
+  disable?: boolean
+  tooltip?: string
+  customClass?: string
 }
 const BtnThreeDotMedia: React.FC<IProps> = ({
   tooltip = "Xem thêm",
@@ -72,12 +72,12 @@ const BtnThreeDotMedia: React.FC<IProps> = ({
   artistsNames = "",
   thumbnailM = "",
 }) => {
-  const dispatch = useAppDispatch();
-  const [showOption, setShowOption] = useState<boolean>(false);
+  const dispatch = useAppDispatch()
+  const [showOption, setShowOption] = useState<boolean>(false)
 
   const handleToggleLyric = () => {
-    dispatch(setShowLyricSongModal(true));
-  };
+    dispatch(setShowLyricSongModal(true))
+  }
 
   const Media: React.FC = () => {
     return (
@@ -94,8 +94,8 @@ const BtnThreeDotMedia: React.FC<IProps> = ({
           )}
         </div>
       </div>
-    );
-  };
+    )
+  }
   const GroupButtonSong: React.FC = () => {
     return (
       <div className={style.groupBtnMenu}>
@@ -116,8 +116,8 @@ const BtnThreeDotMedia: React.FC<IProps> = ({
           </ButtonTitle>
         </div>
       </div>
-    );
-  };
+    )
+  }
   const renderReview = () => {
     return (
       <div className={style.songInfo} tabIndex={-1}>
@@ -127,19 +127,19 @@ const BtnThreeDotMedia: React.FC<IProps> = ({
           <Menu data={MENU_MEDIA} />
         </PopperWrapper>
       </div>
-    );
-  };
+    )
+  }
 
   const handleHideOption = () => {
-    setShowOption(false);
-  };
+    setShowOption(false)
+  }
   return (
     // Using a wrapper <div> or <span> tag around the reference element solves this by creating a new parentNode context.
     <span>
       <HeadlessTippy
         interactive
         visible={showOption}
-        placement='top-start'
+        placement="top-start"
         offset={[10, 30]}
         render={() => renderReview()}
         onClickOutside={handleHideOption}
@@ -156,7 +156,7 @@ const BtnThreeDotMedia: React.FC<IProps> = ({
         </span>
       </HeadlessTippy>
     </span>
-  );
-};
+  )
+}
 
-export default BtnThreeDotMedia;
+export default BtnThreeDotMedia

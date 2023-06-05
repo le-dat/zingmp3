@@ -24,9 +24,9 @@ export const songSlice = createSlice({
     duration: 0,
     streamingStatus: 1,
     album: {
-      encodeId: ""
+      encodeId: "",
     },
-    source: ""
+    source: "",
   },
   reducers: {
     setInfoSong: (state, action: PayloadAction<IProps>) => {
@@ -42,8 +42,8 @@ export const songSlice = createSlice({
     },
     setSource: (state, action: PayloadAction<string>) => {
       state.source = action.payload
-    }
-  }
+    },
+  },
 })
 export const { setInfoSong, setSource } = songSlice.actions
 export default songSlice.reducer

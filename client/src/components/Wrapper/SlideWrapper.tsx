@@ -1,21 +1,21 @@
-import React, { useRef } from "react";
-import { GrFormNext, GrFormPrevious } from "react-icons/gr";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick-theme.css";
-import "slick-carousel/slick/slick.css";
+import React, { useRef } from "react"
+import { GrFormNext, GrFormPrevious } from "react-icons/gr"
+import Slider from "react-slick"
+import "slick-carousel/slick/slick-theme.css"
+import "slick-carousel/slick/slick.css"
 
-import style from "./SlideWrapper.module.scss";
+import style from "./SlideWrapper.module.scss"
 
 interface IProps {
-  pc?: number;
-  pcLow?: number;
-  tablet?: number;
-  mobile?: number;
-  children: React.ReactNode;
+  pc?: number
+  pcLow?: number
+  tablet?: number
+  mobile?: number
+  children: React.ReactNode
 }
 
 const SlideWrapper: React.FC<IProps> = ({ pc = 7, pcLow = 6, tablet = 4, mobile = 3, children }) => {
-  const slideRef = useRef<any>(null);
+  const slideRef = useRef<any>(null)
 
   const settings = {
     autoplay: true,
@@ -49,7 +49,7 @@ const SlideWrapper: React.FC<IProps> = ({ pc = 7, pcLow = 6, tablet = 4, mobile 
         },
       },
     ],
-  };
+  }
   return (
     <div className={style.wrapper}>
       <Slider ref={slideRef} className={style.slider} {...settings}>
@@ -62,7 +62,7 @@ const SlideWrapper: React.FC<IProps> = ({ pc = 7, pcLow = 6, tablet = 4, mobile 
         <GrFormNext />
       </button>
     </div>
-  );
-};
+  )
+}
 
-export default SlideWrapper;
+export default SlideWrapper

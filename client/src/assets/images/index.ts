@@ -1,19 +1,19 @@
 const logo = {
   light: require("./logo/logo-light.svg").default,
   dark: require("./logo/logo-dark.svg").default,
-};
+}
 
 const icon = {
   zingMP3: require("./icon/icon-zing-mp3.svg").default,
   play: require("./icon/icon-play.svg").default,
   playing: require("./icon/icon-playing.gif"),
-};
+}
 const background = {
   zingChart: require("./background/bg-zing-chart.jpg"),
   weekChart: require("./background/bg-week-chart.jpg"),
   emptyAlbumDark: require("./background/empty-album-dark.png"),
   notFound: require("./background/not-found.jpg"),
-};
+}
 
 const artists = {
   chiDan: require("./artists/chi-dan.png"),
@@ -27,7 +27,7 @@ const artists = {
   mrSiro: require("./artists/mr-siro.png"),
   onlyC: require("./artists/onlyc.png"),
   trinhThanhBinh: require("./artists/trinh-thanh-binh.png"),
-};
+}
 
 const theme = {
   eiffel: require("./theme/eiffel.jpg"),
@@ -50,7 +50,7 @@ const theme = {
   girl5: require("./theme/girl5.jpg"),
   girl6: require("./theme/girl6.jpg"),
   girl7: require("./theme/girl7.jpg"),
-};
+}
 
 const themeThumb = {
   blueLight: require("./theme-thumb/blue-light.jpg"),
@@ -87,14 +87,14 @@ const themeThumb = {
   girl5: require("./theme-thumb/girl5.png"),
   girl6: require("./theme-thumb/girl6.png"),
   girl7: require("./theme-thumb/girl7.png"),
-};
+}
 
 const musicKind = {
   kind1: require("./music-kind/kind1.jpg"),
   kind2: require("./music-kind/kind2.jpg"),
   kind3: require("./music-kind/kind3.jpg"),
   kind4: require("./music-kind/kind4.jpg"),
-};
+}
 
 const images = {
   avatar: require("./avatar.jpg"),
@@ -106,6 +106,6 @@ const images = {
   theme,
   themeThumb,
   musicKind,
-};
+}
 
-export default images;
+export default images

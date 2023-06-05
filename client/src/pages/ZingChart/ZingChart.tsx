@@ -22,12 +22,12 @@ const ZingChart: React.FC = () => {
   const [RTChart, setRTChart] = useState<RTChartIProps>({
     chart: { items: {}, times: [{ hour: "0" }] },
     items: getArraySongEmpty(10),
-    promotes: []
+    promotes: [],
   })
   const [weekChart, setWeekChart] = useState<WeekChartIProps[]>([
     { country: "vn", items: getArraySongEmpty(5) },
     { country: "us", items: getArraySongEmpty(5) },
-    { country: "korean", items: getArraySongEmpty(5) }
+    { country: "korean", items: getArraySongEmpty(5) },
   ])
 
   useEffect(() => {
@@ -46,13 +46,13 @@ const ZingChart: React.FC = () => {
       </Helmet>
 
       <div className={clsx("is-relative-1", style.wrapper)}>
-        <AlphaPage src={images.background.zingChart} alt='bg-zing-chart' />
+        <AlphaPage src={images.background.zingChart} alt="bg-zing-chart" />
 
         <div className={clsx("is-relative-10", style.zingChart)}>
-          <HeaderPlayList title='#zingchart' iconPlay customClass={style.header} />
+          <HeaderPlayList title="#zingchart" iconPlay customClass={style.header} />
           <LineChart chart={RTChart.chart} items={RTChart.items} />
 
-          <div className='mar-b-20'>
+          <div className="mar-b-20">
             {RTChart?.promotes && (
               <Media
                 prefixPromote
@@ -74,7 +74,7 @@ const ZingChart: React.FC = () => {
                     iconThreeDots
                     {...item}
                   />
-                )
+                ),
             )}
           </div>
 
@@ -88,11 +88,11 @@ const ZingChart: React.FC = () => {
         </div>
 
         <div className={clsx("is-relative-1", style.weekChart)}>
-          <AlphaPage src={images.background.weekChart} alt='bg-zing-chart' />
+          <AlphaPage src={images.background.weekChart} alt="bg-zing-chart" />
 
-          <div className='is-relative-10'>
-            <HeaderPlayList title='Bảng Xếp Hạng Tuần' customClass={style.header} />
-            <div className='grid'>
+          <div className="is-relative-10">
+            <HeaderPlayList title="Bảng Xếp Hạng Tuần" customClass={style.header} />
+            <div className="grid">
               <div className={clsx("row", style.list)}>
                 {weekChart?.map((item, i) => (
                   <WeekChartItem key={`${item?.country}-${i}`} customClass={clsx("col l-4 m-12 c-12")} {...item} />

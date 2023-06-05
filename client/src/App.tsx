@@ -25,7 +25,7 @@ import {
   UPDATE,
   VIDEO,
   ZING_CHART,
-  ZING_CHART_WEEK
+  ZING_CHART_WEEK,
 } from "./constants"
 import DefaultLayout from "./layouts/DefaultLayout/DefaultLayout"
 import {
@@ -48,7 +48,7 @@ import {
   Update,
   Video,
   ZingChart,
-  ZingChartWeek
+  ZingChartWeek,
 } from "./pages"
 
 function App() {

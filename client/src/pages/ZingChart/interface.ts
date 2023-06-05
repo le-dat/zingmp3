@@ -1,21 +1,21 @@
 export interface WeekChartIProps {
-  country: string;
+  country: string
   items: any[]
 }
 
 export interface ChartIProps {
-  items: any;
-  times: Array<{ hour: string | number }>;
+  items: any
+  times: Array<{ hour: string | number }>
 }
 
 export interface RTChartIProps {
-  chart: ChartIProps;
+  chart: ChartIProps
   items: any[]
   promotes?: any[]
 }
 
 export interface LineChartIProps {
-  chart: ChartIProps;
-  customClass?: string;
+  chart: ChartIProps
+  customClass?: string
   items?: any[]
 }

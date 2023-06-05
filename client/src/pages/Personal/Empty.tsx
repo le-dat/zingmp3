@@ -1,9 +1,9 @@
-import clsx from "clsx";
-import React from "react";
+import clsx from "clsx"
+import React from "react"
 
-import images from "../../assets/images";
-import Image from "../../components/Image";
-import style from "./Personal.module.scss";
+import images from "../../assets/images"
+import Image from "../../components/Image"
+import style from "./Personal.module.scss"
 
 const Empty: React.FC = () => {
   return (
@@ -11,7 +11,7 @@ const Empty: React.FC = () => {
       <Image src={images.background.emptyAlbumDark} />
       <div className={style.text}>Danh sách trống</div>
     </div>
-  );
-};
+  )
+}
 
-export default Empty;
+export default Empty

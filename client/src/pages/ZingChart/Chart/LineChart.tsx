@@ -6,7 +6,7 @@ import {
   LineElement,
   PointElement,
   Title,
-  Tooltip
+  Tooltip,
 } from "chart.js"
 import clsx from "clsx"
 import React from "react"
@@ -29,31 +29,31 @@ const LineChart: React.FC<LineChartIProps> = ({ chart, customClass = "", items =
     datasets: keysChart.map((item, index) => ({
       label: items[index]?.title || keysChart[index],
       data: chart?.items[keysChart[index]]?.map(
-        (item: { time: number; hour: string | number; counter: string | number }) => item.counter
+        (item: { time: number; hour: string | number; counter: string | number }) => item.counter,
       ),
       borderColor: borderColor[index],
-      backgroundColor: "#fff"
-    }))
+      backgroundColor: "#fff",
+    })),
   }
 
   const options = {
     responsive: true,
     plugins: {
       legend: {
-        position: "top" as const
-      }
+        position: "top" as const,
+      },
       // title: {
       //   display: true,
       //   text: "#zingchart",
       // },
-    }
+    },
   }
 
   return (
     <SkeletonTheme baseColor={baseColor} highlightColor={highlightColor}>
       <div className={clsx(style.wrapper, customClass)}>
         {chart.times.length > 5 ? (
-          <Line datasetIdKey='id' options={options} data={data} />
+          <Line datasetIdKey="id" options={options} data={data} />
         ) : (
           <Skeleton height={"100%"} />
         )}

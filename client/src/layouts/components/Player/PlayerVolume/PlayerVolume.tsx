@@ -16,7 +16,7 @@ const PlayerVolume: React.FC = () => {
     dispatch(setVolume(Number.parseInt(e.target.value)))
   }
 
-  const handleClickVolumeButton = () => {
+  const handleMute = () => {
     const volumeValue = volume > 0 ? 0 : preVolume.current
     if (volume > 0) {
       preVolume.current = volume
@@ -31,12 +31,12 @@ const PlayerVolume: React.FC = () => {
         backgroundSmall
         rounded
         customClass={clsx(style.icon, { [style.active]: volume !== 0 })}
-        onClick={handleClickVolumeButton}
+        onClick={handleMute}
       />
       <div className={style.volume}>
         <div className={style.progress}>
           <input
-            type='range'
+            type="range"
             step={1}
             min={0}
             max={100}

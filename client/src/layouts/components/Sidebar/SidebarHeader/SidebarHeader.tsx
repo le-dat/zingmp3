@@ -13,8 +13,8 @@ const SidebarHeader = () => {
   return (
     <div className={clsx(style.header, { [style.isExpanded]: isExpanded })}>
       <Link to={KHAM_PHA} className={clsx(style.headerLinks)}>
-        <Image src={images.icon.zingMP3} alt='zingmp3' className={clsx(style.icon)} />
-        <Image src={images.logo.dark} alt='Zing MP3' className={clsx(style.logo)} />
+        <Image src={images.icon.zingMP3} alt="zingmp3" className={clsx(style.icon)} />
+        <Image src={images.logo.dark} alt="Zing MP3" className={clsx(style.logo)} />
       </Link>
     </div>
   )

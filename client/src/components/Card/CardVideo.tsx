@@ -1,21 +1,21 @@
-import clsx from "clsx";
-import React from "react";
-import { Link } from "react-router-dom";
+import clsx from "clsx"
+import React from "react"
+import { Link } from "react-router-dom"
 
-import { MV, VIDEO } from "../../constants";
-import { AlphaCard } from "../Alpha";
-import Image from "../Image";
-import { SubTitle, Title } from "../Info";
-import Time from "../Time";
-import style from "./CardVideo.module.scss";
+import { MV, VIDEO } from "../../constants"
+import { AlphaCard } from "../Alpha"
+import Image from "../Image"
+import { SubTitle, Title } from "../Info"
+import Time from "../Time"
+import style from "./CardVideo.module.scss"
 
 interface IProps {
-  title: string;
-  encodeId: string;
-  thumbnailM: string;
-  artists: any[];
-  duration: number;
-  customClass?: string;
+  title: string
+  encodeId: string
+  thumbnailM: string
+  artists: any[]
+  duration: number
+  customClass?: string
 }
 const CardVideo: React.FC<IProps> = ({ encodeId, title, thumbnailM, artists, duration, customClass }) => {
   return (
@@ -43,7 +43,7 @@ const CardVideo: React.FC<IProps> = ({ encodeId, title, thumbnailM, artists, dur
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default CardVideo;
+export default CardVideo

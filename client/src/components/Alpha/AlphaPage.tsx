@@ -1,12 +1,12 @@
-import React from "react";
+import React from "react"
 
-import Image from "../Image";
-import style from "./AlphaPage.module.scss";
+import Image from "../Image"
+import style from "./AlphaPage.module.scss"
 
 interface IProps {
-  src: string;
-  alt?: string;
-  customClass?: string;
+  src: string
+  alt?: string
+  customClass?: string
 }
 const AlphaPage: React.FC<IProps> = ({ src, alt = "", customClass = "" }) => {
   return (
@@ -15,7 +15,7 @@ const AlphaPage: React.FC<IProps> = ({ src, alt = "", customClass = "" }) => {
       <div className={style.bgBlur} />
       <div className={style.bgAlpha} />
     </div>
-  );
-};
+  )
+}
 
-export default AlphaPage;
+export default AlphaPage

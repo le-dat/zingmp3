@@ -1,35 +1,35 @@
-import clsx from "clsx";
-import React, { useEffect, useState } from "react";
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-import { Link } from "react-router-dom";
+import clsx from "clsx"
+import React, { useEffect, useState } from "react"
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton"
+import { Link } from "react-router-dom"
 
-import { useAppSelector } from "../../../hooks/useRedux";
-import * as services from "../../../services";
-import { formatFollower } from "../../../utils/common";
-import { AlphaMedia } from "../../Alpha";
-import { BtnFollow } from "../../BtnAction";
-import { CardSong } from "../../Card";
-import Image from "../../Image";
-import style from "./MediaPreview.module.scss";
+import { useAppSelector } from "../../../hooks/useRedux"
+import * as services from "../../../services"
+import { formatFollower } from "../../../utils/common"
+import { AlphaMedia } from "../../Alpha"
+import { BtnFollow } from "../../BtnAction"
+import { CardSong } from "../../Card"
+import Image from "../../Image"
+import style from "./MediaPreview.module.scss"
 
 interface InfoIProps {
-  thumbnail: string;
-  thumbnailM: string;
-  realname: string;
-  link: string;
-  totalFollow: number;
-  follow: number;
-  sortBiography: string;
-  biography: string;
-  sections: Array<any>;
+  thumbnail: string
+  thumbnailM: string
+  realname: string
+  link: string
+  totalFollow: number
+  follow: number
+  sortBiography: string
+  biography: string
+  sections: Array<any>
 }
 interface IProps {
   artist: {
-    alias: string;
-  };
+    alias: string
+  }
 }
 const MediaPreview: React.FC<IProps> = ({ artist }) => {
-  const { baseColor, highlightColor } = useAppSelector((state) => state.skeleton);
+  const { baseColor, highlightColor } = useAppSelector((state) => state.skeleton)
   const [info, setInfo] = useState<InfoIProps>({
     thumbnail: "",
     thumbnailM: "",
@@ -40,16 +40,16 @@ const MediaPreview: React.FC<IProps> = ({ artist }) => {
     sortBiography: "",
     biography: "",
     sections: Array(2).fill({ items: Array(4).fill({}) }),
-  });
+  })
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await services.getArtist(artist?.alias);
-      setInfo(res);
-    };
+      const res = await services.getArtist(artist?.alias)
+      setInfo(res)
+    }
 
-    if (artist.alias) fetchData();
-  }, []);
+    if (artist.alias) fetchData()
+  }, [])
 
   return (
     <SkeletonTheme baseColor={baseColor} highlightColor={highlightColor}>
@@ -95,7 +95,7 @@ const MediaPreview: React.FC<IProps> = ({ artist }) => {
         </div>
       </div>
     </SkeletonTheme>
-  );
-};
+  )
+}
 
-export default MediaPreview;
+export default MediaPreview

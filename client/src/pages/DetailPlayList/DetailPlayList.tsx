@@ -48,12 +48,12 @@ const DetailPlayList: React.FC = () => {
       {
         items: getArraySongEmpty(20),
         sectionType: "",
-        title: ""
-      }
+        title: "",
+      },
     ],
     song: {
-      items: getArraySongEmpty(20)
-    }
+      items: getArraySongEmpty(20),
+    },
   })
   useEffect(() => {
     const fetchData = async () => {
@@ -78,7 +78,7 @@ const DetailPlayList: React.FC = () => {
       <div className={clsx("grid", style.wrapper)}>
         <div className={clsx("row", style.container)}>
           <div className={clsx("col l-4 m-12 c-12")}>
-            <div className='grid'>
+            <div className="grid">
               <div className={clsx("row", style.containerTop)}>
                 <div className={clsx("col l-12 m-3 c-12")}>
                   <ThumbnailHeader thumbnailM={detail?.thumbnailM} />
@@ -130,7 +130,7 @@ const DetailPlayList: React.FC = () => {
                       iconThreeDots
                       {...item}
                     />
-                  )
+                  ),
               )}
 
               {detail?.sections?.map((section, index) => (
@@ -149,7 +149,7 @@ const DetailPlayList: React.FC = () => {
                           iconThreeDots
                           {...item}
                         />
-                      )
+                      ),
                   )}
                 </div>
               ))}
@@ -157,8 +157,8 @@ const DetailPlayList: React.FC = () => {
           </div>
 
           {detail?.artists?.length > 0 && (
-            <div className='col l-12 m-12 c-12'>
-              <PlayListArtist data={detail?.artists} title='Nghệ Sĩ Tham Gia' />
+            <div className="col l-12 m-12 c-12">
+              <PlayListArtist data={detail?.artists} title="Nghệ Sĩ Tham Gia" />
             </div>
           )}
         </div>

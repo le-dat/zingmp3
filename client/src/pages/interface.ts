@@ -1,5 +1,5 @@
 export interface SectionIProps {
-  items: any[];
-  sectionType: string;
-  title: string;
+  items: any[]
+  sectionType: string
+  title: string
 }

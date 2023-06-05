@@ -1,1 +1,1 @@
-export { default } from "./PlayerDuration";
+export { default } from "./PlayerDuration"

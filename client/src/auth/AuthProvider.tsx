@@ -6,60 +6,60 @@ import {
   signInWithRedirect,
   signOut,
   updateProfile,
-} from "firebase/auth";
-import React, { createContext, useContext, useEffect, useState } from "react";
+} from "firebase/auth"
+import React, { createContext, useContext, useEffect, useState } from "react"
 
-import { firebaseAuth } from "../utils/firebase";
+import { firebaseAuth } from "../utils/firebase"
 
 interface AuthContextIProps {
-  signUp: (email: string, password: string) => void;
-  login: (email: string, password: string) => void;
-  logOut: () => void;
-  signInWithGoogle: () => void;
-  updateCurrentUser: (photoUrl: string) => void;
-  currentUser: any;
+  signUp: (email: string, password: string) => void
+  login: (email: string, password: string) => void
+  logOut: () => void
+  signInWithGoogle: () => void
+  updateCurrentUser: (photoUrl: string) => void
+  currentUser: any
 }
-const AuthContext = createContext({} as AuthContextIProps);
+const AuthContext = createContext({} as AuthContextIProps)
 export const useAuthContext = () => {
-  return useContext(AuthContext);
-};
+  return useContext(AuthContext)
+}
 
 interface IProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 const AuthProvider: React.FC<IProps> = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState<any>({});
-  const provider = new GoogleAuthProvider();
+  const [currentUser, setCurrentUser] = useState<any>({})
+  const provider = new GoogleAuthProvider()
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(firebaseAuth, async (user) => {
-      setCurrentUser(user);
-    });
-    return () => unsubscribe();
-  }, []);
+      setCurrentUser(user)
+    })
+    return () => unsubscribe()
+  }, [])
 
   const signUp = (email: string, password: string) => {
-    return createUserWithEmailAndPassword(firebaseAuth, email, password);
-  };
+    return createUserWithEmailAndPassword(firebaseAuth, email, password)
+  }
   const login = (email: string, password: string) => {
-    return signInWithEmailAndPassword(firebaseAuth, email, password);
-  };
+    return signInWithEmailAndPassword(firebaseAuth, email, password)
+  }
   const logOut = () => {
-    setCurrentUser(null);
-    return signOut(firebaseAuth);
-  };
+    setCurrentUser(null)
+    return signOut(firebaseAuth)
+  }
 
   const signInWithGoogle = () => {
-    signInWithRedirect(firebaseAuth, provider);
-  };
+    signInWithRedirect(firebaseAuth, provider)
+  }
 
   const updateCurrentUser = (photoURL: string) => {
     return updateProfile(currentUser, {
       photoURL: photoURL,
-    });
-  };
-  const value = { signUp, login, logOut, currentUser, signInWithGoogle, updateCurrentUser };
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
-};
+    })
+  }
+  const value = { signUp, login, logOut, currentUser, signInWithGoogle, updateCurrentUser }
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
+}
 
-export default AuthProvider;
+export default AuthProvider

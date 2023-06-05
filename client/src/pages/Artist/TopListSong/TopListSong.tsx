@@ -1,21 +1,21 @@
-import clsx from "clsx";
-import React from "react";
+import clsx from "clsx"
+import React from "react"
 
-import HeaderPlayList from "../../../components/HeaderPlayList";
-import { MediaIProps } from "../../../interface";
-import Media from "../../../components/Media";
-import style from "./TopListSong.module.scss";
+import HeaderPlayList from "../../../components/HeaderPlayList"
+import { MediaIProps } from "../../../interface"
+import Media from "../../../components/Media"
+import style from "./TopListSong.module.scss"
 
 interface TopListMediaIProps {
-  data: MediaIProps[];
-  title?: string;
+  data: MediaIProps[]
+  title?: string
 }
 const TopListSong: React.FC<TopListMediaIProps> = ({ data, title = "Bài Hát Nổi Bật" }) => {
   return (
-    <div className='grid'>
+    <div className="grid">
       <HeaderPlayList title={title} small customClass={style.title} />
 
-      <div className='row'>
+      <div className="row">
         {data.map(
           (item, index) =>
             index < 6 && (
@@ -26,7 +26,7 @@ const TopListSong: React.FC<TopListMediaIProps> = ({ data, title = "Bài Hát N�
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default TopListSong;
+export default TopListSong

@@ -15,7 +15,7 @@ import {
   IconRadio,
   IconRecent,
   IconSong,
-  IconZingChart
+  IconZingChart,
 } from "../../../components/Icons"
 import {
   CA_NHAN,
@@ -29,7 +29,7 @@ import {
   THE_LOAI,
   TOP_100,
   VIET_NAM,
-  ZING_CHART
+  ZING_CHART,
 } from "../../../constants"
 import { useAppDispatch, useAppSelector } from "../../../hooks/useRedux"
 import { setExpanded } from "../../../redux/reducers/sidebarSlice"
@@ -47,40 +47,40 @@ const Sidebar = () => {
   const { isExpanded } = useAppSelector((state) => state.sidebar)
 
   const handleClickBlockVip = () => {
-    getToastWarn({ msg: "VietComBank !" })
+    getToastWarn({ msg: "Agribank !" })
   }
   return (
     <aside className={clsx(style.aside, { [style.isExpanded]: isExpanded })}>
       <SidebarHeader />
 
       <SidebarMenu>
-        <SidebarMenuItem navLink icon={<IconPersonal />} title='Cá Nhân' to={CA_NHAN} />
-        <SidebarMenuItem navLink icon={<IconDiscover />} title='Khám Phá' to={KHAM_PHA} />
-        <SidebarMenuItem navLink icon={<IconZingChart />} title='#zingchart' to={ZING_CHART} />
-        <SidebarMenuItem navLink icon={<IconRadio />} title='Radio' to={RADIO} />
-        <SidebarMenuItem navLink icon={<IconFollow />} title='Theo Dõi' to={THEO_DOI} />
+        <SidebarMenuItem navLink icon={<IconPersonal />} title="Cá Nhân" to={CA_NHAN} />
+        <SidebarMenuItem navLink icon={<IconDiscover />} title="Khám Phá" to={KHAM_PHA} />
+        <SidebarMenuItem navLink icon={<IconZingChart />} title="#zingchart" to={ZING_CHART} />
+        <SidebarMenuItem navLink icon={<IconRadio />} title="Radio" to={RADIO} />
+        <SidebarMenuItem navLink icon={<IconFollow />} title="Theo Dõi" to={THEO_DOI} />
       </SidebarMenu>
       <div className={style.divide}></div>
       <div className={clsx(style.container, "scrollbar")}>
         <SidebarMenu>
-          <SidebarMenuItem navLink icon={<IconMusicNew />} title='Nhạc Mới' to={NHAC_MOI} />
-          <SidebarMenuItem navLink icon={<IconMusicKind />} title='Thể Loại' to={THE_LOAI} />
-          <SidebarMenuItem navLink icon={<IconMusicTop100 />} title='Top 100' to={TOP_100} />
-          <SidebarMenuItem navLink icon={<IconMV />} title='MV' to={`${MV}/${VIET_NAM}`} />
+          <SidebarMenuItem navLink icon={<IconMusicNew />} title="Nhạc Mới" to={NHAC_MOI} />
+          <SidebarMenuItem navLink icon={<IconMusicKind />} title="Thể Loại" to={THE_LOAI} />
+          <SidebarMenuItem navLink icon={<IconMusicTop100 />} title="Top 100" to={TOP_100} />
+          <SidebarMenuItem navLink icon={<IconMV />} title="MV" to={`${MV}/${VIET_NAM}`} />
         </SidebarMenu>
 
         <SidebarAdvertise
-          title='NÂNG CẤP VIP'
-          description='Nghe nhạc không quảng cáo cùng kho nhạc VIP'
+          title="NÂNG CẤP VIP"
+          description="Nghe nhạc không quảng cáo cùng kho nhạc VIP"
           onClick={handleClickBlockVip}
         />
 
         {currentUser && (
-          <SidebarMenu title='Thư viện'>
+          <SidebarMenu title="Thư viện">
             <SidebarMenu>
-              <SidebarMenuItem icon={<IconSong />} title='Bài Hát' to={CA_NHAN} />
-              <SidebarMenuItem icon={<IconPlayList />} title='Playlist' to={`${CA_NHAN}/${LIBRARY_PLAY_LIST}`} />
-              <SidebarMenuItem icon={<IconRecent />} title='Gần Đây' to={`${CA_NHAN}/${GAN_DAY}`} />
+              <SidebarMenuItem icon={<IconSong />} title="Bài Hát" to={CA_NHAN} />
+              <SidebarMenuItem icon={<IconPlayList />} title="Playlist" to={`${CA_NHAN}/${LIBRARY_PLAY_LIST}`} />
+              <SidebarMenuItem icon={<IconRecent />} title="Gần Đây" to={`${CA_NHAN}/${GAN_DAY}`} />
             </SidebarMenu>
           </SidebarMenu>
         )}

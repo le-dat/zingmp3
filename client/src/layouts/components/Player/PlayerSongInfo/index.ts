@@ -1,1 +1,1 @@
-export { default } from "./PlayerSongInfo";
+export { default } from "./PlayerSongInfo"

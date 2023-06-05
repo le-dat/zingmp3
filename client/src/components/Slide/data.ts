@@ -1,4 +1,4 @@
-import images from "../../assets/images";
+import images from "../../assets/images"
 
 const ARTISTS = [
   {
@@ -61,6 +61,6 @@ const ARTISTS = [
     name: "mr-siro",
     link: "/artist/mrsiro",
   },
-];
+]
 
-export default ARTISTS;
+export default ARTISTS

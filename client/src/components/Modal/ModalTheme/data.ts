@@ -1,4 +1,4 @@
-import images from "../../../assets/images";
+import images from "../../../assets/images"
 
 const DYNAMIC = [
   {
@@ -36,7 +36,7 @@ const DYNAMIC = [
     className: "brown",
     title: "Nâu",
   },
-];
+]
 
 const CHU_DE = [
   {
@@ -60,7 +60,7 @@ const CHU_DE = [
     className: "eiffel",
     title: "Tháp Elffel",
   },
-];
+]
 const GIRL = [
   {
     themeThumb: images.themeThumb.girl1,
@@ -111,7 +111,7 @@ const GIRL = [
     className: "blue-light",
     title: "girl 7",
   },
-];
+]
 const NGHE_SI = [
   {
     themeThumb: images.themeThumb.jack,
@@ -162,7 +162,7 @@ const NGHE_SI = [
     className: "rose",
     title: "Rosé",
   },
-];
+]
 
 const MAU_TOI = [
   {
@@ -221,7 +221,7 @@ const MAU_TOI = [
     className: "red",
     title: "Đỏ",
   },
-];
+]
 
 const MAU_SANG = [
   {
@@ -252,7 +252,7 @@ const MAU_SANG = [
     className: "pink-light",
     title: "Hồng Cánh Sen",
   },
-];
+]
 
 const LIST_THEME = [
   { title: "Dynamic", items: DYNAMIC },
@@ -261,5 +261,5 @@ const LIST_THEME = [
   { title: "Nghệ Sĩ", items: NGHE_SI },
   { title: "Màu Tói", items: MAU_TOI },
   { title: "Màu Sáng", items: MAU_SANG },
-];
-export default LIST_THEME;
+]
+export default LIST_THEME

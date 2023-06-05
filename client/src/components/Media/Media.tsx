@@ -1,27 +1,27 @@
-import clsx from "clsx";
-import React, { memo } from "react";
+import clsx from "clsx"
+import React, { memo } from "react"
 
-import { useAppDispatch, useAppSelector } from "../../hooks/useRedux";
-import { MediaIProps } from "../../interface";
-import { setInfoSong } from "../../redux/reducers/songSlice";
-import { getToastWarn } from "../../utils/toast";
-import { AlphaMedia } from "../Alpha";
-import { BtnHeartSong, BtnKaraoke, BtnThreeDotMedia } from "../BtnAction";
-import Image from "../Image";
-import { SubTitle, Title } from "../Info";
-import Time from "../Time";
-import style from "./Media.module.scss";
-import { PrefixIcon, PrefixNum, PrefixTitle } from "./Prefix";
+import { useAppDispatch, useAppSelector } from "../../hooks/useRedux"
+import { MediaIProps } from "../../interface"
+import { setInfoSong } from "../../redux/reducers/songSlice"
+import { getToastWarn } from "../../utils/toast"
+import { AlphaMedia } from "../Alpha"
+import { BtnHeartSong, BtnKaraoke, BtnThreeDotMedia } from "../BtnAction"
+import Image from "../Image"
+import { SubTitle, Title } from "../Info"
+import Time from "../Time"
+import style from "./Media.module.scss"
+import { PrefixIcon, PrefixNum, PrefixTitle } from "./Prefix"
 
 interface IProps extends MediaIProps {
-  prefixIndex?: number;
-  prefixPromote?: boolean;
-  prefixIcon?: boolean;
-  iconHeart?: boolean;
-  iconKaraoke?: boolean;
-  iconThreeDots?: boolean;
-  time?: boolean;
-  small?: boolean;
+  prefixIndex?: number
+  prefixPromote?: boolean
+  prefixIcon?: boolean
+  iconHeart?: boolean
+  iconKaraoke?: boolean
+  iconThreeDots?: boolean
+  time?: boolean
+  small?: boolean
 }
 const Media: React.FC<IProps> = ({
   encodeId,
@@ -40,22 +40,22 @@ const Media: React.FC<IProps> = ({
   iconThreeDots,
   time,
 }) => {
-  const dispatch = useAppDispatch();
-  const props = { encodeId, title, thumbnailM, artists, duration, streamingStatus, album };
-  const { encodeId: id } = useAppSelector((state) => state.song);
+  const dispatch = useAppDispatch()
+  const props = { encodeId, title, thumbnailM, artists, duration, streamingStatus, album }
+  const { encodeId: id } = useAppSelector((state) => state.song)
   const className = clsx(style.media, {
     [style.action]: encodeId === id && encodeId !== "",
     [style.small]: small,
     [style.vip]: streamingStatus === 2,
-  });
+  })
 
   const handlePlaySong = async () => {
     if (encodeId !== "") {
       return streamingStatus === 1
         ? dispatch(setInfoSong({ encodeId, thumbnailM, title, artists, duration, album, streamingStatus }))
-        : getToastWarn({ msg: "Bài này dành cho tài khoản vip !" });
+        : getToastWarn({ msg: "Bài này dành cho tài khoản vip !" })
     }
-  };
+  }
 
   const CardInfo = () => {
     return (
@@ -66,13 +66,13 @@ const Media: React.FC<IProps> = ({
         </div>
         <SubTitle artists={artists} hoverColor customClass={style.subTitle} lineCamp={1} />
       </div>
-    );
-  };
+    )
+  }
 
   return (
     <div className={className}>
       <div className={style.mediaLeft}>
-        {prefixPromote && <PrefixTitle title='Gợi ý' />}
+        {prefixPromote && <PrefixTitle title="Gợi ý" />}
         {prefixIndex && <PrefixNum index={prefixIndex} small={small} />}
         {prefixIcon && <PrefixIcon />}
 
@@ -100,7 +100,7 @@ const Media: React.FC<IProps> = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default memo(Media);
+export default memo(Media)

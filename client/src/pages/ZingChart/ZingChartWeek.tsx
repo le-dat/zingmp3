@@ -22,7 +22,7 @@ const ZingChartWeek: React.FC = () => {
   const [weekChart, setWeekChart] = useState([
     { country: "vn", items: getArraySongEmpty(20) },
     { country: "us", items: getArraySongEmpty(20) },
-    { country: "korean", items: getArraySongEmpty(20) }
+    { country: "korean", items: getArraySongEmpty(20) },
   ])
 
   useEffect(() => {
@@ -35,10 +35,10 @@ const ZingChartWeek: React.FC = () => {
 
   return (
     <div className={clsx("is-relative-1", style.wrapper)}>
-      <AlphaPage src={images.background.weekChart} alt='bg-week-chart' />
+      <AlphaPage src={images.background.weekChart} alt="bg-week-chart" />
 
       <div className={clsx("is-relative-10", style.container)}>
-        <HeaderPlayList title='Bảng Xếp Hạng Tuần' iconPlay customClass={style.header} />
+        <HeaderPlayList title="Bảng Xếp Hạng Tuần" iconPlay customClass={style.header} />
 
         <TabWrapper>
           {weekChart?.map((item, index) => (

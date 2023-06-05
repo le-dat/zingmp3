@@ -1,14 +1,14 @@
-import React from "react";
+import React from "react"
 
-import { RadioIProps } from "../../interface";
-import { CardRadio } from "../Card";
-import { Title } from "../Info";
-import { SlideWrapper } from "../Wrapper";
-import style from "./SlideRadio.module.scss";
+import { RadioIProps } from "../../interface"
+import { CardRadio } from "../Card"
+import { Title } from "../Info"
+import { SlideWrapper } from "../Wrapper"
+import style from "./SlideRadio.module.scss"
 
 interface IProps {
-  data: RadioIProps[];
-  title: string;
+  data: RadioIProps[]
+  title: string
 }
 const SlideRadio: React.FC<IProps> = ({ data, title }) => {
   return (
@@ -17,7 +17,7 @@ const SlideRadio: React.FC<IProps> = ({ data, title }) => {
 
       <SlideWrapper>
         {data.map((item, i) => (
-          <div key={`slider-radio-${item.encodeId}-${i}`} >
+          <div key={`slider-radio-${item.encodeId}-${i}`}>
             <CardRadio
               encodeId={item.encodeId}
               title={item.title}
@@ -28,7 +28,7 @@ const SlideRadio: React.FC<IProps> = ({ data, title }) => {
         ))}
       </SlideWrapper>
     </div>
-  );
-};
+  )
+}
 
-export default SlideRadio;
+export default SlideRadio

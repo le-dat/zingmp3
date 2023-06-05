@@ -1,11 +1,11 @@
-import React from "react";
-import { Helmet } from "react-helmet-async";
+import React from "react"
+import { Helmet } from "react-helmet-async"
 
-import { useScrollTop } from "../../hooks";
-import style from "./Radio.module.scss";
+import { useScrollTop } from "../../hooks"
+import style from "./Radio.module.scss"
 
 const Radio: React.FC = () => {
-  useScrollTop();
+  useScrollTop()
   return (
     <>
       <Helmet>
@@ -17,7 +17,7 @@ const Radio: React.FC = () => {
         <h3 className={style.title}>This page not complete :((</h3>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Radio;
+export default Radio

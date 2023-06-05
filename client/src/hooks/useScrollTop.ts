@@ -1,9 +1,9 @@
-import { useEffect } from "react";
+import { useEffect } from "react"
 
 const useScrollTop = (name: string = "container") => {
   useEffect(() => {
-    document.getElementById(name)?.scrollTo(0, 0);
-  }, []);
-};
+    document.getElementById(name)?.scrollTo(0, 0)
+  }, [])
+}
 
-export default useScrollTop;
+export default useScrollTop

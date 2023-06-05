@@ -1,22 +1,22 @@
-import clsx from "clsx";
-import React from "react";
-import { Link } from "react-router-dom";
+import clsx from "clsx"
+import React from "react"
+import { Link } from "react-router-dom"
 
-import images from "../../assets/images";
-import { ARTIST } from "../../constants";
-import { formatLinkArtist } from "../../utils/common";
-import { AlphaCard } from "../Alpha";
-import { BtnFollow } from "../BtnAction";
-import Image from "../Image";
-import { SubTitle, Title } from "../Info";
-import style from "./CardArtist.module.scss";
+import images from "../../assets/images"
+import { ARTIST } from "../../constants"
+import { formatLinkArtist } from "../../utils/common"
+import { AlphaCard } from "../Alpha"
+import { BtnFollow } from "../BtnAction"
+import Image from "../Image"
+import { SubTitle, Title } from "../Info"
+import style from "./CardArtist.module.scss"
 
 interface IProps {
-  link: string;
-  name: string;
-  totalFollow: number;
-  thumbnailM: string;
-  customClass?: string;
+  link: string
+  name: string
+  totalFollow: number
+  thumbnailM: string
+  customClass?: string
 }
 
 const CardArtist: React.FC<IProps> = ({ link, name, totalFollow, thumbnailM = images.noImage, customClass }) => {
@@ -38,7 +38,7 @@ const CardArtist: React.FC<IProps> = ({ link, name, totalFollow, thumbnailM = im
 
       <BtnFollow disable={link === ""} primary customClass={style.btn} />
     </div>
-  );
-};
+  )
+}
 
-export default CardArtist;
+export default CardArtist

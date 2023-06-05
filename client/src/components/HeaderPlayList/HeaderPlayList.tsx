@@ -1,21 +1,21 @@
-import clsx from "clsx";
-import React from "react";
-import { BsPlayFill } from "react-icons/bs";
+import clsx from "clsx"
+import React from "react"
+import { BsPlayFill } from "react-icons/bs"
 
-import style from "./HeaderPlayList.module.scss";
+import style from "./HeaderPlayList.module.scss"
 
 export interface IProps {
-  title: string;
-  iconPlay?: boolean;
-  small?: boolean;
-  large?: boolean;
-  to?: string;
-  customClass?: string;
-  onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  title: string
+  iconPlay?: boolean
+  small?: boolean
+  large?: boolean
+  to?: string
+  customClass?: string
+  onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined
 }
 
 const HeaderPlayList: React.FC<IProps> = ({ title, iconPlay, small, large, customClass, onClick }) => {
-  const className: string = clsx(style.header, { [style.small]: small, [style.large]: large }, customClass);
+  const className: string = clsx(style.header, { [style.small]: small, [style.large]: large }, customClass)
 
   return (
     <div className={className}>
@@ -26,7 +26,7 @@ const HeaderPlayList: React.FC<IProps> = ({ title, iconPlay, small, large, custo
         </button>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default HeaderPlayList;
+export default HeaderPlayList

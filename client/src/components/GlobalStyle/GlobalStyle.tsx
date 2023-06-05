@@ -1,13 +1,13 @@
-import React from "react";
+import React from "react"
 
-import "./Grid.scss";
-import "./GlobalStyle.scss";
+import "./Grid.scss"
+import "./GlobalStyle.scss"
 
 interface IProps {
-  children: any;
+  children: any
 }
 const GlobalStyle: React.FC<IProps> = ({ children }) => {
-  return children;
-};
+  return children
+}
 
-export default GlobalStyle;
+export default GlobalStyle
