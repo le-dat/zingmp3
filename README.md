@@ -36,7 +36,7 @@ MONGODB_PASSWORD=1234
 ACCESS_TOKEN_SECRET=datdeptrai
 ```
 
-run
+Run
 
 ```
 yarn install
@@ -45,74 +45,49 @@ yarn dev
 
 Open Browser: http://localhost:5000
 
-##### For zing
+##### Enpoint for zing
 
-```
-Get Song: http://localhost:5000/api/zing/song?id={param-id-song}
+Get Song: `/api/zing/song?id={param-id-song}`
+Get Detail Playlist: `/api/zing/detailplaylist?id={param-id-playlist}`
+Get Home: `/api/zing/home?page={param-page}`
+Get Top 100: `/api/zing/top100`
+Get Charthome: `/api/zing/charthome`
+Get New Release Chart: `/api/zing/newreleasechart`
+Get Info Song: `/api/zing/infosong?id={param-id-song}`
+Get Artist: `/api/zing/artist?name={param-name}`
+Get Artist Song: `/api/zing/artistsong?name={param-id, page, count}`
+Get Lyric: `/api/zing/lyric?id={param-id-song}`
+Search: `/api/zing/search?keyword={keyword}`
+Get List MV: `/api/zing/listmv?{id, page, count}`
+Get Categoty MV: `/api/zing/categorymv?id={param-id-video}`
+Get Video: `/api/zing/video?id={param-id-video}`
 
-Get Detail Playlist: http://localhost:5000/api/zing/detailplaylist?id={param-id-playlist}
+##### Enpoint for user:
 
-Get Home: http://localhost:5000/api/zing/home?page={param-page}
-
-Get Top 100: http://localhost:5000/api/zing/top100
-
-Get Charthome: http://localhost:5000/api/zing/charthome
-
-Get New Release Chart: http://localhost:5000/api/zing/newreleasechart
-
-Get Info Song: http://localhost:5000/api/zing/infosong?id={param-id-song}
-
-Get Artist: http://localhost:5000/api/zing/artist?name={param-name}
-
-Get Artist Song: http://localhost:5000/api/zing/artistsong?name={param-id, page, count}
-
-Get Lyric: http://localhost:5000/api/zing/lyric?id={param-id-song}
-
-Search: http://localhost:5000/api/zing/search?keyword={keyword}
-
-Get List MV: http://localhost:5000/api/zing/listmv?{id, page, count}
-
-Get Categoty MV: http://localhost:5000/api/zing/categorymv?id={param-id-video}
-
-Get Video: http://localhost:5000/api/zing/video?id={param-id-video}
-```
-
-##### For user:
-
-```
-Get Liked Song: http://localhost:5000/api/user/liked/song/${email}
-
-Get Liked Album: http://localhost:5000/api/user/liked/album/${email
-
-Add Liked Song: http://localhost:5000/api/user/liked/song/add?email=${email}&song=${song}
-
-Add Liked Album: http://localhost:5000/api/user/liked/album/add?email=${email}&song=${song}
-
-Remove Liked Song: http://localhost:5000/api/user/liked/song/add?email=${email}&songId=${songId}
-
-Remove Liked Album: http://localhost:5000/api/user/liked/album/add?email=${email}&albumId=${albumId}
-```
+Get Liked Song: `/api/user/liked/song/${email}`
+Get Liked Album: `/api/user/liked/album/${email`
+Add Liked Song: `/api/user/liked/song/add?email=${email}&song=${song}`
+Add Liked Album: `/api/user/liked/album/add?email=${email}&song=${song}`
+Remove Liked Song: `/api/user/liked/song/add?email=${email}&songId=${songId}`
+Remove Liked Album: `/api/user/liked/album/add?email=${email}&albumId=${albumId}`
 
 ### Client
 
 ```
+
 cd client
+
 ```
 
 Create a new firebase project.[Login to your google account and create a new firebase project](https://console.firebase.google.com/u/0/)
 
-Create an `.env` file and add the following variables.
-
-```
-REACT_APP_BASE_URL=http://localhost:5000
-REACT_APP_BASE_URL_DEPLOY=https://zingmp3-dsy5.onrender.com
-```
-
 `run`
 
 ```
+
 yarn install
-yarn start
+yarn start:dev
+
 ```
 
 Open Browser: http://localhost:3000
