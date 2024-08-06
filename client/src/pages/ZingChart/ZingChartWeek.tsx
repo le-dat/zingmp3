@@ -43,7 +43,9 @@ const ZingChartWeek: React.FC = () => {
         <TabWrapper>
           {weekChart?.map((item, index) => (
             <div key={`${item?.country}-${index}`} className={style.item} onClick={() => setCountry(item?.country)}>
-              <TabNav to={`/${ZING_CHART}/${ZING_CHART_WEEK}/${item?.country}`}>{getTypeTab(item?.country)}</TabNav>
+              <TabNav to={`/${ZING_CHART}/${ZING_CHART_WEEK}/${item?.country}`}>
+                {getTypeTab[item?.country ?? "default"]}
+              </TabNav>
             </div>
           ))}
         </TabWrapper>

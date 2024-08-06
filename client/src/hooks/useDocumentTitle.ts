@@ -1,12 +1,8 @@
 import { useLayoutEffect } from "react"
 
-const useDocumentTitle = (title?: string) => {
+const useDocumentTitle = (title: string = "Zing MP3"): void => {
   useLayoutEffect(() => {
-    if (title) {
-      document.title = title
-    } else {
-      document.title = "Zing MP3"
-    }
+    document.title = title
   }, [title])
 }
 

@@ -1,16 +1,16 @@
 // router
-export const CA_NHAN = "my-music"
-export const GAN_DAY = "history"
+export const PERSONAL = "my-music"
+export const RECENTLY = "history"
 export const LIBRARY_SONG = "library/song"
 export const LIBRARY_PLAY_LIST = "library/playlist"
 
-export const KHAM_PHA = "/"
+export const DISCOVER = "/"
 export const ZING_CHART = "zing-chart"
 export const ZING_CHART_WEEK = "zing-chart-tuan"
 export const RADIO = "radio"
-export const THEO_DOI = "the-loai-nghe-si"
-export const NHAC_MOI = "moi-phat-hanh"
-export const THE_LOAI = "hub"
+export const FOLLOW = "the-loai-nghe-si"
+export const NEW_MUSIC = "moi-phat-hanh"
+export const TYPE_MUSIC = "hub"
 export const TOP_100 = "top100"
 export const MV = "the-loai-video"
 export const VIDEO = "video"
@@ -23,7 +23,7 @@ export const HOA_TAU = "Hoa-Tau"
 export const HOA_NGU = "Hoa-Ngu"
 
 export const LOGIN = "login"
-export const SIGNUP = "signup"
+export const SIGN_UP = "signup"
 export const UPDATE = "update"
 export const NOT_FOUND = "*"
 export const ID = ":id"
@@ -33,8 +33,5 @@ export const PLAYER_STORAGE_KEY = "DAT_PLAYER"
 
 export const API_URL =
   process.env.NODE_ENV !== "production"
-    ? process.env.REACT_APP_BASE_URL || "http://localhost:5000"
-    : process.env.REACT_APP_BASE_URL_DEPLOY || "https://zingmp3-19ul.onrender.com"
-
-console.log(process.env.REACT_APP_BASE_URL)
-console.log(process.env.REACT_APP_BASE_URL_DEPLOY)
+    ? process.env.REACT_APP_LOCALHOST || "http://localhost:5000"
+    : process.env.REACT_APP_BASE_URL || "https://zingmp3-19ul.onrender.com"

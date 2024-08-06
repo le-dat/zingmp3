@@ -2,6 +2,36 @@
   "name": "zingmp3_ts",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "env-cmd -f .env/.env.development react-app-rewired start",
+    "start:dev": "env-cmd -f .env/.env.development react-app-rewired start",
+    "start:stag": "env-cmd -f .env/.env.staging  react-app-rewired start",
+    "build": "env-cmd -f .env/.env.development react-app-rewired build",
+    "build:dev": "env-cmd -f .env/.env.development react-app-rewired build",
+    "build:stag": "env-cmd -f .env/.env.staging  react-app-rewired build",
+    "build:prod": "env-cmd -f .env/.env.production  react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject",
+    "prettier": "prettier --write ."
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",
     "@testing-library/jest-dom": "^5.16.5",
@@ -38,31 +68,6 @@
     "typescript": "^4.9.4",
     "web-vitals": "^2.1.4"
   },
-  "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
-    "eject": "react-app-rewired eject",
-    "prettier": "prettier --write ."
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "devDependencies": {
     "@types/dompurify": "^2.4.0",
     "@types/react-slick": "^0.23.10",
@@ -71,11 +76,17 @@
     "babel-plugin-module-resolver": "^5.0.0",
     "copy-webpack-plugin": "^11.0.0",
     "customize-cra": "^1.0.0",
-    "eslint": "^8.31.0",
-    "eslint-config-prettier": "^8.6.0",
+    "env-cmd": "^10.1.0",
+    "eslint": "^8",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.9.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "^7.32.0",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
     "prettier": "^2.8.3",
     "react-app-rewired": "^2.2.1",
     "typescript-plugin-css-modules": "^4.1.1"

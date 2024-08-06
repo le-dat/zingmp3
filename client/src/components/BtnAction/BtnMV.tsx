@@ -11,9 +11,7 @@ interface IProps {
 const BtnMV: React.FC<IProps> = ({ title = "MV", disable = false, customClass }) => {
   const [isMV, setIsMv] = useState<boolean>(false)
 
-  const handleMV = () => {
-    setIsMv(!isMV)
-  }
+  const handleMV = () => setIsMv(!isMV)
 
   return (
     <ButtonIcon

@@ -19,7 +19,7 @@ const WeekChartItem: React.FC<IProps> = ({ country = "vn", items = [], customCla
     <div className={customClass}>
       <div className={style.wrapper}>
         <div className={style.header}>
-          <Title title={getTypeTab(country)} to={link} small iconPlay customClass={style.title} />
+          <Title title={getTypeTab[country ?? "default"]} to={link} small iconPlay customClass={style.title} />
         </div>
 
         <div className={style.contain}>

@@ -11,17 +11,22 @@ import React, { createContext, useContext, useEffect, useState } from "react"
 
 import { firebaseAuth } from "../utils/firebase"
 
-interface AuthContextIProps {
-  signUp: (email: string, password: string) => void
-  login: (email: string, password: string) => void
-  logOut: () => void
+interface AuthContextProps {
+  signUp: (email: string, password: string) => Promise<void>
+  login: (email: string, password: string) => Promise<void>
+  logOut: () => Promise<void>
   signInWithGoogle: () => void
-  updateCurrentUser: (photoUrl: string) => void
+  updateCurrentUser: (photoUrl: string) => Promise<void>
   currentUser: any
 }
-const AuthContext = createContext({} as AuthContextIProps)
-export const useAuthContext = () => {
-  return useContext(AuthContext)
+const AuthContext = createContext<AuthContextProps | undefined>(undefined)
+
+export const useAuthContext = (): AuthContextProps => {
+  const context = useContext(AuthContext)
+  if (!context) {
+    throw new Error("useAuthContext must be used within an AuthProvider")
+  }
+  return context
 }
 
 interface IProps {
@@ -38,25 +43,27 @@ const AuthProvider: React.FC<IProps> = ({ children }) => {
     return () => unsubscribe()
   }, [])
 
-  const signUp = (email: string, password: string) => {
-    return createUserWithEmailAndPassword(firebaseAuth, email, password)
-  }
-  const login = (email: string, password: string) => {
-    return signInWithEmailAndPassword(firebaseAuth, email, password)
-  }
-  const logOut = () => {
-    setCurrentUser(null)
-    return signOut(firebaseAuth)
+  const signUp = async (email: string, password: string): Promise<void> => {
+    await createUserWithEmailAndPassword(firebaseAuth, email, password)
   }
 
-  const signInWithGoogle = () => {
+  const login = async (email: string, password: string): Promise<void> => {
+    await signInWithEmailAndPassword(firebaseAuth, email, password)
+  }
+
+  const logOut = async (): Promise<void> => {
+    await signOut(firebaseAuth)
+    setCurrentUser(null)
+  }
+
+  const signInWithGoogle = (): void => {
     signInWithRedirect(firebaseAuth, provider)
   }
 
-  const updateCurrentUser = (photoURL: string) => {
-    return updateProfile(currentUser, {
-      photoURL: photoURL,
-    })
+  const updateCurrentUser = async (photoURL: string): Promise<void> => {
+    if (currentUser) {
+      await updateProfile(currentUser, { photoURL })
+    }
   }
   const value = { signUp, login, logOut, currentUser, signInWithGoogle, updateCurrentUser }
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>

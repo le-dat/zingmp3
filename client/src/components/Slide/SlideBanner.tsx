@@ -8,38 +8,39 @@ import { formatLinkBanner } from "../../utils/common"
 import Image from "../Image"
 import style from "./SlideBanner.module.scss"
 
-interface IProps {
+interface SlideBannerProps {
   data: BannerIProps[]
 }
-const SlideBanner: React.FC<IProps> = ({ data = Array(10).fill({}) }) => {
-  const [currentImage, setCurrentImage] = useState<number>(0)
-  const timeRef = useRef<any>(null)
+
+const SlideBanner: React.FC<SlideBannerProps> = ({ data = Array(10).fill({}) }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState<number>(0)
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+  const getNextIndex = (currentIndex: number, length: number): number => {
+    return currentIndex >= length - 1 ? 0 : currentIndex + 1
+  }
+
+  const getPrevIndex = (currentIndex: number, length: number): number => {
+    return currentIndex === 0 ? length - 1 : currentIndex - 1
+  }
 
   const handleNext = () => {
-    if (currentImage >= data.length - 1) {
-      setCurrentImage(0)
-    } else {
-      setCurrentImage(currentImage + 1)
-    }
+    setCurrentImageIndex((prevIndex) => getNextIndex(prevIndex, data.length))
   }
 
   const handlePrev = () => {
-    if (currentImage === 0) {
-      setCurrentImage(data.length - 1)
-    } else {
-      setCurrentImage(currentImage - 1)
-    }
+    setCurrentImageIndex((prevIndex) => getPrevIndex(prevIndex, data.length))
   }
 
   useEffect(() => {
-    timeRef.current = setTimeout(() => handleNext(), 4000)
+    timeoutRef.current = setTimeout(handleNext, 4000)
 
     return () => {
-      if (timeRef.current) {
-        clearTimeout(timeRef.current)
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
       }
     }
-  }, [currentImage])
+  }, [currentImageIndex])
 
   return (
     <div className={clsx("is-center", style.slider)}>
@@ -50,17 +51,17 @@ const SlideBanner: React.FC<IProps> = ({ data = Array(10).fill({}) }) => {
         <GrPrevious />
       </button>
 
-      {data.map((item, index) => (
+      {data.map((bannerItem, index) => (
         <Link
-          to={item?.type === 4 ? formatLinkBanner(item.encodeId) : ""}
+          to={bannerItem?.type === 4 ? formatLinkBanner(bannerItem.encodeId) : ""}
           key={`banner-${index}`}
           className={clsx(style.block, {
-            [style.current]: index === currentImage,
-            [style.prev]: currentImage - 1 < 0 ? index === data.length - 1 : index === currentImage - 1,
-            [style.next]: currentImage + 1 >= data.length ? index === 0 : index === currentImage + 1,
+            [style.current]: index === currentImageIndex,
+            [style.prev]: currentImageIndex - 1 < 0 ? index === data.length - 1 : index === currentImageIndex - 1,
+            [style.next]: currentImageIndex + 1 >= data.length ? index === 0 : index === currentImageIndex + 1,
           })}
         >
-          <Image src={item.banner} alt={item?.description} className={style.image} />
+          <Image src={bannerItem.banner} alt={bannerItem?.description} className={style.image} />
         </Link>
       ))}
     </div>

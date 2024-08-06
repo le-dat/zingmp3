@@ -17,11 +17,12 @@ interface IProps {
   vertical?: boolean
   leftIcon?: React.ReactNode
   rightIcon?: React.ReactNode
-  children: any
+  children: React.ReactNode
   onClick?: () => void
   customClass?: string
 }
-const ButtonTitle = forwardRef<IProps, any>(
+
+const ButtonTitle = forwardRef<HTMLButtonElement | HTMLAnchorElement, IProps>(
   (
     {
       to,
@@ -42,7 +43,7 @@ const ButtonTitle = forwardRef<IProps, any>(
     ref,
   ) => {
     const buttonRef = useRef(ref)
-    let Comp: any = "button"
+    let Component: React.ElementType = "button"
     const className = clsx(
       "is-center",
       style.button,
@@ -58,13 +59,13 @@ const ButtonTitle = forwardRef<IProps, any>(
       customClass,
     )
 
-    const props = { to, href, onClick }
+    const props: Record<string, any> = { onClick }
 
     if (to) {
-      Comp = Link
+      Component = Link
       props.to = to
     } else if (href) {
-      Comp = "a"
+      Component = "a"
       props.href = href
     }
 
@@ -73,11 +74,11 @@ const ButtonTitle = forwardRef<IProps, any>(
     }
 
     return (
-      <Comp className={className} {...props} ref={buttonRef}>
+      <Component className={className} {...props} ref={buttonRef}>
         {leftIcon && <span className={style.leftIcon}>{leftIcon}</span>}
         <span className={style.title}>{children}</span>
         {rightIcon && <span className={style.rightIcon}>{rightIcon}</span>}
-      </Comp>
+      </Component>
     )
   },
 )

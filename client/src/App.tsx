@@ -6,21 +6,21 @@ import "tippy.js/dist/tippy.css"
 import PrivateRouter from "./auth/PrivateRouter"
 import {
   ARTIST,
-  CA_NHAN,
+  PERSONAL,
   DETAIL_PLAY_LIST,
-  GAN_DAY,
+  RECENTLY,
   ID,
-  KHAM_PHA,
+  DISCOVER,
   LIBRARY_PLAY_LIST,
   LIBRARY_SONG,
   LOGIN,
   MV,
-  NHAC_MOI,
+  NEW_MUSIC,
   NOT_FOUND,
   RADIO,
-  SIGNUP,
-  THEO_DOI,
-  THE_LOAI,
+  SIGN_UP,
+  FOLLOW,
+  TYPE_MUSIC,
   TOP_100,
   UPDATE,
   VIDEO,
@@ -56,29 +56,29 @@ function App() {
     <DefaultLayout>
       <Routes>
         {/* ======================= public router ===================== */}
-        <Route path={KHAM_PHA} element={<Discover />} />;
+        <Route path={DISCOVER} element={<Discover />} />;
         <Route path={ZING_CHART} element={<ZingChart />} />
         <Route path={`${ZING_CHART}/${ZING_CHART_WEEK}/${ID}`} element={<ZingChartWeek />} />
         <Route path={RADIO} element={<Radio />}>
           <Route path={ID} element={<Radio />} />
         </Route>
-        <Route path={THEO_DOI} element={<Follow />} />;
-        <Route path={NHAC_MOI} element={<MusicNew />} />;
-        <Route path={THE_LOAI} element={<MusicKind />} />;
+        <Route path={FOLLOW} element={<Follow />} />;
+        <Route path={NEW_MUSIC} element={<MusicNew />} />;
+        <Route path={TYPE_MUSIC} element={<MusicKind />} />;
         <Route path={TOP_100} element={<Top100 />} />;
         <Route path={`${MV}/${ID}`} element={<Mv />} />;
         <Route path={`${VIDEO}/${ID}`} element={<Video />} />;
         <Route path={`${DETAIL_PLAY_LIST}/${ID}`} element={<DetailPlayList />} />;
         <Route path={`${ARTIST}/${ID}`} element={<Artist />} />;
         <Route path={LOGIN} element={<Login />} />;
-        <Route path={SIGNUP} element={<SignUp />} />;
+        <Route path={SIGN_UP} element={<SignUp />} />;
         {/* ======================= private router ===================== */}
         <Route element={<PrivateRouter />}>
-          <Route path={CA_NHAN} element={<Personal />}>
+          <Route path={PERSONAL} element={<Personal />}>
             <Route index element={<PersonalSong />} />;
             <Route path={LIBRARY_SONG} element={<PersonalSong />} />;
             <Route path={LIBRARY_PLAY_LIST} element={<PersonalPlayList />} />;
-            <Route path={GAN_DAY} element={<PersonalRecent />} />;
+            <Route path={RECENTLY} element={<PersonalRecent />} />;
           </Route>
           <Route path={UPDATE} element={<Update />} />;
         </Route>

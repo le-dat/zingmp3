@@ -6,7 +6,7 @@ import { useAuthContext } from "../../auth/AuthProvider"
 import { ButtonTitle } from "../../components/Button"
 import { TabNav } from "../../components/Tab"
 import { PopperWrapper, TabWrapper } from "../../components/Wrapper"
-import { KHAM_PHA, LOGIN, SIGNUP } from "../../constants"
+import { DISCOVER, LOGIN, SIGN_UP } from "../../constants"
 import { useScrollTop } from "../../hooks"
 import { getToastError, getToastSuccess } from "../../utils/toast"
 import style from "./Auth.module.scss"
@@ -26,7 +26,7 @@ const SignUp: React.FC = () => {
 
   useEffect(() => {
     if (currentUser) {
-      navigate(KHAM_PHA)
+      navigate(DISCOVER)
       getToastSuccess({ msg: "Tạo tài khoản thành công" })
     }
   }, [currentUser])
@@ -36,7 +36,7 @@ const SignUp: React.FC = () => {
     const { email, password } = values
     try {
       await signUp(email, password)
-      navigate(KHAM_PHA)
+      navigate(DISCOVER)
       getToastSuccess({ msg: "Tạo tài khoản thành công" })
     } catch (error) {
       getToastError({ msg: "Có lỗi" })
@@ -51,7 +51,7 @@ const SignUp: React.FC = () => {
           <TabNav small to={`/${LOGIN}`}>
             Đăng nhập
           </TabNav>
-          <TabNav small to={`/${SIGNUP}`}>
+          <TabNav small to={`/${SIGN_UP}`}>
             Đăng kí
           </TabNav>
         </TabWrapper>

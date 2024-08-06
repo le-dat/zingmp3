@@ -1,4 +1,4 @@
-export const getRandomIndex = (listSong: any[], currentIndex: number) => {
+export const getRandomIndex = (listSong: any, currentIndex: number): number => {
   let newIndex = 0
 
   do {
@@ -8,16 +8,10 @@ export const getRandomIndex = (listSong: any[], currentIndex: number) => {
   return newIndex
 }
 
-export const getNewIndex = (listSong: any[], currentIndex: number, director: string) => {
-  let newSongIndex
-
-  if (director === "next") {
-    newSongIndex = currentIndex + 1 >= listSong.length ? 0 : currentIndex + 1
-  } else {
-    newSongIndex = currentIndex - 1 < 0 ? listSong.length - 1 : currentIndex - 1
-  }
-
-  return newSongIndex
+export const getNewIndex = (listSong: any, currentIndex: number, direction: string): number => {
+  return direction === "next"
+    ? (currentIndex + 1) % listSong.length
+    : (currentIndex - 1 + listSong.length) % listSong.length
 }
 
 export const getArraySongEmpty = (value: number) => {

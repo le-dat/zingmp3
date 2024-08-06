@@ -8,17 +8,19 @@ const useChangeSong = () => {
   const { isRandom } = useAppSelector((state) => state.control)
   const { songIndex, playListSong } = useAppSelector((state) => state.playList)
 
-  const handleChangeSong = (direction: string) => {
-    let newSongIndex
-    if (isRandom) {
-      newSongIndex = getRandomIndex(playListSong, songIndex)
-    } else {
-      newSongIndex = getNewIndex(playListSong, songIndex, direction)
-    }
+  const determineNewSongIndex = (direction: string) => {
+    return isRandom ? getRandomIndex(playListSong, songIndex) : getNewIndex(playListSong, songIndex, direction)
+  }
 
-    dispatch(setSongIndex(newSongIndex))
+  const updateSongInfo = (newSongIndex: number) => {
     const { encodeId, thumbnailM, title, artists, duration, album, streamingStatus } = playListSong[newSongIndex]
     dispatch(setInfoSong({ encodeId, thumbnailM, title, artists, duration, album, streamingStatus }))
+  }
+
+  const handleChangeSong = (direction: string) => {
+    const newSongIndex = determineNewSongIndex(direction)
+    dispatch(setSongIndex(newSongIndex))
+    updateSongInfo(newSongIndex)
   }
 
   return handleChangeSong

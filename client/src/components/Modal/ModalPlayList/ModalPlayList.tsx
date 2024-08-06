@@ -8,7 +8,7 @@ import { ButtonTitle } from "../../Button"
 import Media from "../../Media"
 import style from "./ModalPlayList.module.scss"
 
-const ModalPlayList = () => {
+const ModalPlayList: React.FC = () => {
   const dispatch = useAppDispatch()
   const {
     album: { encodeId },
@@ -18,14 +18,14 @@ const ModalPlayList = () => {
   useEffect(() => {
     const fetchData = async () => {
       const res = await services.getDetailPlayList(encodeId as string)
-      const playlist = [...res?.song?.items, ...res?.sections[0]?.items]
+      const playlist = [...(res?.song?.items || []), ...(res?.sections[0]?.items || [])]
       console.log(playlist)
       dispatch(setPlayList(playlist))
       dispatch(setSongIndex(0))
     }
 
-    if (encodeId !== "") fetchData()
-  }, [encodeId])
+    if (encodeId) fetchData()
+  }, [dispatch, encodeId])
 
   return (
     <div className={clsx(style.wrapper, { [style.active]: isShowPlayListModal })}>

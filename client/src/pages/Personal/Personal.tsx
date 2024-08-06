@@ -6,7 +6,7 @@ import { ButtonTitle } from "../../components/Button"
 import HeaderPlayList from "../../components/HeaderPlayList"
 import { TabNav } from "../../components/Tab"
 import { TabWrapper } from "../../components/Wrapper"
-import { CA_NHAN, GAN_DAY, LIBRARY_PLAY_LIST, LIBRARY_SONG } from "../../constants"
+import { PERSONAL, RECENTLY, LIBRARY_PLAY_LIST, LIBRARY_SONG } from "../../constants"
 import { useScrollTop } from "../../hooks"
 import { getToastWarn } from "../../utils/toast"
 import style from "./Personal.module.scss"
@@ -14,15 +14,15 @@ import style from "./Personal.module.scss"
 const TABS = [
   {
     title: "BÀI HÁT",
-    to: `/${CA_NHAN}/${LIBRARY_SONG}`,
+    to: `/${PERSONAL}/${LIBRARY_SONG}`,
   },
   {
     title: "PLAY LIST",
-    to: `/${CA_NHAN}/${LIBRARY_PLAY_LIST}`,
+    to: `/${PERSONAL}/${LIBRARY_PLAY_LIST}`,
   },
   {
     title: "GẦN ĐÂY",
-    to: `/${CA_NHAN}/${GAN_DAY}`,
+    to: `/${PERSONAL}/${RECENTLY}`,
   },
 ]
 const Personal: React.FC = () => {
