@@ -9,7 +9,7 @@ import { AlphaMedia } from "../alpha"
 import { BtnHeartSong, BtnKaraoke, BtnThreeDotMedia } from "../btn-action"
 import Image from "../image"
 import { SubTitle, Title } from "../info"
-import Time from "../ime"
+import Time from "../time"
 import style from "./Media.module.scss"
 import { PrefixIcon, PrefixNum, PrefixTitle } from "./prefix"
 

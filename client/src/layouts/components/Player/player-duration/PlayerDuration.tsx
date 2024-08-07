@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react"
 
-import Time from "../../../../components/ime"
+import Time from "../../../../components/time"
 import { useAudioControls, useChangeSong, useProgress } from "../../../../hooks"
 import { useAppDispatch, useAppSelector } from "../../../../hooks/useRedux"
 import { setCurrentTime as setTime } from "../../../../redux/reducers/currentTimeSlice"

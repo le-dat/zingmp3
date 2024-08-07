@@ -6,7 +6,7 @@ import { MV, VIDEO } from "../../constants"
 import { AlphaCard } from "../alpha"
 import Image from "../image"
 import { SubTitle, Title } from "../info"
-import Time from "../ime"
+import Time from "../time"
 import style from "./CardVideo.module.scss"
 
 interface IProps {
