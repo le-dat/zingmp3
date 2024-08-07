@@ -2,7 +2,7 @@ import React from "react"
 import { Helmet } from "react-helmet-async"
 import { Outlet } from "react-router-dom"
 
-import { ButtonTitle } from "../../components/Button"
+import { ButtonTitle } from "../../components/button"
 import HeaderPlayList from "../../components/HeaderPlayList"
 import { TabNav } from "../../components/Tab"
 import { TabWrapper } from "../../components/Wrapper"

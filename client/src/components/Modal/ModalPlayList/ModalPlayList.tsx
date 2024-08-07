@@ -4,7 +4,7 @@ import { useEffect } from "react"
 import { useAppDispatch, useAppSelector } from "../../../hooks/useRedux"
 import { setPlayList, setSongIndex } from "../../../redux/reducers/playListSlice"
 import * as services from "../../../services"
-import { ButtonTitle } from "../../Button"
+import { ButtonTitle } from "../../button"
 import Media from "../../Media"
 import style from "./ModalPlayList.module.scss"
 

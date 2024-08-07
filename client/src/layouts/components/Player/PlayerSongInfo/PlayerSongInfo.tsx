@@ -2,7 +2,7 @@ import clsx from "clsx"
 import React from "react"
 import { Link } from "react-router-dom"
 
-import { BtnHeartSong, BtnThreeDotMedia } from "../../../../components/BtnAction"
+import { BtnHeartSong, BtnThreeDotMedia } from "../../../../components/btn-action"
 import Image from "../../../../components/Image"
 import { SubTitle, Title } from "../../../../components/Info"
 import { DETAIL_PLAY_LIST } from "../../../../constants"

@@ -4,8 +4,8 @@ import { Helmet } from "react-helmet-async"
 import { BsFillPlayFill } from "react-icons/bs"
 import { useParams } from "react-router-dom"
 
-import { BtnHeartAlbum, BtnThreeDotCard } from "../../components/BtnAction"
-import { ButtonTitle } from "../../components/Button"
+import { BtnHeartAlbum, BtnThreeDotCard } from "../../components/btn-action"
+import { ButtonTitle } from "../../components/button"
 import HeaderPlayList from "../../components/HeaderPlayList"
 import { SubTitle, Title } from "../../components/Info"
 import Media from "../../components/Media"
@@ -18,7 +18,7 @@ import { getArrayArtistEmpty, getArraySongEmpty } from "../../utils/song"
 import { getToastWarn } from "../../utils/toast"
 import { SectionIProps } from "../interface"
 import style from "./DetailPlayList.module.scss"
-import ThumbnailHeader from "./ThumbnailHeader"
+import ThumbnailHeader from "./thumbnail-header"
 
 interface IProps {
   encodeId: string

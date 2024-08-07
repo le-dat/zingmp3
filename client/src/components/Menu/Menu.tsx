@@ -2,7 +2,7 @@ import HeadlessTippy from "@tippyjs/react/headless"
 import clsx from "clsx"
 import React from "react"
 
-import { ButtonTitle } from "../Button"
+import { ButtonTitle } from "../button"
 import { PopperWrapper } from "../Wrapper"
 import style from "./Menu.module.scss"
 

@@ -2,7 +2,7 @@ import clsx from "clsx"
 import React from "react"
 import { BsPlayCircle } from "react-icons/bs"
 
-import { BtnHeartAlbum, BtnThreeDotCard } from "../BtnAction"
+import { BtnHeartAlbum, BtnThreeDotCard } from "../btn-action"
 import style from "./AlphaCard.module.scss"
 
 interface IProps {

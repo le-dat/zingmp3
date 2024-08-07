@@ -7,48 +7,40 @@ import { LOGIN } from "../../constants"
 import { useAppSelector } from "../../hooks/useRedux"
 import * as services from "../../services"
 import { getToastSuccess, getToastWarn } from "../../utils/toast"
-import { ButtonIcon } from "../Button"
-
-interface Song {
-  encodeId: string
-  [key: string]: any
-}
+import { ButtonIcon } from "../button"
 
 interface IProps {
-  song: Song
+  album: any
   disable?: boolean
   customClass?: string
 }
-
 interface ResponseIProps {
   status: boolean
   msg: string
 }
-
-const BtnHeartSong: React.FC<IProps> = ({ song, disable = false, customClass }) => {
+const BtnHeartAlbum: React.FC<IProps> = ({ album, disable = false, customClass }) => {
   const navigate = useNavigate()
   const { currentUser } = useAuthContext()
-  const { playListLikedSong } = useAppSelector((state) => state.personal)
-  const [isActive, setIsActive] = useState<boolean>(!!playListLikedSong.find((item) => item.encodeId === song.encodeId))
+  const { playListLikedAlbum } = useAppSelector((state) => state.personal)
+  const [active, setActive] = useState<boolean>(!!playListLikedAlbum.find((item) => item.encodeId === album.encodeId))
 
   const handleAddToList = async () => {
-    const response: ResponseIProps = await services.addLikedSong(currentUser.email, song)
-    const { status, msg } = response
+    const res: ResponseIProps = await services.addLikedAlbum(currentUser.email, album)
+    const { status, msg } = res
     return status ? getToastSuccess({ msg }) : getToastWarn({ msg })
   }
 
   const handleRemoveFromList = async () => {
-    const response: ResponseIProps = await services.removeLikedSong(currentUser.email, song.encodeId)
-    const { status, msg } = response
+    const res: ResponseIProps = await services.removeLikedAlbum(currentUser.email, album.encodeId)
+    const { status, msg } = res
     return status ? getToastSuccess({ msg }) : getToastWarn({ msg })
   }
 
   const handleToggleHeart = () => {
-    if (!currentUser) {
-      return navigate(`/${LOGIN}`)
-    }
-    setIsActive(!isActive)
-    return isActive ? handleRemoveFromList() : handleAddToList()
+    if (!currentUser) return navigate(`/${LOGIN}`)
+
+    setActive(!active)
+    return active ? handleRemoveFromList() : handleAddToList()
   }
 
   return (
@@ -56,13 +48,13 @@ const BtnHeartSong: React.FC<IProps> = ({ song, disable = false, customClass }) 
       backgroundSmall
       rounded
       disable={disable}
-      active={isActive}
-      icon={isActive ? <AiFillHeart /> : <AiOutlineHeart />}
-      title={isActive ? "Xóa bài hát khỏi thư viện" : "Thêm bài hát vào thư viện"}
+      active={active}
+      icon={active ? <AiFillHeart /> : <AiOutlineHeart />}
+      title={active ? "Xóa album khỏi thư viên" : "Thêm album vào thư viện"}
       customClass={customClass}
       onClick={handleToggleHeart}
     />
   )
 }
 
-export default BtnHeartSong
+export default BtnHeartAlbum

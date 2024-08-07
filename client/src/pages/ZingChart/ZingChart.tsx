@@ -3,22 +3,20 @@ import { useEffect, useState } from "react"
 import { Helmet } from "react-helmet-async"
 
 import images from "../../assets/images"
-import { AlphaPage } from "../../components/Alpha"
-import { ButtonTitle } from "../../components/Button"
+import { AlphaPage } from "../../components/alpha"
+import { ButtonTitle } from "../../components/button"
 import Media from "../../components/Media/Media"
 import { useScrollTop } from "../../hooks"
 import * as services from "../../services"
-import { LineChart } from "./Chart"
+import { LineChart } from "./chart"
 import { RTChartIProps, WeekChartIProps } from "./interface"
 import HeaderPlayList from "../../components/HeaderPlayList"
-import WeekChartItem from "./WeekChartItem"
+import WeekChartItem from "./week-chart-item"
 import style from "./ZingChart.module.scss"
 import { getRandom } from "../../utils/common"
 import { getArraySongEmpty } from "../../utils/song"
 
-const ZingChart: React.FC = () => {
-  useScrollTop()
-  const [seeTop100, setSeeTop100] = useState<number>(10)
+const useFetchChartData = () => {
   const [RTChart, setRTChart] = useState<RTChartIProps>({
     chart: { items: {}, times: [{ hour: "0" }] },
     items: getArraySongEmpty(10),
@@ -38,6 +36,14 @@ const ZingChart: React.FC = () => {
     }
     fetchApi()
   }, [])
+
+  return { RTChart, weekChart }
+}
+
+const ZingChart: React.FC = () => {
+  useScrollTop()
+  const [seeTop100, setSeeTop100] = useState<number>(10)
+  const { RTChart, weekChart } = useFetchChartData()
 
   return (
     <>
@@ -62,20 +68,17 @@ const ZingChart: React.FC = () => {
                 iconThreeDots
               />
             )}
-            {RTChart?.items?.map(
-              (item, index) =>
-                index < seeTop100 && (
-                  <Media
-                    key={`media-${item?.encodeId}-${index}`}
-                    prefixIndex={index + 1}
-                    time
-                    iconKaraoke
-                    iconHeart
-                    iconThreeDots
-                    {...item}
-                  />
-                ),
-            )}
+            {RTChart?.items?.slice(0, seeTop100).map((item, index) => (
+              <Media
+                key={`media-${item?.encodeId}-${index}`}
+                prefixIndex={index + 1}
+                time
+                iconKaraoke
+                iconHeart
+                iconThreeDots
+                {...item}
+              />
+            ))}
           </div>
 
           {seeTop100 === 10 && (

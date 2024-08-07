@@ -10,7 +10,7 @@ import { IoIosAddCircleOutline } from "react-icons/io"
 import { MdOutlineModeComment } from "react-icons/md"
 import { SiZalo } from "react-icons/si"
 
-import { ButtonIcon } from "../Button"
+import { ButtonIcon } from "../button"
 import Menu from "../Menu/Menu"
 import { PopperWrapper } from "../Wrapper"
 import style from "./BtnThreeDotCard.module.scss"

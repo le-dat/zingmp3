@@ -1,8 +1,8 @@
 import { useEffect } from "react"
 
-import { BtnKaraoke, BtnMV, BtnToggleList, BtnView } from "../../../components/BtnAction"
+import { BtnKaraoke, BtnMV, BtnToggleList, BtnView } from "../../../components/btn-action"
 import { useAppDispatch, useAppSelector } from "../../../hooks/useRedux"
-import { setFirstMounting, setLoading, setPlay } from "../../../redux/reducers/controlSlice"
+import { setFirstMounting, setLoading, setPlaying } from "../../../redux/reducers/controlSlice"
 import { setSource } from "../../../redux/reducers/songSlice"
 import { currentThemeSelector } from "../../../redux/selectors/themeSelector"
 import * as services from "../../../services"
@@ -21,26 +21,26 @@ const Player: React.FC = () => {
   const dispatch = useAppDispatch()
   const currentTheme = useAppSelector(currentThemeSelector)
   const { encodeId } = useAppSelector((state) => state.song)
-  const { firstMounting } = useAppSelector((state) => state.control)
+  const { isFirstMounting } = useAppSelector((state) => state.control)
 
   // get source audio
   useEffect(() => {
     const fetchApi = async () => {
       dispatch(setLoading(true))
-      dispatch(setPlay(false))
+      dispatch(setPlaying(false))
       const res: ResponseIProps = await services.getSong(encodeId)
       if (res?.[128].startsWith("https")) {
         dispatch(setSource(res[128]))
         dispatch(setLoading(false))
-        if (firstMounting) {
-          dispatch(setPlay(true))
+        if (isFirstMounting) {
+          dispatch(setPlaying(true))
         } else {
           // first mounting
           dispatch(setFirstMounting(true))
         }
       } else {
         // continue playing previous song
-        dispatch(setPlay(true))
+        dispatch(setPlaying(true))
         getToastWarn({ msg: "Bài này dành cho tài khoản vip !" })
       }
     }

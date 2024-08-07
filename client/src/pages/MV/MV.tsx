@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async"
 import { HiOutlineMusicalNote } from "react-icons/hi2"
 import { VscListSelection } from "react-icons/vsc"
 
-import ButtonDropDown from "../../components/Button/ButtonDropDown"
+import ButtonDropDown from "../../components/button/ButtonDropDown"
 import { CardVideo } from "../../components/Card"
 import { TabNav } from "../../components/Tab"
 import { TabWrapper } from "../../components/Wrapper"

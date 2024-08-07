@@ -2,7 +2,7 @@ import clsx from "clsx"
 import React from "react"
 import { BsCheckCircleFill } from "react-icons/bs"
 
-import { AlphaTheme } from "../../Alpha"
+import { AlphaTheme } from "../../alpha"
 import Image from "../../Image"
 import style from "./ThemeItem.module.scss"
 

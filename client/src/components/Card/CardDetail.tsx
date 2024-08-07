@@ -3,7 +3,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 
 import { DETAIL_PLAY_LIST } from "../../constants"
-import { AlphaCard } from "../Alpha"
+import { AlphaCard } from "../alpha"
 import Image from "../Image"
 import { SubTitle, Title } from "../Info"
 import style from "./CardDetail.module.scss"

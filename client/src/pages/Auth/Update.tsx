@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom"
 import images from "../../assets/images"
 
 import { useAuthContext } from "../../auth/AuthProvider"
-import { ButtonTitle } from "../../components/Button"
+import { ButtonTitle } from "../../components/button"
 import Image from "../../components/Image"
 import { PopperWrapper } from "../../components/Wrapper"
 import { LOGIN } from "../../constants"

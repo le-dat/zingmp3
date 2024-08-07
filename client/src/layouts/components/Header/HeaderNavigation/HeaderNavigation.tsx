@@ -10,7 +10,7 @@ import { TbNotes } from "react-icons/tb"
 
 import images from "../../../../assets/images"
 import { useAuthContext } from "../../../../auth/AuthProvider"
-import { ButtonIcon, ButtonMenu } from "../../../../components/Button"
+import { ButtonIcon, ButtonMenu } from "../../../../components/button"
 import { IconTheme } from "../../../../components/Icons"
 import Image from "../../../../components/Image"
 import { UPDATE } from "../../../../constants"
@@ -84,7 +84,7 @@ const HeaderNavigation: React.FC = () => {
     dispatch(setShowThemeModal(true))
   }
   const handleVip = () => {
-    getToastWarn({ msg: "Argibank" })
+    getToastWarn({ msg: "Chưa hỗ trợ" })
   }
   return (
     <div className={style.accounts}>

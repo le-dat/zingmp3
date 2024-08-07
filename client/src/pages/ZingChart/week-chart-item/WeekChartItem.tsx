@@ -1,6 +1,6 @@
 import React from "react"
 
-import { ButtonTitle } from "../../../components/Button"
+import { ButtonTitle } from "../../../components/button"
 import Title from "../../../components/HeaderPlayList"
 import Media from "../../../components/Media/Media"
 import { ZING_CHART_WEEK } from "../../../constants"

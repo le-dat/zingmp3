@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"
 import GoogleButton from "react-google-button"
 import { useNavigate } from "react-router-dom"
 import { useAuthContext } from "../../auth/AuthProvider"
-import { ButtonTitle } from "../../components/Button"
+import { ButtonTitle } from "../../components/button"
 import { TabNav } from "../../components/Tab"
 import { PopperWrapper, TabWrapper } from "../../components/Wrapper"
 import { DISCOVER, LOGIN, SIGN_UP } from "../../constants"
@@ -15,21 +15,22 @@ interface FormIProps {
   email: string
   password: string
 }
-const SignUp: React.FC = () => {
-  useScrollTop()
+
+const useSignUpForm = (initialValues: FormIProps) => {
+  const [values, setValues] = useState<FormIProps>(initialValues)
   const navigate = useNavigate()
   const { signUp, signInWithGoogle, currentUser } = useAuthContext()
-  const [values, setValues] = useState<FormIProps>({
-    email: "",
-    password: "",
-  })
 
   useEffect(() => {
     if (currentUser) {
       navigate(DISCOVER)
       getToastSuccess({ msg: "Tạo tài khoản thành công" })
     }
-  }, [currentUser])
+  }, [currentUser, navigate])
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setValues({ ...values, [e.target.name]: e.target.value })
+  }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -44,6 +45,16 @@ const SignUp: React.FC = () => {
     }
   }
 
+  return { values, handleChange, handleSubmit, signInWithGoogle }
+}
+
+const SignUp: React.FC = () => {
+  useScrollTop()
+  const { values, handleChange, handleSubmit, signInWithGoogle } = useSignUpForm({
+    email: "",
+    password: "",
+  })
+
   return (
     <div className={clsx("is-center", style.wrapper)}>
       <PopperWrapper customClass={style.container} onClick={(e) => e.stopPropagation()}>
@@ -57,7 +68,7 @@ const SignUp: React.FC = () => {
         </TabWrapper>
 
         <div className={style.main}>
-          <form className={clsx("is-center", style.vertical)} onSubmit={(e) => handleSubmit(e)}>
+          <form className={clsx("is-center", style.vertical)} onSubmit={handleSubmit}>
             <input
               required
               type="email"
@@ -65,7 +76,7 @@ const SignUp: React.FC = () => {
               className={style.input}
               placeholder="Nhập email của bạn"
               value={values.email}
-              onChange={(e) => setValues({ ...values, [e.target.name]: e.target.value })}
+              onChange={handleChange}
             />
             <input
               required
@@ -74,7 +85,7 @@ const SignUp: React.FC = () => {
               className={style.input}
               placeholder="Nhập password của bạn"
               value={values.password}
-              onChange={(e) => setValues({ ...values, [e.target.name]: e.target.value })}
+              onChange={handleChange}
             />
             <ButtonTitle primary rounded>
               Gửi
@@ -83,7 +94,7 @@ const SignUp: React.FC = () => {
 
           <div className={clsx("is-center", style.vertical)}>
             <div className={clsx("is-center", style.separate)}>hoặc</div>
-            <GoogleButton type="light" label="Đăng kí bằng Google" onClick={() => signInWithGoogle()} />
+            <GoogleButton type="light" label="Đăng kí bằng Google" onClick={signInWithGoogle} />
           </div>
         </div>
       </PopperWrapper>

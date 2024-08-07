@@ -1,28 +1,14 @@
 import clsx from "clsx"
-import { useRef } from "react"
 import { VscMute, VscUnmute } from "react-icons/vsc"
 
-import { ButtonIcon } from "../../../../components/Button"
-import { useAppDispatch, useAppSelector } from "../../../../hooks/useRedux"
-import { setVolume } from "../../../../redux/reducers/volumeSlice"
+import { ButtonIcon } from "../../../../components/button"
+import { useVolumeControl } from "../../../../hooks"
+import { useAppSelector } from "../../../../hooks/useRedux"
 import style from "./PlayerVolume.module.scss"
 
 const PlayerVolume: React.FC = () => {
-  const dispatch = useAppDispatch()
   const { volume } = useAppSelector((state) => state.volume)
-  const preVolume = useRef<any>(volume || 100)
-
-  const handleChangeVolume = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(setVolume(Number.parseInt(e.target.value)))
-  }
-
-  const handleMute = () => {
-    const volumeValue = volume > 0 ? 0 : preVolume.current
-    if (volume > 0) {
-      preVolume.current = volume
-    }
-    dispatch(setVolume(volumeValue))
-  }
+  const { handleChangeVolume, handleMute } = useVolumeControl(volume)
 
   return (
     <div className={style.duration}>

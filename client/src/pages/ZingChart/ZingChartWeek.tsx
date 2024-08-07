@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 
 import images from "../../assets/images"
-import { AlphaPage } from "../../components/Alpha"
+import { AlphaPage } from "../../components/alpha"
 import HeaderPlayList from "../../components/HeaderPlayList"
 import Media from "../../components/Media"
 import { TabNav } from "../../components/Tab"

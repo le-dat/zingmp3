@@ -4,7 +4,7 @@ import { useAppDispatch } from "../../hooks/useRedux"
 import { changeTheme, setShowThemeModal } from "../../redux/reducers/themeSlice"
 import { getToastWarn } from "../../utils/toast"
 
-import { ButtonTitle } from "../Button"
+import { ButtonTitle } from "../button"
 import style from "./AlphaModalTheme.module.scss"
 
 interface IProps {

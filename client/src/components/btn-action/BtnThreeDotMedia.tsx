@@ -13,7 +13,7 @@ import { SiZalo } from "react-icons/si"
 
 import { useAppDispatch } from "../../hooks/useRedux"
 import { setShowLyricSongModal } from "../../redux/reducers/lyricSlice"
-import { ButtonIcon, ButtonTitle } from "../Button"
+import { ButtonIcon, ButtonTitle } from "../button"
 import Image from "../Image"
 import { SubTitle, Title } from "../Info"
 import Menu from "../Menu/Menu"

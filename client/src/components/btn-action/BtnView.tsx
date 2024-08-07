@@ -1,8 +1,7 @@
 import React, { useState } from "react"
 import { VscMultipleWindows } from "react-icons/vsc"
 
-import { useAppDispatch } from "../../hooks/useRedux"
-import { ButtonIcon } from "../Button"
+import { ButtonIcon } from "../button"
 
 interface IProps {
   title?: string
@@ -10,7 +9,6 @@ interface IProps {
   customClass?: string
 }
 const BtnView: React.FC<IProps> = ({ title = "Chế độ cửa sổ", disable = false, customClass }) => {
-  const dispatch = useAppDispatch()
   const [isView, setIsView] = useState<boolean>(false)
 
   const handleLyric = () => {

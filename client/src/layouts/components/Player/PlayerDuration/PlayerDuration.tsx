@@ -1,7 +1,7 @@
-import React, { useEffect, useMemo, useRef, useState } from "react"
+import React, { useRef, useState } from "react"
 
 import Time from "../../../../components/Time"
-import { useChangeSong } from "../../../../hooks"
+import { useAudioControls, useChangeSong, useProgress } from "../../../../hooks"
 import { useAppDispatch, useAppSelector } from "../../../../hooks/useRedux"
 import { setCurrentTime as setTime } from "../../../../redux/reducers/currentTimeSlice"
 import style from "./PlayerDuration.module.scss"
@@ -9,54 +9,38 @@ import style from "./PlayerDuration.module.scss"
 const PlayerDuration: React.FC = () => {
   const dispatch = useAppDispatch()
   const audioRef = useRef<HTMLAudioElement>(null)
-  const { isPlay, isLoop } = useAppSelector((state) => state.control)
+  const { isPlaying, isLooping } = useAppSelector((state) => state.control)
   const { currentTime } = useAppSelector((state) => state.currentTime)
   const { volume } = useAppSelector((state) => state.volume)
   const { encodeId, duration, source } = useAppSelector((state) => state.song)
-  const [isSeeking, setIsSeeKing] = useState<boolean>(false)
+  const [isSeeking, setIsSeeking] = useState<boolean>(false)
   const [processValue, setProcessValue] = useState<number>(0)
   const handleChangeSong = useChangeSong()
 
-  // set play audio
-  useEffect(() => {
-    if (isPlay) handlePlay()
-    else handlePause()
-  }, [isPlay, encodeId])
-
-  // set volume audio
-  useEffect(() => {
-    if (audioRef?.current) audioRef.current.volume = volume / 100
-  }, [volume])
-
-  const handlePlay = () => audioRef.current?.play()
-  const handlePause = () => audioRef.current?.pause()
+  useAudioControls(audioRef, isPlaying, volume, encodeId)
 
   const handleTimeUpdate = () => {
     if (audioRef.current) {
       dispatch(setTime(audioRef.current.currentTime))
     }
   }
-  const handleChangeProgress = (e: React.ChangeEvent<HTMLInputElement>) => {
+
+  const handleChangeProgress = (e: any) => {
     setProcessValue(Number.parseInt(e.target.value))
   }
+
   const handleSeekTime = (e: any) => {
-    setIsSeeKing(false)
+    setIsSeeking(false)
     if (audioRef.current) {
       const seekTime = (Number.parseInt(e.target.value) * audioRef.current.duration) / 100
       audioRef.current.currentTime = seekTime
     }
   }
-  const progressWidth = useMemo(() => {
-    if (audioRef.current) {
-      const width = isSeeking
-        ? processValue
-        : Math.floor((audioRef.current.currentTime / audioRef.current.duration) * 100) || 0
-      return width
-    }
-  }, [isSeeking, currentTime, processValue])
+
+  const progressWidth = useProgress(audioRef, isSeeking, processValue)
 
   const handleSongEnd = () => {
-    return isLoop ? handlePlay() : handleChangeSong("next")
+    return isLooping ? audioRef.current?.play() : handleChangeSong("next")
   }
 
   return (
@@ -70,25 +54,24 @@ const PlayerDuration: React.FC = () => {
           max={100}
           className={style.range}
           onChange={handleChangeProgress}
-          onMouseDown={() => setIsSeeKing(true)}
-          onTouchStart={() => setIsSeeKing(true)}
-          onMouseUp={handleSeekTime}
-          onTouchEnd={handleSeekTime}
+          onMouseDown={() => setIsSeeking(true)}
+          onTouchStart={() => setIsSeeking(true)}
+          onMouseUp={(e) => handleSeekTime(e)}
+          onTouchEnd={(e) => handleSeekTime(e)}
         />
         <div className={style.track}>
           <div className={style.trackUpdate} style={{ width: `${progressWidth}%` }} />
         </div>
       </div>
       <Time duration={duration} />
-
       <audio
         ref={audioRef}
         id="audio"
         src={source}
-        loop={isLoop}
-        autoPlay={isPlay}
-        onPlay={handlePlay}
-        onPause={handlePause}
+        loop={isLooping}
+        autoPlay={isPlaying}
+        onPlay={() => audioRef.current?.play()}
+        onPause={() => audioRef.current?.pause()}
         onTimeUpdate={handleTimeUpdate}
         onEnded={handleSongEnd}
       />

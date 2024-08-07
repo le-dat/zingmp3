@@ -27,7 +27,7 @@ import {
   ZING_CHART,
   ZING_CHART_WEEK,
 } from "./constants"
-import DefaultLayout from "./layouts/DefaultLayout/DefaultLayout"
+import DefaultLayout from "./layouts/default-layout/DefaultLayout"
 import {
   Artist,
   DetailPlayList,

@@ -19,41 +19,40 @@ import style from "./LineChart.module.scss"
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend)
 
-const LineChart: React.FC<LineChartIProps> = ({ chart, customClass = "", items = [] }) => {
-  const { baseColor, highlightColor } = useAppSelector((state) => state.skeleton)
-  const labels = chart.times.map((time, index) => (index % 2 === 0 ? time.hour + ":00" : ""))
+const useChartData = (chart: LineChartIProps["chart"], items: LineChartIProps["items"]) => {
+  const labels = chart.times.map((time, index) => (index % 2 === 0 ? `${time.hour}:00` : ""))
   const keysChart = Object.keys(chart.items)
   const borderColor = ["rgb(39, 189, 156)", "rgb(74, 144, 226)", "rgb(227, 80, 80)"]
-  const data = {
-    labels,
-    datasets: keysChart.map((item, index) => ({
-      label: items[index]?.title || keysChart[index],
-      data: chart?.items[keysChart[index]]?.map(
-        (item: { time: number; hour: string | number; counter: string | number }) => item.counter,
-      ),
-      borderColor: borderColor[index],
-      backgroundColor: "#fff",
-    })),
-  }
 
-  const options = {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: "top" as const,
-      },
-      // title: {
-      //   display: true,
-      //   text: "#zingchart",
-      // },
+  const datasets = keysChart.map((key, index) => ({
+    label: items?.[index]?.title || key,
+    data: chart.items[key].map((item: { counter: string | number }) => item.counter),
+    borderColor: borderColor[index],
+    backgroundColor: "#fff",
+  }))
+
+  return { labels, datasets }
+}
+
+const useChartOptions = () => ({
+  responsive: true,
+  plugins: {
+    legend: {
+      position: "top" as const,
     },
-  }
+  },
+})
+
+const LineChart: React.FC<LineChartIProps> = ({ chart, customClass = "", items = [] }) => {
+  const { baseColor, highlightColor } = useAppSelector((state) => state.skeleton)
+  const { labels, datasets } = useChartData(chart, items)
+  const options = useChartOptions()
 
   return (
     <SkeletonTheme baseColor={baseColor} highlightColor={highlightColor}>
       <div className={clsx(style.wrapper, customClass)}>
         {chart.times.length > 5 ? (
-          <Line datasetIdKey="id" options={options} data={data} />
+          <Line datasetIdKey="id" options={options} data={{ labels, datasets }} />
         ) : (
           <Skeleton height={"100%"} />
         )}

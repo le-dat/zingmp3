@@ -2,7 +2,7 @@ import clsx from "clsx"
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai"
 
 import { useAuthContext } from "../../../auth/AuthProvider"
-import { ButtonIcon } from "../../../components/Button"
+import { ButtonIcon } from "../../../components/button"
 import {
   IconDiscover,
   IconFollow,
@@ -47,7 +47,7 @@ const Sidebar = () => {
   const { isExpanded } = useAppSelector((state) => state.sidebar)
 
   const handleClickBlockVip = () => {
-    getToastWarn({ msg: "Agribank !" })
+    getToastWarn({ msg: "Tính năng chưa sẵn sàng !" })
   }
   return (
     <aside className={clsx(style.aside, { [style.isExpanded]: isExpanded })}>

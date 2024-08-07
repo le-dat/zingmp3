@@ -31,7 +31,7 @@ export const ID = ":id"
 // storage key
 export const PLAYER_STORAGE_KEY = "DAT_PLAYER"
 
-export const API_URL =
-  process.env.NODE_ENV !== "production"
-    ? process.env.REACT_APP_LOCALHOST || "http://localhost:5000"
-    : process.env.REACT_APP_BASE_URL || "https://zingmp3-19ul.onrender.com"
+export const API_URL = "https://zingmp3-19ul.onrender.com"
+// process.env.NODE_ENV !== "production"
+//   ? process.env.REACT_APP_LOCALHOST || "http://localhost:5000"
+//   : process.env.REACT_APP_BASE_URL || "https://zingmp3-19ul.onrender.com"

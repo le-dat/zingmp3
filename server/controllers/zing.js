@@ -1,88 +1,75 @@
 const { ZingMp3 } = require("zingmp3-api-full");
 
+const handleApiRequest = (apiMethod, req, res) => {
+  apiMethod(req.query)
+    .then((data) => res.json(data))
+    .catch((error) => res.status(500).json({ error: error.message }));
+};
+
 class ZingController {
   getSong(req, res) {
-    ZingMp3.getSong(req.query.id).then((data) => {
-      res.json(data);
-    });
+    handleApiRequest(ZingMp3.getSong.bind(ZingMp3, req.query.id), req, res);
   }
 
   getDetailPlaylist(req, res) {
-    ZingMp3.getDetailPlaylist(req.query.id).then((data) => {
-      res.json(data);
-    });
+    handleApiRequest(ZingMp3.getDetailPlaylist.bind(ZingMp3, req.query.id), req, res);
   }
 
   getHome(req, res) {
-    ZingMp3.getHome().then((data) => {
-      res.json(data);
-    });
+    handleApiRequest(ZingMp3.getHome.bind(ZingMp3), req, res);
   }
 
   getTop100(req, res) {
-    ZingMp3.getTop100().then((data) => {
-      res.json(data);
-    });
+    handleApiRequest(ZingMp3.getTop100.bind(ZingMp3), req, res);
   }
 
   getChartHome(req, res) {
-    ZingMp3.getChartHome().then((data) => {
-      res.json(data);
-    });
+    handleApiRequest(ZingMp3.getChartHome.bind(ZingMp3), req, res);
   }
 
   getNewReleaseChart(req, res) {
-    ZingMp3.getNewReleaseChart().then((data) => {
-      res.json(data);
-    });
+    handleApiRequest(ZingMp3.getNewReleaseChart.bind(ZingMp3), req, res);
   }
 
   getInfoSong(req, res) {
-    ZingMp3.getInfoSong(req.query.id).then((data) => {
-      res.json(data);
-    });
+    handleApiRequest(ZingMp3.getInfoSong.bind(ZingMp3, req.query.id), req, res);
   }
 
   getArtist(req, res) {
-    ZingMp3.getArtist(req.query.name).then((data) => {
-      res.json(data);
-    });
+    handleApiRequest(ZingMp3.getArtist.bind(ZingMp3, req.query.name), req, res);
   }
 
   getListArtistSong(req, res) {
-    ZingMp3.getListArtistSong(req.query.id, req.query.page, req.query.count).then((data) => {
-      res.json(data);
-    });
+    handleApiRequest(
+      ZingMp3.getListArtistSong.bind(ZingMp3, req.query.id, req.query.page, req.query.count),
+      req,
+      res
+    );
   }
 
   getLyric(req, res) {
-    ZingMp3.getLyric(req.query.id).then((data) => {
-      res.json(data);
-    });
+    handleApiRequest(ZingMp3.getLyric.bind(ZingMp3, req.query.id), req, res);
   }
 
   search(req, res) {
-    ZingMp3.search(req.query.keyword).then((data) => {
-      res.json(data);
-    });
+    handleApiRequest(ZingMp3.search.bind(ZingMp3, req.query.keyword), req, res);
   }
 
   getListMV(req, res) {
-    ZingMp3.getListMV(req.query.id, req.query.page, req.query.count).then((data) => {
-      res.json(data);
-    });
+    handleApiRequest(
+      ZingMp3.getListMV.bind(ZingMp3, req.query.id, req.query.page, req.query.count),
+      req,
+      res
+    );
   }
 
   getCategoryMV(req, res) {
-    ZingMp3.getCategoryMV(req.query.id).then((data) => {
-      res.json(data);
-    });
+    handleApiRequest(ZingMp3.getCategoryMV.bind(ZingMp3, req.query.id), req, res);
   }
 
   getVideo(req, res) {
-    ZingMp3.getVideo(req.query.id).then((data) => {
-      res.json(data);
-    });
+    handleApiRequest(ZingMp3.getVideo.bind(ZingMp3, req.query.id), req, res);
   }
 }
+
 module.exports = new ZingController();

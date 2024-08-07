@@ -2,7 +2,7 @@ import clsx from "clsx"
 import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 
-import { BtnFollow } from "../../components/BtnAction"
+import { BtnFollow } from "../../components/btn-action"
 import { CardDetail } from "../../components/Card"
 import HeaderPlayList from "../../components/HeaderPlayList"
 import Image from "../../components/Image"
@@ -16,7 +16,7 @@ import { getArrayArtistEmpty, getArrayPlayListEmpty, getArraySongEmpty, getArray
 import { getToastWarn } from "../../utils/toast"
 import { SectionIProps } from "../interface"
 import style from "./Artist.module.scss"
-import TopListSong from "./TopListSong"
+import TopListSong from "./top-list-song"
 
 interface IProps {
   alias: string

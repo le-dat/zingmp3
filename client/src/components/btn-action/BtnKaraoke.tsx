@@ -3,7 +3,7 @@ import { GiMicrophone } from "react-icons/gi"
 
 import { useAppDispatch } from "../../hooks/useRedux"
 import { setShowLyricSongModal } from "../../redux/reducers/lyricSlice"
-import { ButtonIcon } from "../Button"
+import { ButtonIcon } from "../button"
 
 interface IProps {
   title?: string
