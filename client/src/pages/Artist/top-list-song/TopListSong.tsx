@@ -1,9 +1,9 @@
 import clsx from "clsx"
 import React from "react"
 
-import HeaderPlayList from "../../../components/HeaderPlayList"
+import HeaderPlayList from "../../../components/header-play-list"
 import { MediaIProps } from "../../../interface"
-import Media from "../../../components/Media"
+import Media from "../../../components/media"
 import style from "./TopListSong.module.scss"
 
 interface TopListMediaIProps {

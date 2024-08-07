@@ -1,7 +1,7 @@
 import React from "react"
 import { Helmet } from "react-helmet-async"
 
-import { SlideArtist } from "../../components/Slide"
+import { SlideArtist } from "../../components/slide"
 import { useScrollTop } from "../../hooks"
 import style from "./Follow.module.scss"
 

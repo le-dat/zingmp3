@@ -4,9 +4,9 @@ import { Link } from "react-router-dom"
 
 import { MV, VIDEO } from "../../constants"
 import { AlphaCard } from "../alpha"
-import Image from "../Image"
-import { SubTitle, Title } from "../Info"
-import Time from "../Time"
+import Image from "../image"
+import { SubTitle, Title } from "../info"
+import Time from "../ime"
 import style from "./CardVideo.module.scss"
 
 interface IProps {

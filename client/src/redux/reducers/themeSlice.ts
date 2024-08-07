@@ -1,7 +1,7 @@
 import type { PayloadAction } from "@reduxjs/toolkit"
 import { createSlice } from "@reduxjs/toolkit"
 
-import LIST_THEME from "../../components/Modal/ModalTheme/data"
+import LIST_THEME from "../../components/modal/modal-theme/data"
 import { config, setConfig } from "./../../utils/storage"
 
 interface ThemeIProps {

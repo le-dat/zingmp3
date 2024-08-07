@@ -1,6 +1,6 @@
 import React from "react"
 
-import Image from "../Image"
+import Image from "../image"
 import style from "./AlphaPage.module.scss"
 
 interface IProps {

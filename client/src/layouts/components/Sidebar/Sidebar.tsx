@@ -16,7 +16,7 @@ import {
   IconRecent,
   IconSong,
   IconZingChart,
-} from "../../../components/Icons"
+} from "../../../components/icons"
 import {
   PERSONAL,
   RECENTLY,
@@ -34,12 +34,12 @@ import {
 import { useAppDispatch, useAppSelector } from "../../../hooks/useRedux"
 import { setExpanded } from "../../../redux/reducers/sidebarSlice"
 import { getToastWarn } from "../../../utils/toast"
-import BtnAddPlayList from "./BtnAddPlayList"
+import BtnAddPlayList from "./btn-add-play-list"
 import style from "./Sidebar.module.scss"
-import SidebarAdvertise from "./SidebarAdvertise"
-import SidebarHeader from "./SidebarHeader"
-import SidebarMenu from "./SidebarMenu"
-import SidebarMenuItem from "./SidebarMenu/SidebarMenuItem"
+import SidebarAdvertise from "./sidebar-advertise"
+import SidebarHeader from "./sidebar-header"
+import SidebarMenu from "./sidebar-menu"
+import SidebarMenuItem from "./sidebar-menu/SidebarMenuItem"
 
 const Sidebar = () => {
   const dispatch = useAppDispatch()

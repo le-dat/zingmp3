@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router-dom"
 import reportWebVitals from "./reportWebVitals"
 
 import App from "./App"
-import GlobalStyle from "./components/GlobalStyle/GlobalStyle"
+import GlobalStyle from "./components/global-style/GlobalStyle"
 import { store } from "./redux/store"
 import AuthProvider from "./auth/AuthProvider"
 

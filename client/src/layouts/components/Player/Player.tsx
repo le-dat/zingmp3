@@ -8,10 +8,10 @@ import { currentThemeSelector } from "../../../redux/selectors/themeSelector"
 import * as services from "../../../services"
 import { getToastWarn } from "../../../utils/toast"
 import style from "./Player.module.scss"
-import PlayerControl from "./PlayerControl"
-import PlayerDuration from "./PlayerDuration"
-import PlayerSongInfo from "./PlayerSongInfo"
-import PlayerVolume from "./PlayerVolume"
+import PlayerControl from "./player-control"
+import PlayerDuration from "./player-duration"
+import PlayerSongInfo from "./player-song-info"
+import PlayerVolume from "./player-volume"
 
 interface ResponseIProps {
   128: string

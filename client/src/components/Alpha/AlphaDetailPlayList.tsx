@@ -5,8 +5,8 @@ import { BsPlayCircle } from "react-icons/bs"
 import images from "../../assets/images"
 import { useAppDispatch, useAppSelector } from "../../hooks/useRedux"
 import { setPlaying } from "../../redux/reducers/controlSlice"
-import { IconLoading } from "../Icons"
-import Image from "../Image"
+import { IconLoading } from "../icons"
+import Image from "../image"
 import style from "./AlphaDetailPlayList.module.scss"
 
 interface IProps {

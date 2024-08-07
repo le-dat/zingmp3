@@ -5,10 +5,10 @@ import { HiOutlineMusicalNote } from "react-icons/hi2"
 import { VscListSelection } from "react-icons/vsc"
 
 import ButtonDropDown from "../../components/button/ButtonDropDown"
-import { CardVideo } from "../../components/Card"
-import { TabNav } from "../../components/Tab"
-import { TabWrapper } from "../../components/Wrapper"
-import { HAN_QUOC, HOA_TAU, MV as MV_ROUTER, US_UK, VIET_NAM } from "../../constants"
+import { CardVideo } from "../../components/card"
+import { TabNav } from "../../components/tab"
+import { TabWrapper } from "../../components/wrapper"
+import { KOREAN, INSTRUCMENTAL_MUSIC, MV as MV_ROUTER, US_UK, VIET_NAM } from "../../constants"
 import { useScrollTop } from "../../hooks"
 import { MediaIProps } from "../../interface"
 import * as services from "../../services"
@@ -30,8 +30,8 @@ interface CategoryIProps {
 const TYPE = [
   { name: "VIỆT NAM", link: VIET_NAM, id: "IWZ9Z08I" },
   { name: "US-UK", link: US_UK, id: "IWZ9Z08O" },
-  { name: "KOREAN", link: HAN_QUOC, id: "IWZ9Z08W" },
-  { name: "HÒA TẤU", link: HOA_TAU, id: "IWZ9Z086" },
+  { name: "KOREAN", link: KOREAN, id: "IWZ9Z08W" },
+  { name: "HÒA TẤU", link: INSTRUCMENTAL_MUSIC, id: "IWZ9Z086" },
 ]
 const FILTER = [
   { id: "1", name: "Nghe nhiều" },

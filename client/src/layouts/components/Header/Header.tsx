@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom"
 
 import { ButtonIcon } from "../../../components/button"
 import style from "./Header.module.scss"
-import HeaderNavigation from "./HeaderNavigation"
-import HeaderSearch from "./HeaderSearch"
+import HeaderNavigation from "./header-navigation"
+import HeaderSearch from "./header-search"
 
 interface Ref {
   ref?: any

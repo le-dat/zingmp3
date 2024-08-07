@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react"
 import { Helmet } from "react-helmet-async"
 
-import HeaderPlayList from "../../components/HeaderPlayList"
-import Media from "../../components/Media"
+import HeaderPlayList from "../../components/header-play-list"
+import Media from "../../components/media"
 import { useScrollTop } from "../../hooks"
 import * as services from "../../services"
 import { getArraySongEmpty } from "../../utils/song"

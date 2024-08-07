@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 
 import { useAuthContext } from "../../auth/AuthProvider"
-import { CardAlbum } from "../../components/Card"
+import { CardAlbum } from "../../components/card"
 import { useScrollTop } from "../../hooks"
 import { useAppDispatch, useAppSelector } from "../../hooks/useRedux"
 import { setPlayListLikedAlbum } from "../../redux/reducers/personalSlice"

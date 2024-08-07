@@ -2,7 +2,7 @@ import clsx from "clsx"
 import React from "react"
 
 import images from "../../assets/images"
-import Image from "../../components/Image"
+import Image from "../../components/image"
 import style from "./Personal.module.scss"
 
 const Empty: React.FC = () => {

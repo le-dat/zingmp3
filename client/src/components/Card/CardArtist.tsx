@@ -7,8 +7,8 @@ import { ARTIST } from "../../constants"
 import { formatLinkArtist } from "../../utils/common"
 import { AlphaCard } from "../alpha"
 import { BtnFollow } from "../btn-action"
-import Image from "../Image"
-import { SubTitle, Title } from "../Info"
+import Image from "../image"
+import { SubTitle, Title } from "../info"
 import style from "./CardArtist.module.scss"
 
 interface IProps {

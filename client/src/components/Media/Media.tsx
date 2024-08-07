@@ -7,11 +7,11 @@ import { setInfoSong } from "../../redux/reducers/songSlice"
 import { getToastWarn } from "../../utils/toast"
 import { AlphaMedia } from "../alpha"
 import { BtnHeartSong, BtnKaraoke, BtnThreeDotMedia } from "../btn-action"
-import Image from "../Image"
-import { SubTitle, Title } from "../Info"
-import Time from "../Time"
+import Image from "../image"
+import { SubTitle, Title } from "../info"
+import Time from "../ime"
 import style from "./Media.module.scss"
-import { PrefixIcon, PrefixNum, PrefixTitle } from "./Prefix"
+import { PrefixIcon, PrefixNum, PrefixTitle } from "./prefix"
 
 interface IProps extends MediaIProps {
   prefixIndex?: number

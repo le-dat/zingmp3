@@ -3,7 +3,7 @@ import clsx from "clsx"
 import React from "react"
 
 import { ButtonTitle } from "../button"
-import { PopperWrapper } from "../Wrapper"
+import { PopperWrapper } from "../wrapper"
 import style from "./Menu.module.scss"
 
 interface MenuIProps {

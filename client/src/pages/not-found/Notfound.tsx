@@ -2,7 +2,7 @@ import React from "react"
 import { Helmet } from "react-helmet-async"
 
 import images from "../../assets/images"
-import Image from "../../components/Image"
+import Image from "../../components/image"
 import style from "./NotFound.module.scss"
 
 const Notfound: React.FC = () => {

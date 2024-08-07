@@ -11,8 +11,8 @@ import { MdOutlineModeComment } from "react-icons/md"
 import { SiZalo } from "react-icons/si"
 
 import { ButtonIcon } from "../button"
-import Menu from "../Menu/Menu"
-import { PopperWrapper } from "../Wrapper"
+import Menu from "../menu/Menu"
+import { PopperWrapper } from "../wrapper"
 import style from "./BtnThreeDotCard.module.scss"
 
 const MENU_CARD = [

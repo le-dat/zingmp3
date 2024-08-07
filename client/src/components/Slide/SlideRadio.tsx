@@ -1,9 +1,9 @@
 import React from "react"
 
 import { RadioIProps } from "../../interface"
-import { CardRadio } from "../Card"
-import { Title } from "../Info"
-import { SlideWrapper } from "../Wrapper"
+import { CardRadio } from "../card"
+import { Title } from "../info"
+import { SlideWrapper } from "../wrapper"
 import style from "./SlideRadio.module.scss"
 
 interface IProps {
