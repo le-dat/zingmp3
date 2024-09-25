@@ -8,7 +8,9 @@
 ![ZingMp3 screenshot](https://raw.githubusercontent.com/le-dat/zingmp3/master/static/screenshot6.png)
 ![ZingMp3 screenshot](https://raw.githubusercontent.com/le-dat/zingmp3/master/static/screenshot7.png)
 
-### Feature:
+
+
+### 🔑 Key Features
 
 - Play, pause, skip to the next or previous music track.
 - Adjust the volume and seek through the audio.
@@ -19,7 +21,12 @@
 - Login or register using email or Google.
 - Add or remove songs from favorites.
 - To view real-time lyrics for audio,
+### Prerequisites
 
+- **Node.js** version > 18.0.0
+- **Yarn** (preferred package manager)
+
+---
 ### Server
 
 ```
@@ -36,16 +43,13 @@ MONGODB_PASSWORD=1234
 ACCESS_TOKEN_SECRET=datdeptrai
 ```
 
-Run
+#### 🏁 Run app in your browser (http://localhost:5000)
 
+```bash
+   yarn install && yarn dev
 ```
-yarn install
-yarn dev
-```
 
-Open Browser: http://localhost:5000
-
-##### Enpoint for zing
+#### Enpoint for zing
 
 Get Song: `/api/zing/song?id={param-id-song}`
 Get Detail Playlist: `/api/zing/detailplaylist?id={param-id-playlist}`
@@ -74,20 +78,22 @@ Remove Liked Album: `/api/user/liked/album/add?email=${email}&albumId=${albumId}
 ### Client
 
 ```
-
 cd client
 
 ```
 
 Create a new firebase project.[Login to your google account and create a new firebase project](https://console.firebase.google.com/u/0/)
 
-`run`
+#### 🏁 Run app in your browser (http://localhost:3000)
 
+```bash
+   yarn install && yarn start:dev
 ```
 
-yarn install
-yarn start:dev
+## 📝 Version
 
-```
+0.1.0
 
-Open Browser: http://localhost:3000
+## Author
+
+Le Quoc Dat. See the [Website Portfolio](https://ledat-portfolio.vercel.app/) for details.
