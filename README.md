@@ -52,27 +52,45 @@ ACCESS_TOKEN_SECRET=datdeptrai
 #### Enpoint for zing
 
 Get Song: `/api/zing/song?id={param-id-song}`
+
 Get Detail Playlist: `/api/zing/detailplaylist?id={param-id-playlist}`
+
 Get Home: `/api/zing/home?page={param-page}`
+
 Get Top 100: `/api/zing/top100`
+
 Get Charthome: `/api/zing/charthome`
+
 Get New Release Chart: `/api/zing/newreleasechart`
+
 Get Info Song: `/api/zing/infosong?id={param-id-song}`
+
 Get Artist: `/api/zing/artist?name={param-name}`
-Get Artist Song: `/api/zing/artistsong?name={param-id, page, count}`
+
+Get Artist Song: `/api/zing/artistsong?name={param-id, page, count`
+
 Get Lyric: `/api/zing/lyric?id={param-id-song}`
+
 Search: `/api/zing/search?keyword={keyword}`
+
 Get List MV: `/api/zing/listmv?{id, page, count}`
+
 Get Categoty MV: `/api/zing/categorymv?id={param-id-video}`
+
 Get Video: `/api/zing/video?id={param-id-video}`
 
 ##### Enpoint for user:
 
 Get Liked Song: `/api/user/liked/song/${email}`
+
 Get Liked Album: `/api/user/liked/album/${email`
+
 Add Liked Song: `/api/user/liked/song/add?email=${email}&song=${song}`
+
 Add Liked Album: `/api/user/liked/album/add?email=${email}&song=${song}`
+
 Remove Liked Song: `/api/user/liked/song/add?email=${email}&songId=${songId}`
+
 Remove Liked Album: `/api/user/liked/album/add?email=${email}&albumId=${albumId}`
 
 ### Client
