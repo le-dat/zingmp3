@@ -45,7 +45,7 @@
     "axios": "^1.2.2",
     "chart.js": "^4.1.2",
     "clsx": "^1.2.1",
-    "dompurify": "^2.4.3",
+    "dompurify": "^2.5.0",
     "firebase": "^9.17.1",
     "format-duration": "^3.0.1",
     "framer-motion": "^9.0.1",
