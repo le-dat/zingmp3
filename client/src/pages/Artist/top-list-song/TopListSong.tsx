@@ -3,7 +3,7 @@ import React from "react"
 
 import HeaderPlayList from "../../../components/header-play-list"
 import { MediaIProps } from "../../../interface"
-import Media from "../../../components/media"
+import Media from "../../../components/Media"
 import style from "./TopListSong.module.scss"
 
 interface TopListMediaIProps {

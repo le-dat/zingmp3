@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { AiOutlineCheck } from "react-icons/ai"
 import { SlUserFollow } from "react-icons/sl"
 
-import { ButtonTitle } from "../button"
+import { ButtonTitle } from "../Button"
 
 interface IProps {
   primary?: boolean

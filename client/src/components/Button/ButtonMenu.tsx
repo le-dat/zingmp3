@@ -2,8 +2,8 @@ import HeadlessTippy from "@tippyjs/react/headless"
 import clsx from "clsx"
 import React, { useState } from "react"
 
-import Menu from "../menu"
-import { PopperWrapper } from "../wrapper"
+import Menu from "../Menu"
+import { PopperWrapper } from "../Wrapper"
 import style from "./ButtonMenu.module.scss"
 
 interface IProps {

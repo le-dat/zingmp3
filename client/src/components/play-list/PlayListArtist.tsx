@@ -2,7 +2,7 @@ import clsx from "clsx"
 import React from "react"
 
 import { ArtistIProps } from "../../interface"
-import CardArtist from "../card/CardArtist"
+import CardArtist from "../Card/CardArtist"
 import HeaderPlayList from "../header-play-list"
 import style from "./PlayList.module.scss"
 

@@ -1,7 +1,7 @@
 import clsx from "clsx"
 import { VscMute, VscUnmute } from "react-icons/vsc"
 
-import { ButtonIcon } from "../../../../components/button"
+import { ButtonIcon } from "../../../../components/Button"
 import { useVolumeControl } from "../../../../hooks"
 import { useAppSelector } from "../../../../hooks/useRedux"
 import style from "./PlayerVolume.module.scss"

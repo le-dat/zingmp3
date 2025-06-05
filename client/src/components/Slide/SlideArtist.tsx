@@ -1,8 +1,8 @@
 import React from "react"
 import { Link } from "react-router-dom"
 
-import Image from "../image"
-import { SlideWrapper } from "../wrapper"
+import Image from "../Image"
+import { SlideWrapper } from "../Wrapper"
 import ARTISTS from "./data"
 import style from "./SlideArtist.module.scss"
 

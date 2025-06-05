@@ -5,10 +5,10 @@ import { DETAIL_PLAY_LIST } from "../../constants"
 import { useAppDispatch } from "../../hooks/useRedux"
 import { MediaIProps } from "../../interface"
 import { setInfoSong } from "../../redux/reducers/songSlice"
-import { AlphaMedia } from "../alpha"
+import { AlphaMedia } from "../Alpha"
 import { BtnHeartSong, BtnThreeDotMedia } from "../btn-action"
-import Image from "../image"
-import { SubTitle, Title } from "../info"
+import Image from "../Image"
+import { SubTitle, Title } from "../Info"
 import style from "./SuggestItem.module.scss"
 
 const SuggestItem: React.FC<MediaIProps> = (props) => {

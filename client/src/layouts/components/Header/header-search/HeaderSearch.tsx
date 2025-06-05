@@ -8,7 +8,7 @@ import { IoCloseOutline } from "react-icons/io5"
 import useSearch from "../../../../hooks/useSearch"
 import { SuggestArtist, SuggestItem } from "../../../../components/suggest-item"
 import style from "./HeaderSearch.module.scss"
-import { PopperWrapper } from "../../../../components/wrapper"
+import { PopperWrapper } from "../../../../components/Wrapper"
 
 const HeaderSearch: React.FC = () => {
   const [searchValue, setSearchValue] = useState<string>("")

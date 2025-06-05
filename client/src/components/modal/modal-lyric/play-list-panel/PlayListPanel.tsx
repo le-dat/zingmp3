@@ -2,9 +2,9 @@ import clsx from "clsx"
 import React from "react"
 
 import { useAppSelector } from "../../../../hooks/useRedux"
-import Image from "../../../image"
-import { SubTitle, Title } from "../../../info"
-import { SlideWrapper } from "../../../wrapper"
+import Image from "../../../Image"
+import { SubTitle, Title } from "../../../Info"
+import { SlideWrapper } from "../../../Wrapper"
 import style from "./PlayListPanel.module.scss"
 
 const PlayListPanel: React.FC = () => {

@@ -6,10 +6,10 @@ import { Link } from "react-router-dom"
 import { useAppSelector } from "../../../hooks/useRedux"
 import * as services from "../../../services"
 import { formatFollower } from "../../../utils/common"
-import { AlphaMedia } from "../../alpha"
+import { AlphaMedia } from "../../Alpha"
 import { BtnFollow } from "../../btn-action"
-import { CardSong } from "../../card"
-import Image from "../../image"
+import { CardSong } from "../../Card"
+import Image from "../../Image"
 import style from "./MediaPreview.module.scss"
 
 interface SectionItem {

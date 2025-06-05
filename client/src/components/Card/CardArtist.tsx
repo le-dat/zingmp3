@@ -5,10 +5,10 @@ import { Link } from "react-router-dom"
 import images from "../../assets/images"
 import { ARTIST } from "../../constants"
 import { formatLinkArtist } from "../../utils/common"
-import { AlphaCard } from "../alpha"
+import { AlphaCard } from "../Alpha"
 import { BtnFollow } from "../btn-action"
-import Image from "../image"
-import { SubTitle, Title } from "../info"
+import Image from "../Image"
+import { SubTitle, Title } from "../Info"
 import style from "./CardArtist.module.scss"
 
 interface IProps {

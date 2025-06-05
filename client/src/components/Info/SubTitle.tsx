@@ -7,8 +7,8 @@ import { Link } from "react-router-dom"
 import { ARTIST } from "../../constants"
 import { useAppSelector } from "../../hooks/useRedux"
 import { formatLinkArtist } from "../../utils/common"
-import MediaReview from "../media/media-review"
-import { PopperWrapper } from "../wrapper"
+import MediaReview from "../Media/media-review"
+import { PopperWrapper } from "../Wrapper"
 import style from "./SubTitle.module.scss"
 
 interface IProps {

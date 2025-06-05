@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import { HiOutlineChevronDown, HiOutlineChevronUp } from "react-icons/hi2"
 
 import { ButtonTitle } from "."
-import { PopperWrapper } from "../wrapper"
+import { PopperWrapper } from "../Wrapper"
 import style from "./ButtonDropDown.module.scss"
 
 interface IProps {

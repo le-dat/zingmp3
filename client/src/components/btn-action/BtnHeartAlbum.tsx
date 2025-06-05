@@ -7,7 +7,7 @@ import { LOGIN } from "../../constants"
 import { useAppSelector } from "../../hooks/useRedux"
 import * as services from "../../services"
 import { getToastSuccess, getToastWarn } from "../../utils/toast"
-import { ButtonIcon } from "../button"
+import { ButtonIcon } from "../Button"
 
 interface IProps {
   album: any

@@ -4,7 +4,7 @@ import { forwardRef, useImperativeHandle, useRef } from "react"
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs"
 import { useNavigate } from "react-router-dom"
 
-import { ButtonIcon } from "../../../components/button"
+import { ButtonIcon } from "../../../components/Button"
 import style from "./Header.module.scss"
 import HeaderNavigation from "./header-navigation"
 import HeaderSearch from "./header-search"

@@ -2,8 +2,8 @@ import clsx from "clsx"
 import React from "react"
 
 import { useAppSelector } from "../../../../hooks/useRedux"
-import Image from "../../../image"
-import Lyric from "../../../lyric"
+import Image from "../../../Image"
+import Lyric from "../../../Lyric"
 import style from "./LyricsPanel.module.scss"
 
 const LyricsPanel: React.FC = () => {

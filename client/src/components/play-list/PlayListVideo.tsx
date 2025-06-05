@@ -2,7 +2,7 @@ import clsx from "clsx"
 import React from "react"
 
 import { CardIProps } from "../../interface"
-import { CardVideo } from "../card"
+import { CardVideo } from "../Card"
 import HeaderPlayList from "../header-play-list"
 import style from "./PlayList.module.scss"
 

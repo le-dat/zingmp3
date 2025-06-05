@@ -2,7 +2,7 @@ import clsx from "clsx"
 import { Link } from "react-router-dom"
 
 import images from "../../../../assets/images"
-import Image from "../../../../components/image"
+import Image from "../../../../components/Image"
 import { DISCOVER } from "../../../../constants"
 import { useAppSelector } from "../../../../hooks/useRedux"
 import style from "./SidebarHeader.module.scss"

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 
 import { BannerIProps } from "../../interface"
 import { formatLinkBanner } from "../../utils/common"
-import Image from "../image"
+import Image from "../Image"
 import style from "./SlideBanner.module.scss"
 
 interface SlideBannerProps {

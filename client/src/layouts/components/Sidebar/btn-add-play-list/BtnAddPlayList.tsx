@@ -4,7 +4,7 @@ import { IoAdd } from "react-icons/io5"
 import { useNavigate } from "react-router-dom"
 
 import { useAuthContext } from "../../../../auth/AuthProvider"
-import { ButtonTitle } from "../../../../components/button"
+import { ButtonTitle } from "../../../../components/Button"
 import { LOGIN } from "../../../../constants"
 import { useAppSelector } from "../../../../hooks/useRedux"
 import { getToastWarn } from "../../../../utils/toast"

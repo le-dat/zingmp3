@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { VscMultipleWindows } from "react-icons/vsc"
 
-import { ButtonIcon } from "../button"
+import { ButtonIcon } from "../Button"
 
 interface IProps {
   title?: string
