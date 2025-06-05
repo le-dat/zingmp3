@@ -2,7 +2,7 @@ import clsx from "clsx"
 import React, { useEffect, useState } from "react"
 import { Helmet } from "react-helmet-async"
 
-import { ImgTop100 } from "../../components/icons"
+import { ImgTop100 } from "../../components/Icons"
 import { PlayListAlbum } from "../../components/play-list"
 import { useScrollTop } from "../../hooks"
 import * as services from "../../services"

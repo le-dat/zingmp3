@@ -3,9 +3,9 @@ import React from "react"
 import { Link } from "react-router-dom"
 
 import { DETAIL_PLAY_LIST, RADIO } from "../../constants"
-import { AlphaCard } from "../alpha"
-import Image from "../image"
-import { SubTitle, Title } from "../info"
+import { AlphaCard } from "../Alpha"
+import Image from "../Image"
+import { SubTitle, Title } from "../Info"
 import style from "./CardRadio.module.scss"
 
 interface IProps {

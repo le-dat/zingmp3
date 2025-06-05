@@ -2,7 +2,7 @@ import clsx from "clsx"
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai"
 
 import { useAuthContext } from "../../../auth/AuthProvider"
-import { ButtonIcon } from "../../../components/button"
+import { ButtonIcon } from "../../../components/Button"
 import {
   IconDiscover,
   IconFollow,
@@ -16,7 +16,7 @@ import {
   IconRecent,
   IconSong,
   IconZingChart,
-} from "../../../components/icons"
+} from "../../../components/Icons"
 import {
   PERSONAL,
   RECENTLY,

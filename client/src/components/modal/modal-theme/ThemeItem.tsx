@@ -2,8 +2,8 @@ import clsx from "clsx"
 import React from "react"
 import { BsCheckCircleFill } from "react-icons/bs"
 
-import { AlphaTheme } from "../../alpha"
-import Image from "../../image"
+import { AlphaTheme } from "../../Alpha"
+import Image from "../../Image"
 import style from "./ThemeItem.module.scss"
 
 interface IProps {

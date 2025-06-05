@@ -3,8 +3,8 @@ import { IoMdClose } from "react-icons/io"
 
 import { useAppDispatch, useAppSelector } from "../../../hooks/useRedux"
 import { setShowThemeModal } from "../../../redux/reducers/themeSlice"
-import { ButtonIcon } from "../../button"
-import { PopperWrapper } from "../../wrapper"
+import { ButtonIcon } from "../../Button"
+import { PopperWrapper } from "../../Wrapper"
 import style from "./ModalTheme.module.scss"
 import ThemeList from "./ThemeList"
 

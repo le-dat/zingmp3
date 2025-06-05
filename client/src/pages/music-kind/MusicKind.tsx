@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async"
 import images from "../../assets/images"
 
 import HeaderPlayList from "../../components/header-play-list"
-import Image from "../../components/image"
+import Image from "../../components/Image"
 import { useScrollTop } from "../../hooks"
 import { getToastWarn } from "../../utils/toast"
 import style from "./MusicKind.module.scss"

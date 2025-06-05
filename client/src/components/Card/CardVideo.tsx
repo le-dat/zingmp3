@@ -3,9 +3,9 @@ import React from "react"
 import { Link } from "react-router-dom"
 
 import { MV, VIDEO } from "../../constants"
-import { AlphaCard } from "../alpha"
-import Image from "../image"
-import { SubTitle, Title } from "../info"
+import { AlphaCard } from "../Alpha"
+import Image from "../Image"
+import { SubTitle, Title } from "../Info"
 import Time from "../time"
 import style from "./CardVideo.module.scss"
 

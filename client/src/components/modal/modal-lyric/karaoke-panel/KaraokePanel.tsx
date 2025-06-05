@@ -1,7 +1,7 @@
 import clsx from "clsx"
 import React from "react"
 
-import Lyric from "../../../lyric"
+import Lyric from "../../../Lyric"
 import style from "./KaraokePanel.module.scss"
 
 const KaraokePanel: React.FC = () => {

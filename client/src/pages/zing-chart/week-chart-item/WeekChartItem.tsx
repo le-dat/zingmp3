@@ -1,8 +1,8 @@
 import React from "react"
 
-import { ButtonTitle } from "../../../components/button"
+import { ButtonTitle } from "../../../components/Button"
 import Title from "../../../components/header-play-list"
-import Media from "../../../components/media/Media"
+import Media from "../../../components/Media/Media"
 import { ZING_CHART_WEEK } from "../../../constants"
 import { getTypeTab } from "../../../utils/common"
 import style from "./WeekChartItem.module.scss"

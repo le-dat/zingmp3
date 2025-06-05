@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { MdOutlineVideoLibrary } from "react-icons/md"
 
-import { ButtonIcon } from "../button"
+import { ButtonIcon } from "../Button"
 
 interface IProps {
   title?: string

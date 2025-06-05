@@ -4,7 +4,7 @@ import { BsMusicNoteList } from "react-icons/bs"
 import { useAppDispatch, useAppSelector } from "../../hooks/useRedux"
 import { setShowPlayListModal } from "../../redux/reducers/playListSlice"
 
-import { ButtonIcon } from "../button"
+import { ButtonIcon } from "../Button"
 import style from "./BtnToggleList.module.scss"
 
 interface IProps {

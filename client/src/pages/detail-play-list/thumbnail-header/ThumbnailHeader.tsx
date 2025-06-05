@@ -1,8 +1,8 @@
 import clsx from "clsx"
 import React from "react"
 
-import { AlphaDetailPlayList } from "../../../components/alpha"
-import Image from "../../../components/image"
+import { AlphaDetailPlayList } from "../../../components/Alpha"
+import Image from "../../../components/Image"
 import { useAppSelector } from "../../../hooks/useRedux"
 import style from "./ThumbnailHeader.module.scss"
 

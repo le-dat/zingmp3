@@ -3,8 +3,8 @@ import { Link } from "react-router-dom"
 
 import { ARTIST } from "../../constants"
 import { formatFollower } from "../../utils/common"
-import Image from "../image"
-import { SubTitle, Title } from "../info"
+import Image from "../Image"
+import { SubTitle, Title } from "../Info"
 import style from "./SuggestArtist.module.scss"
 
 interface IProps {

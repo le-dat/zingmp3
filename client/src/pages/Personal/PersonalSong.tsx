@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 
 import { useAuthContext } from "../../auth/AuthProvider"
-import Media from "../../components/media"
+import Media from "../../components/Media"
 import { useScrollTop } from "../../hooks"
 import { useAppDispatch, useAppSelector } from "../../hooks/useRedux"
 import { setPlayListLikedSong } from "../../redux/reducers/personalSlice"

@@ -4,8 +4,8 @@ import React from "react"
 import images from "../../assets/images"
 import { useAppDispatch, useAppSelector } from "../../hooks/useRedux"
 import { setPlaying } from "../../redux/reducers/controlSlice"
-import { IconLoading } from "../icons"
-import Image from "../image"
+import { IconLoading } from "../Icons"
+import Image from "../Image"
 import style from "./AlphaMedia.module.scss"
 
 interface IProps {
