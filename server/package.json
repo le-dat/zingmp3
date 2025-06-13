@@ -11,7 +11,7 @@
   "author": "le-dat lqdat87@gmail.com",
   "license": "ISC",
   "dependencies": {
-    "argon2": "^0.30.3",
+    "argon2": "^0.40.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
